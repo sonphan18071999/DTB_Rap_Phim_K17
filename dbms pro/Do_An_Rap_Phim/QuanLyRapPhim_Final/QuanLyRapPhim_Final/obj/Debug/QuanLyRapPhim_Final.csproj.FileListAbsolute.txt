@@ -1,0 +1,124 @@
+F:\New folder\github\Windows\QuanLyRapPhim_Final\QuanLyRapPhim_Final\obj\Debug\QuanLyRapPhim_Final.csprojAssemblyReference.cache
+F:\New folder\github\Windows\QuanLyRapPhim_Final\QuanLyRapPhim_Final\obj\Debug\QuanLyRapPhim_Final.Form1.resources
+F:\New folder\github\Windows\QuanLyRapPhim_Final\QuanLyRapPhim_Final\obj\Debug\QuanLyRapPhim_Final.Properties.Resources.resources
+F:\New folder\github\Windows\QuanLyRapPhim_Final\QuanLyRapPhim_Final\obj\Debug\QuanLyRapPhim_Final.User_Controls.DatVeUC.resources
+F:\New folder\github\Windows\QuanLyRapPhim_Final\QuanLyRapPhim_Final\obj\Debug\QuanLyRapPhim_Final.User_Controls.PhimUC.resources
+F:\New folder\github\Windows\QuanLyRapPhim_Final\QuanLyRapPhim_Final\obj\Debug\QuanLyRapPhim_Final.User_Controls.QuanLyKhachHangUC.resources
+F:\New folder\github\Windows\QuanLyRapPhim_Final\QuanLyRapPhim_Final\obj\Debug\QuanLyRapPhim_Final.User_Controls.QuanLyNhanVienUC.resources
+F:\New folder\github\Windows\QuanLyRapPhim_Final\QuanLyRapPhim_Final\obj\Debug\QuanLyRapPhim_Final.User_Controls.QuanLyRapUC.resources
+F:\New folder\github\Windows\QuanLyRapPhim_Final\QuanLyRapPhim_Final\obj\Debug\QuanLyRapPhim_Final.User_Controls.WelcomeUC.resources
+F:\New folder\github\Windows\QuanLyRapPhim_Final\QuanLyRapPhim_Final\obj\Debug\QuanLyRapPhim_Final.csproj.GenerateResource.cache
+F:\New folder\github\Windows\QuanLyRapPhim_Final\QuanLyRapPhim_Final\obj\Debug\QuanLyRapPhim_Final.csproj.CoreCompileInputs.cache
+F:\New folder\github\Windows\QuanLyRapPhim_Final\QuanLyRapPhim_Final\bin\Debug\QuanLyRapPhim_Final.exe.config
+F:\New folder\github\Windows\QuanLyRapPhim_Final\QuanLyRapPhim_Final\bin\Debug\QuanLyRapPhim_Final.exe
+F:\New folder\github\Windows\QuanLyRapPhim_Final\QuanLyRapPhim_Final\bin\Debug\QuanLyRapPhim_Final.pdb
+F:\New folder\github\Windows\QuanLyRapPhim_Final\QuanLyRapPhim_Final\obj\Debug\QuanLyRapPhim_Final.exe
+F:\New folder\github\Windows\QuanLyRapPhim_Final\QuanLyRapPhim_Final\obj\Debug\QuanLyRapPhim_Final.pdb
+F:\New folder\Windows\QuanLyRapPhim_Final\QuanLyRapPhim_Final\bin\Debug\QuanLyRapPhim_Final.exe.config
+F:\New folder\Windows\QuanLyRapPhim_Final\QuanLyRapPhim_Final\bin\Debug\QuanLyRapPhim_Final.exe
+F:\New folder\Windows\QuanLyRapPhim_Final\QuanLyRapPhim_Final\bin\Debug\QuanLyRapPhim_Final.pdb
+F:\New folder\Windows\QuanLyRapPhim_Final\QuanLyRapPhim_Final\obj\Debug\QuanLyRapPhim_Final.Form1.resources
+F:\New folder\Windows\QuanLyRapPhim_Final\QuanLyRapPhim_Final\obj\Debug\QuanLyRapPhim_Final.Properties.Resources.resources
+F:\New folder\Windows\QuanLyRapPhim_Final\QuanLyRapPhim_Final\obj\Debug\QuanLyRapPhim_Final.User_Controls.DatVeUC.resources
+F:\New folder\Windows\QuanLyRapPhim_Final\QuanLyRapPhim_Final\obj\Debug\QuanLyRapPhim_Final.User_Controls.PhimUC.resources
+F:\New folder\Windows\QuanLyRapPhim_Final\QuanLyRapPhim_Final\obj\Debug\QuanLyRapPhim_Final.User_Controls.QuanLyKhachHangUC.resources
+F:\New folder\Windows\QuanLyRapPhim_Final\QuanLyRapPhim_Final\obj\Debug\QuanLyRapPhim_Final.User_Controls.QuanLyNhanVienUC.resources
+F:\New folder\Windows\QuanLyRapPhim_Final\QuanLyRapPhim_Final\obj\Debug\QuanLyRapPhim_Final.User_Controls.QuanLyRapUC.resources
+F:\New folder\Windows\QuanLyRapPhim_Final\QuanLyRapPhim_Final\obj\Debug\QuanLyRapPhim_Final.User_Controls.WelcomeUC.resources
+F:\New folder\Windows\QuanLyRapPhim_Final\QuanLyRapPhim_Final\obj\Debug\QuanLyRapPhim_Final.csproj.GenerateResource.cache
+F:\New folder\Windows\QuanLyRapPhim_Final\QuanLyRapPhim_Final\obj\Debug\QuanLyRapPhim_Final.csproj.CoreCompileInputs.cache
+F:\New folder\Windows\QuanLyRapPhim_Final\QuanLyRapPhim_Final\obj\Debug\QuanLyRapPhim_Final.exe
+F:\New folder\Windows\QuanLyRapPhim_Final\QuanLyRapPhim_Final\obj\Debug\QuanLyRapPhim_Final.pdb
+F:\New folder\Windows\QuanLyRapPhim_Final\QuanLyRapPhim_Final\obj\Debug\QuanLyRapPhim_Final.User_Controls.ChucVuUC.resources
+F:\New folder\Windows\QuanLyRapPhim_Final\QuanLyRapPhim_Final\obj\Debug\QuanLyRapPhim_Final.csprojAssemblyReference.cache
+F:\New folder\github\Windows\QuanLyRapPhim_Final\QuanLyRapPhim_Final\obj\Debug\QuanLyRapPhim_Final.User_Controls.ChucVuUC.resources
+F:\New folder\github\Windows\QuanLyRapPhim_Final\QuanLyRapPhim_Final\obj\Debug\QuanLyRapPhim_Final.User_Controls.QuanLySuatChieuUC.resources
+C:\Users\DangKhoa\Desktop\project\Windows\QuanLyRapPhim_Final\QuanLyRapPhim_Final\bin\Debug\QuanLyRapPhim_Final.exe.config
+C:\Users\DangKhoa\Desktop\project\Windows\QuanLyRapPhim_Final\QuanLyRapPhim_Final\bin\Debug\QuanLyRapPhim_Final.exe
+C:\Users\DangKhoa\Desktop\project\Windows\QuanLyRapPhim_Final\QuanLyRapPhim_Final\bin\Debug\QuanLyRapPhim_Final.pdb
+C:\Users\DangKhoa\Desktop\project\Windows\QuanLyRapPhim_Final\QuanLyRapPhim_Final\obj\Debug\QuanLyRapPhim_Final.csprojResolveAssemblyReference.cache
+C:\Users\DangKhoa\Desktop\project\Windows\QuanLyRapPhim_Final\QuanLyRapPhim_Final\obj\Debug\QuanLyRapPhim_Final.Form1.resources
+C:\Users\DangKhoa\Desktop\project\Windows\QuanLyRapPhim_Final\QuanLyRapPhim_Final\obj\Debug\QuanLyRapPhim_Final.Properties.Resources.resources
+C:\Users\DangKhoa\Desktop\project\Windows\QuanLyRapPhim_Final\QuanLyRapPhim_Final\obj\Debug\QuanLyRapPhim_Final.User_Controls.ChucVuUC.resources
+C:\Users\DangKhoa\Desktop\project\Windows\QuanLyRapPhim_Final\QuanLyRapPhim_Final\obj\Debug\QuanLyRapPhim_Final.User_Controls.DatVeUC.resources
+C:\Users\DangKhoa\Desktop\project\Windows\QuanLyRapPhim_Final\QuanLyRapPhim_Final\obj\Debug\QuanLyRapPhim_Final.User_Controls.PhimUC.resources
+C:\Users\DangKhoa\Desktop\project\Windows\QuanLyRapPhim_Final\QuanLyRapPhim_Final\obj\Debug\QuanLyRapPhim_Final.User_Controls.QuanLyKhachHangUC.resources
+C:\Users\DangKhoa\Desktop\project\Windows\QuanLyRapPhim_Final\QuanLyRapPhim_Final\obj\Debug\QuanLyRapPhim_Final.User_Controls.QuanLyNhanVienUC.resources
+C:\Users\DangKhoa\Desktop\project\Windows\QuanLyRapPhim_Final\QuanLyRapPhim_Final\obj\Debug\QuanLyRapPhim_Final.User_Controls.QuanLyRapUC.resources
+C:\Users\DangKhoa\Desktop\project\Windows\QuanLyRapPhim_Final\QuanLyRapPhim_Final\obj\Debug\QuanLyRapPhim_Final.User_Controls.QuanLySuatChieuUC.resources
+C:\Users\DangKhoa\Desktop\project\Windows\QuanLyRapPhim_Final\QuanLyRapPhim_Final\obj\Debug\QuanLyRapPhim_Final.User_Controls.WelcomeUC.resources
+C:\Users\DangKhoa\Desktop\project\Windows\QuanLyRapPhim_Final\QuanLyRapPhim_Final\obj\Debug\QuanLyRapPhim_Final.csproj.GenerateResource.Cache
+C:\Users\DangKhoa\Desktop\project\Windows\QuanLyRapPhim_Final\QuanLyRapPhim_Final\obj\Debug\QuanLyRapPhim_Final.csproj.CoreCompileInputs.cache
+C:\Users\DangKhoa\Desktop\project\Windows\QuanLyRapPhim_Final\QuanLyRapPhim_Final\obj\Debug\QuanLyRapPhim_Final.exe
+C:\Users\DangKhoa\Desktop\project\Windows\QuanLyRapPhim_Final\QuanLyRapPhim_Final\obj\Debug\QuanLyRapPhim_Final.pdb
+D:\đồ án cuối kì win\FinalWindows\QuanLyRapPhim_Final\QuanLyRapPhim_Final\bin\Debug\QuanLyRapPhim_Final.exe.config
+D:\đồ án cuối kì win\FinalWindows\QuanLyRapPhim_Final\QuanLyRapPhim_Final\bin\Debug\QuanLyRapPhim_Final.exe
+D:\đồ án cuối kì win\FinalWindows\QuanLyRapPhim_Final\QuanLyRapPhim_Final\bin\Debug\QuanLyRapPhim_Final.pdb
+D:\đồ án cuối kì win\FinalWindows\QuanLyRapPhim_Final\QuanLyRapPhim_Final\obj\Debug\QuanLyRapPhim_Final.csprojResolveAssemblyReference.cache
+D:\đồ án cuối kì win\FinalWindows\QuanLyRapPhim_Final\QuanLyRapPhim_Final\obj\Debug\QuanLyRapPhim_Final.Form1.resources
+D:\đồ án cuối kì win\FinalWindows\QuanLyRapPhim_Final\QuanLyRapPhim_Final\obj\Debug\QuanLyRapPhim_Final.Properties.Resources.resources
+D:\đồ án cuối kì win\FinalWindows\QuanLyRapPhim_Final\QuanLyRapPhim_Final\obj\Debug\QuanLyRapPhim_Final.User_Controls.ChucVuUC.resources
+D:\đồ án cuối kì win\FinalWindows\QuanLyRapPhim_Final\QuanLyRapPhim_Final\obj\Debug\QuanLyRapPhim_Final.User_Controls.DatVeUC.resources
+D:\đồ án cuối kì win\FinalWindows\QuanLyRapPhim_Final\QuanLyRapPhim_Final\obj\Debug\QuanLyRapPhim_Final.User_Controls.PhimUC.resources
+D:\đồ án cuối kì win\FinalWindows\QuanLyRapPhim_Final\QuanLyRapPhim_Final\obj\Debug\QuanLyRapPhim_Final.User_Controls.QuanLyKhachHangUC.resources
+D:\đồ án cuối kì win\FinalWindows\QuanLyRapPhim_Final\QuanLyRapPhim_Final\obj\Debug\QuanLyRapPhim_Final.User_Controls.QuanLyNhanVienUC.resources
+D:\đồ án cuối kì win\FinalWindows\QuanLyRapPhim_Final\QuanLyRapPhim_Final\obj\Debug\QuanLyRapPhim_Final.User_Controls.QuanLyRapUC.resources
+D:\đồ án cuối kì win\FinalWindows\QuanLyRapPhim_Final\QuanLyRapPhim_Final\obj\Debug\QuanLyRapPhim_Final.User_Controls.QuanLySuatChieuUC.resources
+D:\đồ án cuối kì win\FinalWindows\QuanLyRapPhim_Final\QuanLyRapPhim_Final\obj\Debug\QuanLyRapPhim_Final.User_Controls.WelcomeUC.resources
+D:\đồ án cuối kì win\FinalWindows\QuanLyRapPhim_Final\QuanLyRapPhim_Final\obj\Debug\QuanLyRapPhim_Final.csproj.GenerateResource.Cache
+D:\đồ án cuối kì win\FinalWindows\QuanLyRapPhim_Final\QuanLyRapPhim_Final\obj\Debug\QuanLyRapPhim_Final.csproj.CoreCompileInputs.cache
+D:\đồ án cuối kì win\FinalWindows\QuanLyRapPhim_Final\QuanLyRapPhim_Final\obj\Debug\QuanLyRapPhim_Final.exe
+D:\đồ án cuối kì win\FinalWindows\QuanLyRapPhim_Final\QuanLyRapPhim_Final\obj\Debug\QuanLyRapPhim_Final.pdb
+D:\Working !\QuanLyRapPhim_Final\QuanLyRapPhim_Final\bin\Debug\QuanLyRapPhim_Final.exe.config
+D:\Working !\QuanLyRapPhim_Final\QuanLyRapPhim_Final\bin\Debug\QuanLyRapPhim_Final.exe
+D:\Working !\QuanLyRapPhim_Final\QuanLyRapPhim_Final\bin\Debug\QuanLyRapPhim_Final.pdb
+D:\Working !\QuanLyRapPhim_Final\QuanLyRapPhim_Final\obj\Debug\QuanLyRapPhim_Final.Form1.resources
+D:\Working !\QuanLyRapPhim_Final\QuanLyRapPhim_Final\obj\Debug\QuanLyRapPhim_Final.Properties.Resources.resources
+D:\Working !\QuanLyRapPhim_Final\QuanLyRapPhim_Final\obj\Debug\QuanLyRapPhim_Final.User_Controls.ChucVuUC.resources
+D:\Working !\QuanLyRapPhim_Final\QuanLyRapPhim_Final\obj\Debug\QuanLyRapPhim_Final.User_Controls.DatVeUC.resources
+D:\Working !\QuanLyRapPhim_Final\QuanLyRapPhim_Final\obj\Debug\QuanLyRapPhim_Final.User_Controls.PhimUC.resources
+D:\Working !\QuanLyRapPhim_Final\QuanLyRapPhim_Final\obj\Debug\QuanLyRapPhim_Final.User_Controls.QuanLyKhachHangUC.resources
+D:\Working !\QuanLyRapPhim_Final\QuanLyRapPhim_Final\obj\Debug\QuanLyRapPhim_Final.User_Controls.QuanLyNhanVienUC.resources
+D:\Working !\QuanLyRapPhim_Final\QuanLyRapPhim_Final\obj\Debug\QuanLyRapPhim_Final.User_Controls.QuanLyRapUC.resources
+D:\Working !\QuanLyRapPhim_Final\QuanLyRapPhim_Final\obj\Debug\QuanLyRapPhim_Final.User_Controls.QuanLySuatChieuUC.resources
+D:\Working !\QuanLyRapPhim_Final\QuanLyRapPhim_Final\obj\Debug\QuanLyRapPhim_Final.User_Controls.WelcomeUC.resources
+D:\Working !\QuanLyRapPhim_Final\QuanLyRapPhim_Final\obj\Debug\QuanLyRapPhim_Final.csproj.GenerateResource.Cache
+D:\Working !\QuanLyRapPhim_Final\QuanLyRapPhim_Final\obj\Debug\QuanLyRapPhim_Final.csproj.CoreCompileInputs.cache
+D:\Working !\QuanLyRapPhim_Final\QuanLyRapPhim_Final\obj\Debug\QuanLyRapPhim_Final.exe
+D:\Working !\QuanLyRapPhim_Final\QuanLyRapPhim_Final\obj\Debug\QuanLyRapPhim_Final.pdb
+D:\Working !\QuanLyRapPhim_Final\QuanLyRapPhim_Final\obj\Debug\QuanLyRapPhim_Final.csprojAssemblyReference.cache
+D:\Hoc tap\Nam 3_HKI\He quan tri CSDL\Do_An_Rap_Phim\QuanLyRapPhim_Final\QuanLyRapPhim_Final\bin\Debug\QuanLyRapPhim_Final.exe.config
+D:\Hoc tap\Nam 3_HKI\He quan tri CSDL\Do_An_Rap_Phim\QuanLyRapPhim_Final\QuanLyRapPhim_Final\bin\Debug\QuanLyRapPhim_Final.exe
+D:\Hoc tap\Nam 3_HKI\He quan tri CSDL\Do_An_Rap_Phim\QuanLyRapPhim_Final\QuanLyRapPhim_Final\bin\Debug\QuanLyRapPhim_Final.pdb
+D:\Hoc tap\Nam 3_HKI\He quan tri CSDL\Do_An_Rap_Phim\QuanLyRapPhim_Final\QuanLyRapPhim_Final\obj\Debug\QuanLyRapPhim_Final.csprojAssemblyReference.cache
+D:\Hoc tap\Nam 3_HKI\He quan tri CSDL\Do_An_Rap_Phim\QuanLyRapPhim_Final\QuanLyRapPhim_Final\obj\Debug\QuanLyRapPhim_Final.Form1.resources
+D:\Hoc tap\Nam 3_HKI\He quan tri CSDL\Do_An_Rap_Phim\QuanLyRapPhim_Final\QuanLyRapPhim_Final\obj\Debug\QuanLyRapPhim_Final.Properties.Resources.resources
+D:\Hoc tap\Nam 3_HKI\He quan tri CSDL\Do_An_Rap_Phim\QuanLyRapPhim_Final\QuanLyRapPhim_Final\obj\Debug\QuanLyRapPhim_Final.User_Controls.ChucVuUC.resources
+D:\Hoc tap\Nam 3_HKI\He quan tri CSDL\Do_An_Rap_Phim\QuanLyRapPhim_Final\QuanLyRapPhim_Final\obj\Debug\QuanLyRapPhim_Final.User_Controls.DatVeUC.resources
+D:\Hoc tap\Nam 3_HKI\He quan tri CSDL\Do_An_Rap_Phim\QuanLyRapPhim_Final\QuanLyRapPhim_Final\obj\Debug\QuanLyRapPhim_Final.User_Controls.PhimUC.resources
+D:\Hoc tap\Nam 3_HKI\He quan tri CSDL\Do_An_Rap_Phim\QuanLyRapPhim_Final\QuanLyRapPhim_Final\obj\Debug\QuanLyRapPhim_Final.User_Controls.QuanLyKhachHangUC.resources
+D:\Hoc tap\Nam 3_HKI\He quan tri CSDL\Do_An_Rap_Phim\QuanLyRapPhim_Final\QuanLyRapPhim_Final\obj\Debug\QuanLyRapPhim_Final.User_Controls.QuanLyNhanVienUC.resources
+D:\Hoc tap\Nam 3_HKI\He quan tri CSDL\Do_An_Rap_Phim\QuanLyRapPhim_Final\QuanLyRapPhim_Final\obj\Debug\QuanLyRapPhim_Final.User_Controls.QuanLyRapUC.resources
+D:\Hoc tap\Nam 3_HKI\He quan tri CSDL\Do_An_Rap_Phim\QuanLyRapPhim_Final\QuanLyRapPhim_Final\obj\Debug\QuanLyRapPhim_Final.User_Controls.QuanLySuatChieuUC.resources
+D:\Hoc tap\Nam 3_HKI\He quan tri CSDL\Do_An_Rap_Phim\QuanLyRapPhim_Final\QuanLyRapPhim_Final\obj\Debug\QuanLyRapPhim_Final.User_Controls.WelcomeUC.resources
+D:\Hoc tap\Nam 3_HKI\He quan tri CSDL\Do_An_Rap_Phim\QuanLyRapPhim_Final\QuanLyRapPhim_Final\obj\Debug\QuanLyRapPhim_Final.csproj.GenerateResource.cache
+D:\Hoc tap\Nam 3_HKI\He quan tri CSDL\Do_An_Rap_Phim\QuanLyRapPhim_Final\QuanLyRapPhim_Final\obj\Debug\QuanLyRapPhim_Final.exe
+D:\Hoc tap\Nam 3_HKI\He quan tri CSDL\Do_An_Rap_Phim\QuanLyRapPhim_Final\QuanLyRapPhim_Final\obj\Debug\QuanLyRapPhim_Final.pdb
+D:\dbms pro\Do_An_Rap_Phim\QuanLyRapPhim_Final\QuanLyRapPhim_Final\bin\Debug\QuanLyRapPhim_Final.exe.config
+D:\dbms pro\Do_An_Rap_Phim\QuanLyRapPhim_Final\QuanLyRapPhim_Final\bin\Debug\QuanLyRapPhim_Final.exe
+D:\dbms pro\Do_An_Rap_Phim\QuanLyRapPhim_Final\QuanLyRapPhim_Final\bin\Debug\QuanLyRapPhim_Final.pdb
+D:\dbms pro\Do_An_Rap_Phim\QuanLyRapPhim_Final\QuanLyRapPhim_Final\obj\Debug\QuanLyRapPhim_Final.Form1.resources
+D:\dbms pro\Do_An_Rap_Phim\QuanLyRapPhim_Final\QuanLyRapPhim_Final\obj\Debug\QuanLyRapPhim_Final.Properties.Resources.resources
+D:\dbms pro\Do_An_Rap_Phim\QuanLyRapPhim_Final\QuanLyRapPhim_Final\obj\Debug\QuanLyRapPhim_Final.User_Controls.ChucVuUC.resources
+D:\dbms pro\Do_An_Rap_Phim\QuanLyRapPhim_Final\QuanLyRapPhim_Final\obj\Debug\QuanLyRapPhim_Final.User_Controls.DatVeUC.resources
+D:\dbms pro\Do_An_Rap_Phim\QuanLyRapPhim_Final\QuanLyRapPhim_Final\obj\Debug\QuanLyRapPhim_Final.User_Controls.PhimUC.resources
+D:\dbms pro\Do_An_Rap_Phim\QuanLyRapPhim_Final\QuanLyRapPhim_Final\obj\Debug\QuanLyRapPhim_Final.User_Controls.QuanLyHangSanXuatUC.resources
+D:\dbms pro\Do_An_Rap_Phim\QuanLyRapPhim_Final\QuanLyRapPhim_Final\obj\Debug\QuanLyRapPhim_Final.User_Controls.QuanLyKhachHangUC.resources
+D:\dbms pro\Do_An_Rap_Phim\QuanLyRapPhim_Final\QuanLyRapPhim_Final\obj\Debug\QuanLyRapPhim_Final.User_Controls.QuanLyNhanVienUC.resources
+D:\dbms pro\Do_An_Rap_Phim\QuanLyRapPhim_Final\QuanLyRapPhim_Final\obj\Debug\QuanLyRapPhim_Final.User_Controls.QuanLyRapUC.resources
+D:\dbms pro\Do_An_Rap_Phim\QuanLyRapPhim_Final\QuanLyRapPhim_Final\obj\Debug\QuanLyRapPhim_Final.User_Controls.QuanLySuatChieuUC.resources
+D:\dbms pro\Do_An_Rap_Phim\QuanLyRapPhim_Final\QuanLyRapPhim_Final\obj\Debug\QuanLyRapPhim_Final.User_Controls.WelcomeUC.resources
+D:\dbms pro\Do_An_Rap_Phim\QuanLyRapPhim_Final\QuanLyRapPhim_Final\obj\Debug\QuanLyRapPhim_Final.csproj.GenerateResource.cache
+D:\dbms pro\Do_An_Rap_Phim\QuanLyRapPhim_Final\QuanLyRapPhim_Final\obj\Debug\QuanLyRapPhim_Final.exe
+D:\dbms pro\Do_An_Rap_Phim\QuanLyRapPhim_Final\QuanLyRapPhim_Final\obj\Debug\QuanLyRapPhim_Final.pdb
+D:\dbms pro\Do_An_Rap_Phim\QuanLyRapPhim_Final\QuanLyRapPhim_Final\obj\Debug\QuanLyRapPhim_Final.csprojAssemblyReference.cache
