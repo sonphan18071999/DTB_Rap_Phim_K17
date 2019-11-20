@@ -28,6 +28,7 @@ namespace QuanLyRapPhim_Final.User_Controls
             txtMaKH.ResetText();
             txtHovalotKH.ResetText();
             txtTenKH.ResetText();
+            txtTichDiem.ResetText();
             // Không cho thao tác trên các nút Lưu / Hủy
             btnLuu.Enabled = false;
             btnHuy.Enabled = false;
@@ -37,7 +38,7 @@ namespace QuanLyRapPhim_Final.User_Controls
             btnXoa.Enabled = true;
             try
             {
-                this.khachHangTableAdapter.Fill(this.quanLyRapPhimDataSet_KHACHHANG.KhachHang);
+                this.khachHangTableAdapter.Fill(this.quanLyRapPhimDataSet_KhachHang.KhachHang);
             }
             catch
             {
@@ -59,7 +60,8 @@ namespace QuanLyRapPhim_Final.User_Controls
             txtMaKH.ResetText();
             txtTenKH.Enabled = true;
             txtTenKH.ResetText();
-
+            dtpNgaySinh.ResetText();
+            txtTichDiem.ResetText();
             btnLuu.Enabled = true;
             btnHuy.Enabled = true;
 
@@ -86,11 +88,22 @@ namespace QuanLyRapPhim_Final.User_Controls
 
         private void Dgv_KHACHHANG_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            int r = dgv_KHACHHANG.CurrentCell.RowIndex;
+            try
+            {
+                int r = dgv_KHACHHANG.CurrentCell.RowIndex;
 
-            txtMaKH.Text = dgv_KHACHHANG.Rows[r].Cells[0].Value.ToString();
-            txtHovalotKH.Text = dgv_KHACHHANG.Rows[r].Cells[1].Value.ToString();
-            txtTenKH.Text = dgv_KHACHHANG.Rows[r].Cells[2].Value.ToString();
+                txtMaKH.Text = dgv_KHACHHANG.Rows[r].Cells[0].Value.ToString();
+                txtHovalotKH.Text = dgv_KHACHHANG.Rows[r].Cells[1].Value.ToString();
+                txtTenKH.Text = dgv_KHACHHANG.Rows[r].Cells[2].Value.ToString();
+                dtpNgaySinh.Value = Convert.ToDateTime(dgv_KHACHHANG.Rows[r].Cells[3].Value.ToString());
+                txtTichDiem.Text = dgv_KHACHHANG.Rows[r].Cells[4].Value.ToString();
+            }
+            catch (Exception)
+            {
+
+                
+            }
+
         }
 
         private void BtnHuy_Click(object sender, EventArgs e)

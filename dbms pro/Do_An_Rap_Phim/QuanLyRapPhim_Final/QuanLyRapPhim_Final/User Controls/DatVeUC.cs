@@ -54,7 +54,6 @@ namespace QuanLyRapPhim_Final.User_Controls
         private void DatVeUC_Load(object sender, EventArgs e)
         {
 
-            this.datVeTableAdapter.Fill(this.quanLyRapPhimDataSet_DATVE.DatVe);
             setNhanViencb();
             setCombobox2();
             DataSet ds = dbRap.LayRap();
@@ -63,7 +62,7 @@ namespace QuanLyRapPhim_Final.User_Controls
             seatPanel.Visible = false;
             SuatChieucb.Enabled = false;
             setMaKHcb();
-            comboBox2.Enabled = false;
+            Phimcb.Enabled = false;
             btnHuy.Enabled = false;
             btnLuu.Enabled = false;
         }
@@ -73,9 +72,9 @@ namespace QuanLyRapPhim_Final.User_Controls
             conn = new SqlConnection(cnstr);
             da = new SqlDataAdapter("select * from Phim", conn);
             da.Fill(dtPhim);
-            comboBox2.DataSource = dtPhim;
-            comboBox2.DisplayMember = "TenPhim";
-            comboBox2.ValueMember = "TenPhim";
+            Phimcb.DataSource = dtPhim;
+            Phimcb.DisplayMember = "TenPhim";
+            Phimcb.ValueMember = "TenPhim";
         }
         private void setRaptxt(DataTable dt)
         {
@@ -86,7 +85,7 @@ namespace QuanLyRapPhim_Final.User_Controls
             dtSuatChieu = dsSuatChieu.Tables[0];
             for (int i = 0; i < dtPhim.Rows.Count; i++)
             {
-                if (comboBox2.Text == dt.Rows[i].ItemArray[0].ToString())
+                if (Phimcb.Text == dt.Rows[i].ItemArray[0].ToString())
                 {
                     for (int j = 0; j < dtSuatChieu.Rows.Count; j++)
                     {
@@ -116,10 +115,8 @@ namespace QuanLyRapPhim_Final.User_Controls
 
             dtDatVe = new DataTable();
             dtDatVe.Clear();
-            //comboBox1.SelectedValue.ToString()
-            QuanLyRapPhimDataClassesDataContext qlrp = new QuanLyRapPhimDataClassesDataContext();
-            List <DatVe> lsqr= dbDatVe.findBookedSeat(globalRap, SuatChieucb.Text);
-            //dtDatVe = ds.Tables[0];
+            DataSet ds = dbDatVe.GetBookedSeat(currentMaPhim, globalRap, SuatChieucb.Text.Trim());       
+            dtDatVe = ds.Tables[0];
             bookedSeatAlpha = new List<string>();
             bookedSeatNum = new List<string>();
             if (dtDatVe.Rows.Count != 0)
@@ -144,7 +141,7 @@ namespace QuanLyRapPhim_Final.User_Controls
             //setRaptxt(dtPhim);
             //gọi hàm set cb suất chiếu
             SuatChieucb.Enabled = true;
-            if (comboBox2.ValueMember != "")
+            if (Phimcb.ValueMember != "")
             {
                 setCbSuatChieu(dtPhim);
             }
@@ -153,34 +150,16 @@ namespace QuanLyRapPhim_Final.User_Controls
 
 
         }
-        private string getHour()
-        {
-
-            dtDatVe = new DataTable();
-            dtDatVe.Clear();
-            IEnumerable<DataSet> dsDatVe = dbDatVe.findHour(SuatChieucb.SelectedItem.ToString());
-            return "";
-            //dtDatVe = dsDatVe.Tables[0];
-            //for (int i = 0; i < dtDatVe.Rows.Count; i++)
-            //{
-            //    if (comboBox2.Text == dtDatVe.Rows[i].ItemArray[1].ToString())
-            //    {
-            //        return dtDatVe.Rows[i].ItemArray[0].ToString();
-            //    }
-            //}
-            //return "";
-        }
 
         private void SuatChieucb_SelectedIndexChanged(object sender, EventArgs e)
         {
             Daytxt.Text = "";
             ghetxt.Text = "";
-            if (comboBox2.ValueMember.ToString() == "") return;
+            if (Phimcb.ValueMember.ToString() == "") return;
             if (SuatChieucb.ValueMember.ToString() == "") return;
             //string time;
 
 
-            getHour();
             seatPanel.Visible = true;
             render seatLoader = new render();
             dtRap = new DataTable();
@@ -213,13 +192,13 @@ namespace QuanLyRapPhim_Final.User_Controls
         }
         private void setCbSuatChieu(DataTable dtPhim)
         {
-            if (comboBox2.ValueMember.ToString() == "") return;
+            if (Phimcb.ValueMember.ToString() == "") return;
             dtSuatChieu = new DataTable();
             dtSuatChieu.Clear();
 
             for (int i = 0; i < dtPhim.Rows.Count; i++)
             {
-                if (comboBox2.Text == dtPhim.Rows[i].ItemArray[0].ToString())
+                if (Phimcb.Text == dtPhim.Rows[i].ItemArray[0].ToString())
                 {
                     currentMaPhim = dtPhim.Rows[i].ItemArray[1].ToString();
                 }
@@ -227,8 +206,8 @@ namespace QuanLyRapPhim_Final.User_Controls
             DataSet ds = dbSuatChieu.LaySuatChieuCuaPhim(currentMaPhim);
             dtSuatChieu = ds.Tables[0];
             SuatChieucb.DataSource = dtSuatChieu;
-            SuatChieucb.DisplayMember = "SuatChieu";
-            SuatChieucb.ValueMember = "SuatChieu";
+            SuatChieucb.DisplayMember = "GioChieu";
+            SuatChieucb.ValueMember = "MaSC";
 
         }
 
@@ -299,8 +278,7 @@ namespace QuanLyRapPhim_Final.User_Controls
             btnLuu.Enabled = true;
             btnHuy.Enabled = true;
             btnThem.Enabled = false;
-
-            comboBox2.Enabled = true;
+            Phimcb.Enabled = true;
 
         }
 
@@ -363,7 +341,7 @@ namespace QuanLyRapPhim_Final.User_Controls
         private string findMaPhim(DataTable dt)
         {
             int i = 0;
-            while (i < dt.Rows.Count && comboBox2.Text != dt.Rows[i].ItemArray[0].ToString())
+            while (i < dt.Rows.Count && Phimcb.Text != dt.Rows[i].ItemArray[0].ToString())
             {
                 i++;
             }
@@ -403,14 +381,17 @@ namespace QuanLyRapPhim_Final.User_Controls
 
         private void btnHuy_Click(object sender, EventArgs e)
         {
-            comboBox2.Text = "";
+            themFlag = false;
+            Phimcb.Text = "";
             SuatChieucb.Text = "";
             maKHcb.Text = "";
             raptxt.Text = "";
             Daytxt.Text = "";
             ghetxt.Text = "";
             nhanViencb.Text = "";
-
+            Phimcb.Enabled = false;
+            btnHuy.Enabled = false;
+            btnThem.Enabled = true;
         }
     }
 }

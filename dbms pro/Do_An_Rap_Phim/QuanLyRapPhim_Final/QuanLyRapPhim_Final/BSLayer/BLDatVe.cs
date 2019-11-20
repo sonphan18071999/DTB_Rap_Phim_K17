@@ -27,12 +27,11 @@ namespace QuanLyRapPhim_Final.BSLayer
             QuanLyRapPhimDataClassesDataContext qlrp = new QuanLyRapPhimDataClassesDataContext();
             return qlrp.DatVes;
         }
-        public List<DatVe> findBookedSeat(string MaRap, string tgChieu)
+        public DataSet GetBookedSeat(string MaPhim,string MaRap,string tgChieu)
         {
-            QuanLyRapPhimDataClassesDataContext qlrp = new QuanLyRapPhimDataClassesDataContext();
-
-            var dvqr = (from dv in qlrp.DatVes where dv.MaRap == MaRap && dv.SuatChieu == tgChieu select dv);
-            return dvqr.ToList();       
+            string sqlString = $"select Day,So from (select MaSC from SuatChieuPhim where MaPhim = N'{MaPhim}' and MaRap = N'{MaRap}' and GioChieu=N'{tgChieu}') as a inner join DatVe as b on a.MaSC = b.MaSC";
+            return db.ExecuteQueryDataSet(sqlString,
+                CommandType.Text);
         }
         public IEnumerable<DataSet> findHour(string tgChieu)
         {

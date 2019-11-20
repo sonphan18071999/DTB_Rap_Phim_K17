@@ -28,7 +28,7 @@ namespace QuanLyRapPhim_Final.User_Controls
 
         private void PhimUC_Load(object sender, EventArgs e)
         {
-            this.phimTableAdapter.Fill(this.quanLyRapPhimDataSet_PHIM.Phim);
+            this.phimTableAdapter.Fill(this.quanLyRapPhimDataSet_Phim.Phim);
         }
         void LoadData()
         {
@@ -45,6 +45,7 @@ namespace QuanLyRapPhim_Final.User_Controls
                 txtMaPhim.ResetText();
                 txtTenPhim.ResetText();
                 txtGiaVe.ResetText();
+                txtTLP.ResetText();
                 txtMaPhim.Enabled = false;
 
                 btnCancel.Enabled = false;
@@ -79,7 +80,7 @@ namespace QuanLyRapPhim_Final.User_Controls
             txtMaPhim.ResetText();
             txtTenPhim.ResetText();
             txtGiaVe.ResetText();
-
+            txtTLP.ResetText();
             btnSave.Enabled = true;
             btnCancel.Enabled = true;
             btnAdd.Enabled = false;
@@ -98,6 +99,7 @@ namespace QuanLyRapPhim_Final.User_Controls
             txtMaPhim.ResetText();
             txtTenPhim.ResetText();
             txtGiaVe.ResetText();
+            txtTLP.ResetText();
             btnAdd.Enabled = true;
             btnEditFilm.Enabled = true;
             btnDelFilm.Enabled = true;
@@ -120,7 +122,7 @@ namespace QuanLyRapPhim_Final.User_Controls
                     BLPhim blPhim = new BLPhim();
 
                     blPhim.ThemPhim(this.txtTenPhim.Text.Trim(), this.txtMaPhim.Text.Trim(),
-                        int.Parse(txtGiaVe.Text.ToString()), linkPic, ref err);
+                        int.Parse(txtGiaVe.Text.ToString()), linkPic,float.Parse(txtTLP.Text.ToString().Trim()), ref err);
                     LoadData();
                     MessageBox.Show("Đã thêm xong!");
                 }
@@ -135,7 +137,7 @@ namespace QuanLyRapPhim_Final.User_Controls
                 try
                 {
                     BLPhim blPhim = new BLPhim();
-                    blPhim.CapNhatPhim(this.txtMaPhim.Text.Trim(), this.txtTenPhim.Text.Trim(),Int32.Parse(this.txtGiaVe.Text), linkPic, ref err);
+                    blPhim.CapNhatPhim(this.txtMaPhim.Text.Trim(), this.txtTenPhim.Text.Trim(),Int32.Parse(this.txtGiaVe.Text), linkPic,float.Parse(txtTLP.Text), ref err);
                     LoadData();
                     MessageBox.Show("Đã sửa xong!");
                 }
@@ -184,11 +186,10 @@ namespace QuanLyRapPhim_Final.User_Controls
         private void dgv_PHIM_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int r = dgv_PHIM.CurrentCell.RowIndex;
-
             txtTenPhim.Text = dgv_PHIM.Rows[r].Cells[0].Value.ToString();
             txtMaPhim.Text = dgv_PHIM.Rows[r].Cells[1].Value.ToString();
             txtGiaVe.Text = dgv_PHIM.Rows[r].Cells[2].Value.ToString();
-           
+            txtTLP.Text = dgv_PHIM.Rows[r].Cells[4].Value.ToString();           
         }
     }
 }

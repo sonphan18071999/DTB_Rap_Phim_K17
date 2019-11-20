@@ -61,7 +61,7 @@
             this.label1.Location = new System.Drawing.Point(29, 23);
             this.label1.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(74, 19);
+            this.label1.Size = new System.Drawing.Size(89, 23);
             this.label1.TabIndex = 2;
             this.label1.Text = "Mã Rạp :";
             // 
@@ -71,7 +71,7 @@
             this.label2.Location = new System.Drawing.Point(29, 71);
             this.label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(91, 19);
+            this.label2.Size = new System.Drawing.Size(113, 23);
             this.label2.TabIndex = 4;
             this.label2.Text = "Số dãy ghế :";
             // 
@@ -81,7 +81,7 @@
             this.label3.Location = new System.Drawing.Point(29, 114);
             this.label3.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(106, 19);
+            this.label3.Size = new System.Drawing.Size(131, 23);
             this.label3.TabIndex = 6;
             this.label3.Text = "Số lượng ghế :";
             // 
@@ -90,7 +90,7 @@
             this.txtMaRap.Location = new System.Drawing.Point(229, 26);
             this.txtMaRap.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txtMaRap.Name = "txtMaRap";
-            this.txtMaRap.Size = new System.Drawing.Size(229, 26);
+            this.txtMaRap.Size = new System.Drawing.Size(229, 30);
             this.txtMaRap.TabIndex = 8;
             // 
             // txtSoDayGhe
@@ -98,7 +98,7 @@
             this.txtSoDayGhe.Location = new System.Drawing.Point(229, 68);
             this.txtSoDayGhe.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txtSoDayGhe.Name = "txtSoDayGhe";
-            this.txtSoDayGhe.Size = new System.Drawing.Size(229, 26);
+            this.txtSoDayGhe.Size = new System.Drawing.Size(229, 30);
             this.txtSoDayGhe.TabIndex = 9;
             // 
             // txtSoLuongGhe
@@ -106,7 +106,7 @@
             this.txtSoLuongGhe.Location = new System.Drawing.Point(229, 111);
             this.txtSoLuongGhe.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txtSoLuongGhe.Name = "txtSoLuongGhe";
-            this.txtSoLuongGhe.Size = new System.Drawing.Size(229, 26);
+            this.txtSoLuongGhe.Size = new System.Drawing.Size(229, 30);
             this.txtSoLuongGhe.TabIndex = 10;
             // 
             // dgv_RAP
@@ -121,7 +121,8 @@
             this.dgv_RAP.DataSource = this.rapBindingSource;
             this.dgv_RAP.Location = new System.Drawing.Point(33, 216);
             this.dgv_RAP.Name = "dgv_RAP";
-            this.dgv_RAP.Size = new System.Drawing.Size(443, 150);
+            this.dgv_RAP.RowHeadersWidth = 51;
+            this.dgv_RAP.Size = new System.Drawing.Size(485, 150);
             this.dgv_RAP.TabIndex = 12;
             this.dgv_RAP.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_RAP_CellClick);
             // 
@@ -129,25 +130,33 @@
             // 
             this.maRapDataGridViewTextBoxColumn.DataPropertyName = "MaRap";
             this.maRapDataGridViewTextBoxColumn.HeaderText = "MaRap";
+            this.maRapDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.maRapDataGridViewTextBoxColumn.Name = "maRapDataGridViewTextBoxColumn";
+            this.maRapDataGridViewTextBoxColumn.Width = 125;
             // 
             // soDayGheDataGridViewTextBoxColumn
             // 
             this.soDayGheDataGridViewTextBoxColumn.DataPropertyName = "SoDayGhe";
             this.soDayGheDataGridViewTextBoxColumn.HeaderText = "SoDayGhe";
+            this.soDayGheDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.soDayGheDataGridViewTextBoxColumn.Name = "soDayGheDataGridViewTextBoxColumn";
+            this.soDayGheDataGridViewTextBoxColumn.Width = 125;
             // 
             // soLuongGheDataGridViewTextBoxColumn
             // 
             this.soLuongGheDataGridViewTextBoxColumn.DataPropertyName = "SoLuongGhe";
             this.soLuongGheDataGridViewTextBoxColumn.HeaderText = "SoLuongGhe";
+            this.soLuongGheDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.soLuongGheDataGridViewTextBoxColumn.Name = "soLuongGheDataGridViewTextBoxColumn";
+            this.soLuongGheDataGridViewTextBoxColumn.Width = 125;
             // 
             // loaiPhimDataGridViewTextBoxColumn
             // 
             this.loaiPhimDataGridViewTextBoxColumn.DataPropertyName = "LoaiPhim";
             this.loaiPhimDataGridViewTextBoxColumn.HeaderText = "LoaiPhim";
+            this.loaiPhimDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.loaiPhimDataGridViewTextBoxColumn.Name = "loaiPhimDataGridViewTextBoxColumn";
+            this.loaiPhimDataGridViewTextBoxColumn.Width = 125;
             // 
             // rapBindingSource
             // 
@@ -215,7 +224,7 @@
             this.label4.Location = new System.Drawing.Point(29, 160);
             this.label4.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(84, 19);
+            this.label4.Size = new System.Drawing.Size(105, 23);
             this.label4.TabIndex = 18;
             this.label4.Text = "Loại phim :";
             // 
@@ -224,7 +233,7 @@
             this.txtLoaiPhim.Location = new System.Drawing.Point(229, 157);
             this.txtLoaiPhim.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txtLoaiPhim.Name = "txtLoaiPhim";
-            this.txtLoaiPhim.Size = new System.Drawing.Size(229, 26);
+            this.txtLoaiPhim.Size = new System.Drawing.Size(229, 30);
             this.txtLoaiPhim.TabIndex = 19;
             // 
             // rapTableAdapter
@@ -233,7 +242,7 @@
             // 
             // QuanLyRapUC
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.txtLoaiPhim);
             this.Controls.Add(this.label4);

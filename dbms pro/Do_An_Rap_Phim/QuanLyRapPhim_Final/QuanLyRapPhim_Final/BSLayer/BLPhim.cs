@@ -20,10 +20,10 @@ namespace QuanLyRapPhim_Final.BSLayer
         {
             return db.ExecuteQueryDataSet("select * from Phim", CommandType.Text);
         }
-        public bool ThemPhim(string TenPhim, string MaPhim, int GiaVe, string Poster, ref string err)
+        public bool ThemPhim(string TenPhim, string MaPhim, int GiaVe, string Poster,float ThoiLuong, ref string err)
         {
             string sqlString = $"Insert Into Phim Values(N'{TenPhim.Trim()}','{MaPhim.Trim()}',{GiaVe}," +
-                $"( select BulkColumn from Openrowset(Bulk '{Poster}', single_Blob) as image))";
+                $"( select BulkColumn from Openrowset(Bulk '{Poster}', single_Blob) as image),"+$"{ThoiLuong})";
             return db.MyExecuteNonQuery(sqlString, CommandType.Text, ref err);
         }
         public bool XoaPhim(ref string err, string MaPhim)
@@ -31,9 +31,9 @@ namespace QuanLyRapPhim_Final.BSLayer
             string sqlString = "Delete From Phim Where MaPhim='" + MaPhim + "'";
             return db.MyExecuteNonQuery(sqlString, CommandType.Text, ref err);
         }
-        public bool CapNhatPhim(string MaPhim, string TenPhim,int GiaVe,string Poster, ref string err)
+        public bool CapNhatPhim(string MaPhim, string TenPhim,int GiaVe,string Poster,float thoiLuong, ref string err)
         {
-            string sqlString = "Update Phim Set TenPhim=N'" + TenPhim + "', GiaVe=" + GiaVe + ", Poster=" + $"( select BulkColumn from Openrowset(Bulk '{Poster}', single_Blob) as image)"+
+            string sqlString = "Update Phim Set TenPhim=N'" + TenPhim + "', GiaVe=" + GiaVe + ", Poster=" + $"( select BulkColumn from Openrowset(Bulk '{Poster}', single_Blob) as image),ThoiLuong={thoiLuong}"+
                 " Where MaPhim='" + MaPhim + "'";
             return db.MyExecuteNonQuery(sqlString, CommandType.Text, ref err);
         }

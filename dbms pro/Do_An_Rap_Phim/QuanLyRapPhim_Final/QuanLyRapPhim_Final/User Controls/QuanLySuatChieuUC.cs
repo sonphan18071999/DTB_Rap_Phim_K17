@@ -28,6 +28,7 @@ namespace QuanLyRapPhim_Final.User_Controls
             txtMaPhim.ResetText();
             txtSuatChieu.ResetText();
             txtMaRap.ResetText();
+            txtMaSCP.ResetText();
             // Không cho thao tác trên các nút Lưu / Hủy
             btnSave.Enabled = false;
             btnCancel.Enabled = false;
@@ -37,7 +38,7 @@ namespace QuanLyRapPhim_Final.User_Controls
             btnDel.Enabled = true;
             try
             {
-                this.suatChieuPhimTableAdapter.Fill(quanLyRapPhimDataSet_SUATCHIEUPHIM.SuatChieuPhim);
+                this.suatChieuPhimTableAdapter.Fill(quanLyRapPhimDataSet_SuatChieuPhim.SuatChieuPhim);
             }
             catch
             {
@@ -52,6 +53,7 @@ namespace QuanLyRapPhim_Final.User_Controls
             txtMaPhim.Text = dgv_SUATCHIEU.Rows[r].Cells[0].Value.ToString();
             txtSuatChieu.Text = dgv_SUATCHIEU.Rows[r].Cells[1].Value.ToString();
             txtMaRap.Text = dgv_SUATCHIEU.Rows[r].Cells[2].Value.ToString();
+            txtMaSCP.Text = dgv_SUATCHIEU.Rows[r].Cells[3].Value.ToString();
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -64,6 +66,9 @@ namespace QuanLyRapPhim_Final.User_Controls
             txtSuatChieu.ResetText();
             txtMaRap.Enabled = true;
             txtMaRap.ResetText();
+            txtMaSCP.ResetText();
+            txtMaSCP.Enabled = true;
+            txtMaSCP.Focus();
 
             btnSave.Enabled = true;
             btnCancel.Enabled = true;
@@ -91,7 +96,7 @@ namespace QuanLyRapPhim_Final.User_Controls
         private void btnDel_Click(object sender, EventArgs e)
         {
             int r = dgv_SUATCHIEU.CurrentCell.RowIndex;
-            string strSC = dgv_SUATCHIEU.Rows[r].Cells[1].Value.ToString();
+            string strSC = dgv_SUATCHIEU.Rows[r].Cells[3].Value.ToString();
 
             DialogResult traloi;
             traloi = MessageBox.Show("Bạn thực sự muốn xóa?", "Trả lời", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
@@ -144,7 +149,7 @@ namespace QuanLyRapPhim_Final.User_Controls
 
         private void QuanLySuatChieuUC_Load(object sender, EventArgs e)
         {
-            this.suatChieuPhimTableAdapter.Fill(quanLyRapPhimDataSet_SUATCHIEUPHIM.SuatChieuPhim);
+            this.suatChieuPhimTableAdapter.Fill(quanLyRapPhimDataSet_SuatChieuPhim.SuatChieuPhim);
         }
     }
 }

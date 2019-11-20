@@ -36,6 +36,15 @@
             this.txtHovalotNV = new System.Windows.Forms.TextBox();
             this.txtTenNV = new System.Windows.Forms.TextBox();
             this.dgv_NHANVIEN = new System.Windows.Forms.DataGridView();
+            this.hovaLotNVDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tenNVDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.maNVDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.maCVDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.soGioLamDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.maNQLDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.maChiNhanhDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nhanVienBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.quanLyRapPhimDataSet1 = new QuanLyRapPhim_Final.QuanLyRapPhimDataSet1();
             this.quanLyRapPhimDataSet_NHANVIEN = new QuanLyRapPhim_Final.QuanLyRapPhimDataSet_NHANVIEN();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnReload = new System.Windows.Forms.Button();
@@ -54,21 +63,12 @@
             this.nhanVienTableAdapter = new QuanLyRapPhim_Final.QuanLyRapPhimDataSet_NHANVIENTableAdapters.NhanVienTableAdapter();
             this.quanLyRapPhimDataSet = new QuanLyRapPhim_Final.QuanLyRapPhimDataSet();
             this.nhanVienTableAdapter1 = new QuanLyRapPhim_Final.QuanLyRapPhimDataSetTableAdapters.NhanVienTableAdapter();
-            this.quanLyRapPhimDataSet1 = new QuanLyRapPhim_Final.QuanLyRapPhimDataSet1();
-            this.nhanVienBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.nhanVienTableAdapter2 = new QuanLyRapPhim_Final.QuanLyRapPhimDataSet1TableAdapters.NhanVienTableAdapter();
-            this.hovaLotNVDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tenNVDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.maNVDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.maCVDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.soGioLamDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.maNQLDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.maChiNhanhDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_NHANVIEN)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nhanVienBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.quanLyRapPhimDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.quanLyRapPhimDataSet_NHANVIEN)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.quanLyRapPhimDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.quanLyRapPhimDataSet1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nhanVienBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -145,6 +145,65 @@
             this.dgv_NHANVIEN.Size = new System.Drawing.Size(820, 150);
             this.dgv_NHANVIEN.TabIndex = 9;
             this.dgv_NHANVIEN.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_NHANVIEN_CellClick);
+            // 
+            // hovaLotNVDataGridViewTextBoxColumn
+            // 
+            this.hovaLotNVDataGridViewTextBoxColumn.DataPropertyName = "HovaLotNV";
+            this.hovaLotNVDataGridViewTextBoxColumn.HeaderText = "HovaLotNV";
+            this.hovaLotNVDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.hovaLotNVDataGridViewTextBoxColumn.Name = "hovaLotNVDataGridViewTextBoxColumn";
+            // 
+            // tenNVDataGridViewTextBoxColumn
+            // 
+            this.tenNVDataGridViewTextBoxColumn.DataPropertyName = "TenNV";
+            this.tenNVDataGridViewTextBoxColumn.HeaderText = "TenNV";
+            this.tenNVDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.tenNVDataGridViewTextBoxColumn.Name = "tenNVDataGridViewTextBoxColumn";
+            // 
+            // maNVDataGridViewTextBoxColumn
+            // 
+            this.maNVDataGridViewTextBoxColumn.DataPropertyName = "MaNV";
+            this.maNVDataGridViewTextBoxColumn.HeaderText = "MaNV";
+            this.maNVDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.maNVDataGridViewTextBoxColumn.Name = "maNVDataGridViewTextBoxColumn";
+            // 
+            // maCVDataGridViewTextBoxColumn
+            // 
+            this.maCVDataGridViewTextBoxColumn.DataPropertyName = "MaCV";
+            this.maCVDataGridViewTextBoxColumn.HeaderText = "MaCV";
+            this.maCVDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.maCVDataGridViewTextBoxColumn.Name = "maCVDataGridViewTextBoxColumn";
+            // 
+            // soGioLamDataGridViewTextBoxColumn
+            // 
+            this.soGioLamDataGridViewTextBoxColumn.DataPropertyName = "SoGioLam";
+            this.soGioLamDataGridViewTextBoxColumn.HeaderText = "SoGioLam";
+            this.soGioLamDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.soGioLamDataGridViewTextBoxColumn.Name = "soGioLamDataGridViewTextBoxColumn";
+            // 
+            // maNQLDataGridViewTextBoxColumn
+            // 
+            this.maNQLDataGridViewTextBoxColumn.DataPropertyName = "MaNQL";
+            this.maNQLDataGridViewTextBoxColumn.HeaderText = "MaNQL";
+            this.maNQLDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.maNQLDataGridViewTextBoxColumn.Name = "maNQLDataGridViewTextBoxColumn";
+            // 
+            // maChiNhanhDataGridViewTextBoxColumn
+            // 
+            this.maChiNhanhDataGridViewTextBoxColumn.DataPropertyName = "MaChiNhanh";
+            this.maChiNhanhDataGridViewTextBoxColumn.HeaderText = "MaChiNhanh";
+            this.maChiNhanhDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.maChiNhanhDataGridViewTextBoxColumn.Name = "maChiNhanhDataGridViewTextBoxColumn";
+            // 
+            // nhanVienBindingSource
+            // 
+            this.nhanVienBindingSource.DataMember = "NhanVien";
+            this.nhanVienBindingSource.DataSource = this.quanLyRapPhimDataSet1;
+            // 
+            // quanLyRapPhimDataSet1
+            // 
+            this.quanLyRapPhimDataSet1.DataSetName = "QuanLyRapPhimDataSet1";
+            this.quanLyRapPhimDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // quanLyRapPhimDataSet_NHANVIEN
             // 
@@ -309,68 +368,9 @@
             // 
             this.nhanVienTableAdapter1.ClearBeforeFill = true;
             // 
-            // quanLyRapPhimDataSet1
-            // 
-            this.quanLyRapPhimDataSet1.DataSetName = "QuanLyRapPhimDataSet1";
-            this.quanLyRapPhimDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // nhanVienBindingSource
-            // 
-            this.nhanVienBindingSource.DataMember = "NhanVien";
-            this.nhanVienBindingSource.DataSource = this.quanLyRapPhimDataSet1;
-            // 
             // nhanVienTableAdapter2
             // 
             this.nhanVienTableAdapter2.ClearBeforeFill = true;
-            // 
-            // hovaLotNVDataGridViewTextBoxColumn
-            // 
-            this.hovaLotNVDataGridViewTextBoxColumn.DataPropertyName = "HovaLotNV";
-            this.hovaLotNVDataGridViewTextBoxColumn.HeaderText = "HovaLotNV";
-            this.hovaLotNVDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.hovaLotNVDataGridViewTextBoxColumn.Name = "hovaLotNVDataGridViewTextBoxColumn";
-            // 
-            // tenNVDataGridViewTextBoxColumn
-            // 
-            this.tenNVDataGridViewTextBoxColumn.DataPropertyName = "TenNV";
-            this.tenNVDataGridViewTextBoxColumn.HeaderText = "TenNV";
-            this.tenNVDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.tenNVDataGridViewTextBoxColumn.Name = "tenNVDataGridViewTextBoxColumn";
-            // 
-            // maNVDataGridViewTextBoxColumn
-            // 
-            this.maNVDataGridViewTextBoxColumn.DataPropertyName = "MaNV";
-            this.maNVDataGridViewTextBoxColumn.HeaderText = "MaNV";
-            this.maNVDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.maNVDataGridViewTextBoxColumn.Name = "maNVDataGridViewTextBoxColumn";
-            // 
-            // maCVDataGridViewTextBoxColumn
-            // 
-            this.maCVDataGridViewTextBoxColumn.DataPropertyName = "MaCV";
-            this.maCVDataGridViewTextBoxColumn.HeaderText = "MaCV";
-            this.maCVDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.maCVDataGridViewTextBoxColumn.Name = "maCVDataGridViewTextBoxColumn";
-            // 
-            // soGioLamDataGridViewTextBoxColumn
-            // 
-            this.soGioLamDataGridViewTextBoxColumn.DataPropertyName = "SoGioLam";
-            this.soGioLamDataGridViewTextBoxColumn.HeaderText = "SoGioLam";
-            this.soGioLamDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.soGioLamDataGridViewTextBoxColumn.Name = "soGioLamDataGridViewTextBoxColumn";
-            // 
-            // maNQLDataGridViewTextBoxColumn
-            // 
-            this.maNQLDataGridViewTextBoxColumn.DataPropertyName = "MaNQL";
-            this.maNQLDataGridViewTextBoxColumn.HeaderText = "MaNQL";
-            this.maNQLDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.maNQLDataGridViewTextBoxColumn.Name = "maNQLDataGridViewTextBoxColumn";
-            // 
-            // maChiNhanhDataGridViewTextBoxColumn
-            // 
-            this.maChiNhanhDataGridViewTextBoxColumn.DataPropertyName = "MaChiNhanh";
-            this.maChiNhanhDataGridViewTextBoxColumn.HeaderText = "MaChiNhanh";
-            this.maChiNhanhDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.maChiNhanhDataGridViewTextBoxColumn.Name = "maChiNhanhDataGridViewTextBoxColumn";
             // 
             // QuanLyNhanVienUC
             // 
@@ -400,13 +400,13 @@
             this.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "QuanLyNhanVienUC";
-            this.Size = new System.Drawing.Size(896, 1200);
+            this.Size = new System.Drawing.Size(896, 791);
             this.Load += new System.EventHandler(this.QuanLyNhanVienUC_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_NHANVIEN)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nhanVienBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.quanLyRapPhimDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.quanLyRapPhimDataSet_NHANVIEN)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.quanLyRapPhimDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.quanLyRapPhimDataSet1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nhanVienBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
