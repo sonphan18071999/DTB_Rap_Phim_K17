@@ -118,7 +118,7 @@ namespace QuanLyRapPhim_Final.User_Controls
                 try
                 {
                     BLKhachHang blKH = new BLKhachHang();
-                    blKH.ThemKhachHang(this.txtMaKH.Text.Trim(), this.txtHovalotKH.Text.Trim(), this.txtTenKH.Text.Trim(), ref err);
+                    blKH.ThemKhachHang(this.txtMaKH.Text.Trim(), this.txtHovalotKH.Text.Trim(), this.txtTenKH.Text.Trim(),dtpNgaySinh.Value,Int32.Parse(txtTichDiem.Text.Trim()), ref err);
                     LoadData();
                     MessageBox.Show("Đã thêm xong!");
                 }
@@ -130,7 +130,7 @@ namespace QuanLyRapPhim_Final.User_Controls
             else
             {
                 BLKhachHang blKH = new BLKhachHang();
-                blKH.CapNhatKhachHang(this.txtMaKH.Text, this.txtTenKH.Text, ref err);
+                blKH.CapNhatKhachHang(this.txtMaKH.Text.Trim(), this.txtHovalotKH.Text.Trim(), this.txtTenKH.Text.Trim(), dtpNgaySinh.Value, Int32.Parse(txtTichDiem.Text.Trim()), ref err);
                 LoadData();
                 MessageBox.Show("Đã sửa xong!");
             }

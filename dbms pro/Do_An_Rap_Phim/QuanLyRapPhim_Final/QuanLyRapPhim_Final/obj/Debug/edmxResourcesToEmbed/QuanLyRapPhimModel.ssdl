@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="QuanLyRapPhimModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <Function Name="ChiNhanhInsertUpdateDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MaChiNhanh" Type="nvarchar" Mode="In" />
+    <Parameter Name="TenChiNanh" Type="nvarchar" Mode="In" />
+    <Parameter Name="StatementType" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="ChucVuInsertUpdateDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MaCV" Type="nvarchar" Mode="In" />
+    <Parameter Name="ChucVu" Type="nvarchar" Mode="In" />
+    <Parameter Name="Luong" Type="int" Mode="In" />
+    <Parameter Name="StatementType" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="DangNhapInsertUpdateDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MaNV" Type="nvarchar" Mode="In" />
+    <Parameter Name="MatKhau" Type="varchar" Mode="In" />
+    <Parameter Name="StatementType" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="DatVeInsertUpdateDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MaVe" Type="nvarchar" Mode="In" />
+    <Parameter Name="MaNV" Type="nvarchar" Mode="In" />
+    <Parameter Name="MaKH" Type="nvarchar" Mode="In" />
+    <Parameter Name="Day" Type="nvarchar" Mode="In" />
+    <Parameter Name="Ngay" Type="date" Mode="In" />
+    <Parameter Name="So" Type="int" Mode="In" />
+    <Parameter Name="MaSC" Type="nvarchar" Mode="In" />
+    <Parameter Name="GioKetThuc" Type="time" Mode="In" />
+    <Parameter Name="StatementType" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+  <Function Name="HangSanXuatInsertUpdateDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MaHSX" Type="nvarchar" Mode="In" />
+    <Parameter Name="TenHSX" Type="nvarchar" Mode="In" />
+    <Parameter Name="Email" Type="nvarchar" Mode="In" />
+    <Parameter Name="DiaChi" Type="nvarchar" Mode="In" />
+    <Parameter Name="MaHD" Type="nvarchar" Mode="In" />
+    <Parameter Name="StatementType" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="KhachHangInsertUpdateDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MaKH" Type="nvarchar" Mode="In" />
+    <Parameter Name="HovaLotKH" Type="nchar" Mode="In" />
+    <Parameter Name="TenKH" Type="nchar" Mode="In" />
+    <Parameter Name="NgaySinh" Type="date" Mode="In" />
+    <Parameter Name="TichDiem" Type="int" Mode="In" />
+    <Parameter Name="StatementType" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="NhanVienInsertUpdateDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="HovaLotNV" Type="nvarchar" Mode="In" />
+    <Parameter Name="TenNV" Type="nvarchar" Mode="In" />
+    <Parameter Name="MaNV" Type="nvarchar" Mode="In" />
+    <Parameter Name="MaCV" Type="nvarchar" Mode="In" />
+    <Parameter Name="SoGioLam" Type="int" Mode="In" />
+    <Parameter Name="MaNQL" Type="nvarchar" Mode="In" />
+    <Parameter Name="MaChiNhanh" Type="nvarchar" Mode="In" />
+    <Parameter Name="StatementType" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="PhimHopDongInsertUpdateDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MaHD" Type="nvarchar" Mode="In" />
+    <Parameter Name="DaoDien" Type="nvarchar" Mode="In" />
+    <Parameter Name="GiaTriHD" Type="int" Mode="In" />
+    <Parameter Name="NgayXuatBan" Type="date" Mode="In" />
+    <Parameter Name="NgayKyHopDong" Type="date" Mode="In" />
+    <Parameter Name="NgayHetHan" Type="date" Mode="In" />
+    <Parameter Name="MaPhim" Type="nvarchar" Mode="In" />
+    <Parameter Name="StatementType" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="PhimInsertUpdateDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="TenPhim" Type="nvarchar" Mode="In" />
+    <Parameter Name="MaPhim" Type="nvarchar" Mode="In" />
+    <Parameter Name="GiaVe" Type="int" Mode="In" />
+    <Parameter Name="Poster" Type="image" Mode="In" />
+    <Parameter Name="ThoiLuong" Type="float" Mode="In" />
+    <Parameter Name="StatementType" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="RapInsertUpdateDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MaRap" Type="nvarchar" Mode="In" />
+    <Parameter Name="SoDayGhe" Type="nvarchar" Mode="In" />
+    <Parameter Name="SoLuongGhe" Type="nvarchar" Mode="In" />
+    <Parameter Name="LoaiPhim" Type="nvarchar" Mode="In" />
+    <Parameter Name="StatementType" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SuatChieuPhimInsertUpdateDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MaPhim" Type="nvarchar" Mode="In" />
+    <Parameter Name="GioChieu" Type="nvarchar" Mode="In" />
+    <Parameter Name="MaRap" Type="nvarchar" Mode="In" />
+    <Parameter Name="MaSC" Type="nvarchar" Mode="In" />
+    <Parameter Name="StatementType" Type="nvarchar" Mode="In" />
+  </Function>
+  <EntityContainer Name="QuanLyRapPhimModelStoreContainer" />
+</Schema>

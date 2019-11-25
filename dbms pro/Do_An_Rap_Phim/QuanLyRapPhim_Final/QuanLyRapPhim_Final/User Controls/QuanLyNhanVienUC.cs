@@ -14,10 +14,12 @@ namespace QuanLyRapPhim_Final.User_Controls
 {
     public partial class QuanLyNhanVienUC : UserControl
     {
+        private string NQL;
         bool Them;
         string err;
         BLNhanVien dbNV = new BLNhanVien();
         BLChucVu dbCV = new BLChucVu();
+        BLChiNhanh dbChiNhanh = new BLChiNhanh();
         DataTable dt = null;
         int month = DateTime.Now.Month;
         int day = DateTime.Now.Day;
@@ -71,7 +73,15 @@ namespace QuanLyRapPhim_Final.User_Controls
                 dgv_NHANVIEN.DataSource = dt;
                 dgv_NHANVIEN.Refresh();
                 //this.nhanVienTableAdapter.Fill(quanLyRapPhimDataSet_NHANVIEN.NhanVien);
-
+                DataSet data1 = new DataSet();
+                data1.Clear();
+                data1 = dbNV.LayNguoiQuanLy("QL");
+                dt = data1.Tables[0];
+                cbMaNQL.DataSource = dt;
+                //to do:
+                cbMaNQL.DisplayMember = "FullName";
+                cbMaNQL.ValueMember = "MaNV";
+                SetupcbChiNhanh();
             }
             catch
             {
@@ -89,7 +99,7 @@ namespace QuanLyRapPhim_Final.User_Controls
             txtMaNV.ResetText();
             txtTenNV.Enabled = true;
             txtTenNV.ResetText();
-
+            nmrSoGioLam.Enabled = true;
             btnSave.Enabled = true;
             btnCancel.Enabled = true;
 
@@ -105,14 +115,21 @@ namespace QuanLyRapPhim_Final.User_Controls
             dgv_NHANVIEN_CellClick(null, null);
             btnSave.Enabled = true;
             btnCancel.Enabled = true;
-
+            nmrSoGioLam.Enabled = true;
+            cbChiNhanh.Enabled = true;
             btnAdd.Enabled = false;
             btnEditNV.Enabled = false;
             btnDelNV.Enabled = false;
 
             txtMaNV.Enabled = false;
         }
-
+        private void SetupcbChiNhanh()
+        {
+            DataSet dataSet = dbChiNhanh.LayChiNanh();
+            cbChiNhanh.DataSource = dataSet.Tables[0];
+            cbChiNhanh.DisplayMember = "MaChiNhanh";
+            cbChiNhanh.ValueMember = "MaChiNhanh";
+        }
         private void dgv_NHANVIEN_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int r = dgv_NHANVIEN.CurrentCell.RowIndex;
@@ -121,6 +138,27 @@ namespace QuanLyRapPhim_Final.User_Controls
             txtHovalotNV.Text = dgv_NHANVIEN.Rows[r].Cells[0].Value.ToString();
             txtTenNV.Text = dgv_NHANVIEN.Rows[r].Cells[1].Value.ToString();
             cbbMaCV.Text= dgv_NHANVIEN.Rows[r].Cells[3].Value.ToString();
+            try
+            {
+                nmrSoGioLam.Enabled = true;
+                nmrSoGioLam.Value = decimal.Parse(dgv_NHANVIEN.Rows[r].Cells[4].Value.ToString());
+                nmrSoGioLam.Enabled = false;
+            }
+            catch (Exception)
+            {
+                
+            }
+            if (dgv_NHANVIEN.Rows[r].Cells[5].Value.ToString()=="")
+            {
+                cbMaNQL.ResetText();
+                cbMaNQL.Enabled = false;
+            }
+            else
+            {
+                cbMaNQL.Text = dgv_NHANVIEN.Rows[r].Cells[5].Value.ToString();
+                cbMaNQL.Enabled = false;
+            }
+            cbChiNhanh.Text = dgv_NHANVIEN.Rows[r].Cells[6].Value.ToString();
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -134,8 +172,9 @@ namespace QuanLyRapPhim_Final.User_Controls
             {
                 try
                 {
+                    
                     BLNhanVien blNV = new BLNhanVien();
-                    blNV.ThemNhanVien(this.txtMaNV.Text.Trim(), this.txtHovalotNV.Text.Trim(), this.txtTenNV.Text.Trim(), cbbMaCV.Text,ref err);
+                    blNV.ThemNhanVien(this.txtMaNV.Text.Trim(), this.txtHovalotNV.Text.Trim(), this.txtTenNV.Text.Trim(), cbbMaCV.Text,int.Parse(nmrSoGioLam.Value.ToString()),NQL, cbChiNhanh.SelectedValue.ToString(), ref err);
                     LoadData();
                     MessageBox.Show("Đã thêm xong!");
                 }
@@ -147,7 +186,7 @@ namespace QuanLyRapPhim_Final.User_Controls
             else
             {
                 BLNhanVien blNV = new BLNhanVien();
-                blNV.CapNhatNhanVien( this.txtHovalotNV.Text.Trim(),this.txtTenNV.Text.Trim(),this.cbbMaCV.Text, this.txtMaNV.Text,ref err);
+                blNV.CapNhatNhanVien( this.txtHovalotNV.Text.Trim(),this.txtTenNV.Text.Trim(),this.cbbMaCV.Text, this.txtMaNV.Text,int.Parse(nmrSoGioLam.Value.ToString()),NQL,cbChiNhanh.SelectedValue.ToString(),ref err);
                 LoadData();
                 MessageBox.Show("Đã sửa xong!");
             }
@@ -186,30 +225,27 @@ namespace QuanLyRapPhim_Final.User_Controls
             dt = data.Tables[0];
             txtChucVu.Text = dt.Rows[cbbMaCV.SelectedIndex].ItemArray[1].ToString();
             txtLuong.Text = dt.Rows[cbbMaCV.SelectedIndex].ItemArray[2].ToString();
+            if (cbbMaCV.Text=="QL")
+            {
+                cbMaNQL.ResetText();
+                cbMaNQL.Enabled = false;
+                NQL = "null";
+            }
+            else
+            {
+                cbMaNQL.Enabled = true;
+                DataSet dataSet = dbNV.LayNguoiQuanLy("QL");
+                cbMaNQL.DataSource = dataSet.Tables[0];
+                cbMaNQL.DisplayMember = "FullName";
+                cbMaNQL.ValueMember = "MaNV";
+                NQL = cbMaNQL.SelectedValue.ToString() ;
+            }
         }
 
 
         private void btnReload_Click(object sender, EventArgs e)
         {
             LoadData();
-        }
-
-
-        private void btnQuanLy_Click(object sender, EventArgs e)
-        {
-            Them = false;
-            txtMaNV.Enabled = false;
-            txtHovalotNV.Enabled = false;
-            txtTenNV.Enabled = false;
-            txtChucVu.Enabled = true;
-            txtLuong.Enabled = true;
-            btnSave.Enabled = true;
-            btnCancel.Enabled = true;
-
-            btnAdd.Enabled = false;
-            btnEditNV.Enabled = false;
-            btnDelNV.Enabled = false;
-
         }
     }
 }

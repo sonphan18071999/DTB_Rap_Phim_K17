@@ -13,6 +13,7 @@ namespace QuanLyRapPhim_Final
     public partial class Form1 : Form
     {
         QuanLyHangSanXuatUC quanLyHangSanXuatUC = new QuanLyHangSanXuatUC();
+        HopDongUC quanLyHopDong = new HopDongUC();
 
         public Form1()
         {
@@ -26,6 +27,7 @@ namespace QuanLyRapPhim_Final
             welcomeUC1.BringToFront();
             lblHeader.Text = "Welcome";
             quanLyHangSanXuatUC.SendToBack();
+            quanLyHopDong.SendToBack();
 
         }
 
@@ -46,6 +48,7 @@ namespace QuanLyRapPhim_Final
             phimUC1.BringToFront();
             lblHeader.Text = "Phim đang chiếu";
             quanLyHangSanXuatUC.SendToBack();
+            quanLyHopDong.SendToBack();
 
         }
 
@@ -56,6 +59,7 @@ namespace QuanLyRapPhim_Final
             quanLyKhachHangUC1.BringToFront();
             lblHeader.Text = "Quản lý khách hàng";
             quanLyHangSanXuatUC.SendToBack();
+            quanLyHopDong.SendToBack();
 
         }
 
@@ -66,6 +70,7 @@ namespace QuanLyRapPhim_Final
             quanLyNhanVienUC1.BringToFront();
             lblHeader.Text = "Quản lý nhân viên";
             quanLyHangSanXuatUC.SendToBack();
+            quanLyHopDong.SendToBack();
 
         }
 
@@ -76,6 +81,7 @@ namespace QuanLyRapPhim_Final
             quanLyRapUC1.BringToFront();
             lblHeader.Text = "Quản lý rạp";
             quanLyHangSanXuatUC.SendToBack();
+            quanLyHopDong.SendToBack();
 
         }
 
@@ -86,6 +92,7 @@ namespace QuanLyRapPhim_Final
             datVeUC1.BringToFront();
             lblHeader.Text = "Đặt vé";
             quanLyHangSanXuatUC.SendToBack();
+            quanLyHopDong.SendToBack();
 
         }
 
@@ -106,6 +113,8 @@ namespace QuanLyRapPhim_Final
             quanLySuatChieuUC1.BringToFront();
             lblHeader.Text = "Suất chiếu";
             quanLyHangSanXuatUC.SendToBack();
+            quanLyHopDong.SendToBack();
+
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -116,7 +125,13 @@ namespace QuanLyRapPhim_Final
             quanLyHangSanXuatUC.Width = 900;
             quanLyHangSanXuatUC.Height = 754;
             quanLyHangSanXuatUC.BackColor = Color.FromArgb(255, 224, 192);
-            
+            //setup Quan lý hợp đồng
+            this.Controls.Add(quanLyHopDong);
+            quanLyHopDong.Location = p;
+            quanLyHopDong.Width = 900;
+            quanLyHopDong.Height = 754;
+            quanLyHopDong.BackColor= Color.FromArgb(255, 224, 192);
+
         }
 
         private void btnQuanLyHangSanXuat_Click(object sender, EventArgs e)
@@ -125,7 +140,18 @@ namespace QuanLyRapPhim_Final
             pnlClick.Top = btnQuanLyHangSanXuat.Top;
             pnlClick.BringToFront();
             quanLyHangSanXuatUC.BringToFront();
+            quanLyHopDong.SendToBack();
             lblHeader.Text = "Hãng sản xuất";
+        }
+
+        private void btnHopDong_Click(object sender, EventArgs e)
+        {
+            pnlClick.Height = btnHopDong.Height;
+            pnlClick.Top = btnHopDong.Top;
+            pnlClick.BringToFront();
+            quanLyHangSanXuatUC.SendToBack();
+            quanLyHopDong.BringToFront();
+            lblHeader.Text = "Bảng hợp đồng";
         }
     }
 }

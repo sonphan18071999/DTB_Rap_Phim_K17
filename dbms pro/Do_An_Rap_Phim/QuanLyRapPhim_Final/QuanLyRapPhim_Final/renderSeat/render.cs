@@ -133,7 +133,7 @@ namespace QuanLyRapPhim_Final.renderSeat
                 lineRow = soHang;
                 lineCol = soGhe;
             }
-            private int cellWidth = 40;
+            private int cellWidth = 50;
             private int cellHeight = 30;
             private int lineCol = 15;   //số ô cột
             private int lineRow = 5;    //số ô hàng

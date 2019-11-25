@@ -48,6 +48,12 @@
             this.btnReload = new System.Windows.Forms.Button();
             this.maKHcb = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.txtMaVe = new System.Windows.Forms.TextBox();
+            this.txtGioKetThuc = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -65,9 +71,9 @@
             // seatPanel
             // 
             this.seatPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.seatPanel.Location = new System.Drawing.Point(12, 208);
+            this.seatPanel.Location = new System.Drawing.Point(12, 241);
             this.seatPanel.Name = "seatPanel";
-            this.seatPanel.Size = new System.Drawing.Size(1313, 549);
+            this.seatPanel.Size = new System.Drawing.Size(826, 549);
             this.seatPanel.TabIndex = 1;
             this.seatPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.seatPanel_Paint);
             // 
@@ -231,10 +237,65 @@
             this.label7.TabIndex = 21;
             this.label7.Text = "Mã KH:";
             // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(105, 128);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(278, 30);
+            this.dateTimePicker1.TabIndex = 22;
+            this.dateTimePicker1.Value = new System.DateTime(2019, 11, 20, 21, 31, 56, 0);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(8, 135);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(61, 23);
+            this.label8.TabIndex = 23;
+            this.label8.Text = "Ngày:";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(417, 135);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(66, 23);
+            this.label9.TabIndex = 24;
+            this.label9.Text = "Mã Vé";
+            // 
+            // txtMaVe
+            // 
+            this.txtMaVe.Location = new System.Drawing.Point(579, 135);
+            this.txtMaVe.Name = "txtMaVe";
+            this.txtMaVe.Size = new System.Drawing.Size(136, 30);
+            this.txtMaVe.TabIndex = 25;
+            // 
+            // txtGioKetThuc
+            // 
+            this.txtGioKetThuc.Location = new System.Drawing.Point(105, 164);
+            this.txtGioKetThuc.Name = "txtGioKetThuc";
+            this.txtGioKetThuc.Size = new System.Drawing.Size(278, 30);
+            this.txtGioKetThuc.TabIndex = 26;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(8, 171);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(90, 23);
+            this.label10.TabIndex = 27;
+            this.label10.Text = "Kết thúc:";
+            // 
             // DatVeUC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.txtGioKetThuc);
+            this.Controls.Add(this.txtMaVe);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.btnLuu);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.maKHcb);
@@ -288,5 +349,11 @@
         private System.Windows.Forms.Button btnReload;
         private System.Windows.Forms.ComboBox maKHcb;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox txtMaVe;
+        private System.Windows.Forms.TextBox txtGioKetThuc;
+        private System.Windows.Forms.Label label10;
     }
 }

@@ -17,6 +17,7 @@ namespace QuanLyRapPhim_Final.User_Controls
         bool Them;
         string err;
         BLChucVu dbCV = new BLChucVu();
+
         DataTable dt = null;
 
         public ChucVuUC()

@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnHuy = new System.Windows.Forms.Button();
             this.btnLuu = new System.Windows.Forms.Button();
@@ -39,18 +38,13 @@
             this.txtTenHSX = new System.Windows.Forms.TextBox();
             this.hangSanXuatlbl = new System.Windows.Forms.Label();
             this.maHDlbl = new System.Windows.Forms.Label();
-            this.txtMaHD = new System.Windows.Forms.TextBox();
             this.dgv_HangSanXuat = new System.Windows.Forms.DataGridView();
-            this.quanLyRapPhimDataSet_HANGSANXUAT = new QuanLyRapPhim_Final.QuanLyRapPhimDataSet_HANGSANXUAT();
-            this.hangSanXuatBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.hangSanXuatTableAdapter = new QuanLyRapPhim_Final.QuanLyRapPhimDataSet_HANGSANXUATTableAdapters.HangSanXuatTableAdapter();
-            this.tenHSXDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.diaChiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.maHDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnXoa = new System.Windows.Forms.Button();
+            this.btnSua = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtMaHSX = new System.Windows.Forms.TextBox();
+            this.cbMaHD = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_HangSanXuat)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.quanLyRapPhimDataSet_HANGSANXUAT)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.hangSanXuatBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // btnAdd
@@ -64,6 +58,7 @@
             this.btnAdd.Text = "Thêm";
             this.btnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnHuy
             // 
@@ -73,6 +68,7 @@
             this.btnHuy.TabIndex = 23;
             this.btnHuy.Text = "Huỷ";
             this.btnHuy.UseVisualStyleBackColor = true;
+            this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
             // 
             // btnLuu
             // 
@@ -86,10 +82,11 @@
             this.btnLuu.Text = "Lưu";
             this.btnLuu.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnLuu.UseVisualStyleBackColor = true;
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // txtDiaChiHSX
             // 
-            this.txtDiaChiHSX.Location = new System.Drawing.Point(208, 113);
+            this.txtDiaChiHSX.Location = new System.Drawing.Point(208, 157);
             this.txtDiaChiHSX.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txtDiaChiHSX.Name = "txtDiaChiHSX";
             this.txtDiaChiHSX.Size = new System.Drawing.Size(351, 22);
@@ -98,7 +95,7 @@
             // diaChilbl
             // 
             this.diaChilbl.AutoSize = true;
-            this.diaChilbl.Location = new System.Drawing.Point(10, 116);
+            this.diaChilbl.Location = new System.Drawing.Point(10, 160);
             this.diaChilbl.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.diaChilbl.Name = "diaChilbl";
             this.diaChilbl.Size = new System.Drawing.Size(59, 17);
@@ -107,7 +104,7 @@
             // 
             // txtEmailHSX
             // 
-            this.txtEmailHSX.Location = new System.Drawing.Point(208, 69);
+            this.txtEmailHSX.Location = new System.Drawing.Point(208, 113);
             this.txtEmailHSX.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txtEmailHSX.Name = "txtEmailHSX";
             this.txtEmailHSX.Size = new System.Drawing.Size(351, 22);
@@ -116,7 +113,7 @@
             // emaillbl
             // 
             this.emaillbl.AutoSize = true;
-            this.emaillbl.Location = new System.Drawing.Point(10, 72);
+            this.emaillbl.Location = new System.Drawing.Point(10, 116);
             this.emaillbl.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.emaillbl.Name = "emaillbl";
             this.emaillbl.Size = new System.Drawing.Size(46, 17);
@@ -125,7 +122,7 @@
             // 
             // txtTenHSX
             // 
-            this.txtTenHSX.Location = new System.Drawing.Point(208, 24);
+            this.txtTenHSX.Location = new System.Drawing.Point(208, 68);
             this.txtTenHSX.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txtTenHSX.Name = "txtTenHSX";
             this.txtTenHSX.Size = new System.Drawing.Size(351, 22);
@@ -134,7 +131,7 @@
             // hangSanXuatlbl
             // 
             this.hangSanXuatlbl.AutoSize = true;
-            this.hangSanXuatlbl.Location = new System.Drawing.Point(10, 24);
+            this.hangSanXuatlbl.Location = new System.Drawing.Point(10, 68);
             this.hangSanXuatlbl.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.hangSanXuatlbl.Name = "hangSanXuatlbl";
             this.hangSanXuatlbl.Size = new System.Drawing.Size(130, 17);
@@ -144,90 +141,83 @@
             // maHDlbl
             // 
             this.maHDlbl.AutoSize = true;
-            this.maHDlbl.Location = new System.Drawing.Point(10, 151);
+            this.maHDlbl.Location = new System.Drawing.Point(10, 195);
             this.maHDlbl.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.maHDlbl.Name = "maHDlbl";
             this.maHDlbl.Size = new System.Drawing.Size(99, 17);
             this.maHDlbl.TabIndex = 25;
             this.maHDlbl.Text = "Mã hợp đồng :";
             // 
-            // txtMaHD
-            // 
-            this.txtMaHD.Location = new System.Drawing.Point(208, 151);
-            this.txtMaHD.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.txtMaHD.Name = "txtMaHD";
-            this.txtMaHD.Size = new System.Drawing.Size(351, 22);
-            this.txtMaHD.TabIndex = 26;
-            // 
             // dgv_HangSanXuat
             // 
-            this.dgv_HangSanXuat.AutoGenerateColumns = false;
             this.dgv_HangSanXuat.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_HangSanXuat.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.tenHSXDataGridViewTextBoxColumn,
-            this.emailDataGridViewTextBoxColumn,
-            this.diaChiDataGridViewTextBoxColumn,
-            this.maHDDataGridViewTextBoxColumn});
-            this.dgv_HangSanXuat.DataSource = this.hangSanXuatBindingSource;
-            this.dgv_HangSanXuat.Location = new System.Drawing.Point(13, 232);
+            this.dgv_HangSanXuat.Location = new System.Drawing.Point(13, 241);
             this.dgv_HangSanXuat.Name = "dgv_HangSanXuat";
             this.dgv_HangSanXuat.RowHeadersWidth = 51;
             this.dgv_HangSanXuat.RowTemplate.Height = 24;
             this.dgv_HangSanXuat.Size = new System.Drawing.Size(845, 160);
             this.dgv_HangSanXuat.TabIndex = 27;
+            this.dgv_HangSanXuat.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_HangSanXuat_CellClick);
             // 
-            // quanLyRapPhimDataSet_HANGSANXUAT
+            // btnXoa
             // 
-            this.quanLyRapPhimDataSet_HANGSANXUAT.DataSetName = "QuanLyRapPhimDataSet_HANGSANXUAT";
-            this.quanLyRapPhimDataSet_HANGSANXUAT.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.btnXoa.Location = new System.Drawing.Point(676, 73);
+            this.btnXoa.Name = "btnXoa";
+            this.btnXoa.Size = new System.Drawing.Size(91, 50);
+            this.btnXoa.TabIndex = 48;
+            this.btnXoa.Text = "Xóa";
+            this.btnXoa.UseVisualStyleBackColor = true;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
-            // hangSanXuatBindingSource
+            // btnSua
             // 
-            this.hangSanXuatBindingSource.DataMember = "HangSanXuat";
-            this.hangSanXuatBindingSource.DataSource = this.quanLyRapPhimDataSet_HANGSANXUAT;
+            this.btnSua.Image = global::QuanLyRapPhim_Final.Properties.Resources.tools;
+            this.btnSua.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSua.Location = new System.Drawing.Point(564, 73);
+            this.btnSua.Name = "btnSua";
+            this.btnSua.Size = new System.Drawing.Size(90, 50);
+            this.btnSua.TabIndex = 47;
+            this.btnSua.Text = "Sửa";
+            this.btnSua.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSua.UseVisualStyleBackColor = true;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
-            // hangSanXuatTableAdapter
+            // label1
             // 
-            this.hangSanXuatTableAdapter.ClearBeforeFill = true;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(10, 30);
+            this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(63, 17);
+            this.label1.TabIndex = 49;
+            this.label1.Text = "Mã HSX:";
             // 
-            // tenHSXDataGridViewTextBoxColumn
+            // txtMaHSX
             // 
-            this.tenHSXDataGridViewTextBoxColumn.DataPropertyName = "TenHSX";
-            this.tenHSXDataGridViewTextBoxColumn.HeaderText = "TenHSX";
-            this.tenHSXDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.tenHSXDataGridViewTextBoxColumn.Name = "tenHSXDataGridViewTextBoxColumn";
-            this.tenHSXDataGridViewTextBoxColumn.Width = 125;
+            this.txtMaHSX.Location = new System.Drawing.Point(208, 30);
+            this.txtMaHSX.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.txtMaHSX.Name = "txtMaHSX";
+            this.txtMaHSX.Size = new System.Drawing.Size(351, 22);
+            this.txtMaHSX.TabIndex = 50;
             // 
-            // emailDataGridViewTextBoxColumn
+            // cbMaHD
             // 
-            this.emailDataGridViewTextBoxColumn.DataPropertyName = "Email";
-            this.emailDataGridViewTextBoxColumn.HeaderText = "Email";
-            this.emailDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
-            this.emailDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // diaChiDataGridViewTextBoxColumn
-            // 
-            this.diaChiDataGridViewTextBoxColumn.DataPropertyName = "DiaChi";
-            this.diaChiDataGridViewTextBoxColumn.HeaderText = "DiaChi";
-            this.diaChiDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.diaChiDataGridViewTextBoxColumn.Name = "diaChiDataGridViewTextBoxColumn";
-            this.diaChiDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // maHDDataGridViewTextBoxColumn
-            // 
-            this.maHDDataGridViewTextBoxColumn.DataPropertyName = "MaHD";
-            this.maHDDataGridViewTextBoxColumn.HeaderText = "MaHD";
-            this.maHDDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.maHDDataGridViewTextBoxColumn.Name = "maHDDataGridViewTextBoxColumn";
-            this.maHDDataGridViewTextBoxColumn.Width = 125;
+            this.cbMaHD.FormattingEnabled = true;
+            this.cbMaHD.Location = new System.Drawing.Point(208, 192);
+            this.cbMaHD.Name = "cbMaHD";
+            this.cbMaHD.Size = new System.Drawing.Size(351, 24);
+            this.cbMaHD.TabIndex = 51;
             // 
             // QuanLyHangSanXuatUC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.cbMaHD);
+            this.Controls.Add(this.txtMaHSX);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.btnXoa);
+            this.Controls.Add(this.btnSua);
             this.Controls.Add(this.dgv_HangSanXuat);
-            this.Controls.Add(this.txtMaHD);
             this.Controls.Add(this.maHDlbl);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.btnHuy);
@@ -240,9 +230,8 @@
             this.Controls.Add(this.hangSanXuatlbl);
             this.Name = "QuanLyHangSanXuatUC";
             this.Size = new System.Drawing.Size(890, 1200);
+            this.Load += new System.EventHandler(this.QuanLyHangSanXuatUC_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_HangSanXuat)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.quanLyRapPhimDataSet_HANGSANXUAT)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.hangSanXuatBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -260,14 +249,11 @@
         private System.Windows.Forms.TextBox txtTenHSX;
         private System.Windows.Forms.Label hangSanXuatlbl;
         private System.Windows.Forms.Label maHDlbl;
-        private System.Windows.Forms.TextBox txtMaHD;
         private System.Windows.Forms.DataGridView dgv_HangSanXuat;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tenHSXDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn diaChiDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn maHDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource hangSanXuatBindingSource;
-        private QuanLyRapPhimDataSet_HANGSANXUAT quanLyRapPhimDataSet_HANGSANXUAT;
-        private QuanLyRapPhimDataSet_HANGSANXUATTableAdapters.HangSanXuatTableAdapter hangSanXuatTableAdapter;
+        private System.Windows.Forms.Button btnXoa;
+        private System.Windows.Forms.Button btnSua;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtMaHSX;
+        private System.Windows.Forms.ComboBox cbMaHD;
     }
 }

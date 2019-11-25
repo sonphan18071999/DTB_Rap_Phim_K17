@@ -158,3 +158,9 @@ C:\Users\DangKhoa\Desktop\DBMS\DTB_Rap_Phim_K17\dbms pro\Do_An_Rap_Phim\QuanLyRa
 C:\Users\DangKhoa\Desktop\DBMS\DTB_Rap_Phim_K17\dbms pro\Do_An_Rap_Phim\QuanLyRapPhim_Final\QuanLyRapPhim_Final\obj\Debug\QuanLyRapPhim_Final.exe
 C:\Users\DangKhoa\Desktop\DBMS\DTB_Rap_Phim_K17\dbms pro\Do_An_Rap_Phim\QuanLyRapPhim_Final\QuanLyRapPhim_Final\obj\Debug\QuanLyRapPhim_Final.pdb
 C:\Users\DangKhoa\Desktop\DBMS\DTB_Rap_Phim_K17\dbms pro\Do_An_Rap_Phim\QuanLyRapPhim_Final\QuanLyRapPhim_Final\obj\Debug\QuanLyRapPhim_Final.csprojAssemblyReference.cache
+C:\Users\DangKhoa\Desktop\DBMS\DTB_Rap_Phim_K17\dbms pro\Do_An_Rap_Phim\QuanLyRapPhim_Final\QuanLyRapPhim_Final\obj\Debug\QuanLyRapPhim_Final.User_Controls.HopDongUC.resources
+C:\Users\DangKhoa\Desktop\DBMS\DTB_Rap_Phim_K17\dbms pro\Do_An_Rap_Phim\QuanLyRapPhim_Final\QuanLyRapPhim_Final\bin\Debug\EntityFramework.dll
+C:\Users\DangKhoa\Desktop\DBMS\DTB_Rap_Phim_K17\dbms pro\Do_An_Rap_Phim\QuanLyRapPhim_Final\QuanLyRapPhim_Final\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\DangKhoa\Desktop\DBMS\DTB_Rap_Phim_K17\dbms pro\Do_An_Rap_Phim\QuanLyRapPhim_Final\QuanLyRapPhim_Final\bin\Debug\EntityFramework.xml
+C:\Users\DangKhoa\Desktop\DBMS\DTB_Rap_Phim_K17\dbms pro\Do_An_Rap_Phim\QuanLyRapPhim_Final\QuanLyRapPhim_Final\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\DangKhoa\Desktop\DBMS\DTB_Rap_Phim_K17\dbms pro\Do_An_Rap_Phim\QuanLyRapPhim_Final\QuanLyRapPhim_Final\obj\Debug\QuanLyRapPhim_Final.csproj.CopyComplete

@@ -22,27 +22,22 @@ namespace QuanLyRapPhim_Final.BSLayer
                 CommandType.Text);
         }
         public bool ThemKhachHang(string MaKH, string HovaTenLotKH, 
-            string TenKH, ref string err)
+            string TenKH,DateTime ngaySinh,int tichDiem, ref string err)
         {
-            string sqlString =
-                $"Insert Into KhachHang Values " +
-                "( " + " '" + MaKH + " ' ,N'" + HovaTenLotKH +
-                "',N' " + TenKH + "') ";
+            string sqlString = $"exec KhachHangInsertUpdateDelete N'{MaKH}',N'{HovaTenLotKH}',N'{TenKH}','{ngaySinh}',{tichDiem},'Insert'";
             return db.MyExecuteNonQuery(sqlString,
                 CommandType.Text, ref err);
         }
         public bool XoaKhachHang(ref string err, string MaKH)
         {
-            string sqlString = "Delete From KhachHang Where MaKH='"
-                + MaKH + "'";
+            string sqlString = $"exec KhachHangInsertUpdateDelete N'{MaKH}',null,null,null,null,'Delete'";
             return db.MyExecuteNonQuery(sqlString, 
                 CommandType.Text, ref err);
         }
-        public bool CapNhatKhachHang(string MaKH,
-            string TenKH, ref string err)
+        public bool CapNhatKhachHang(string MaKH, string HovaTenLotKH,
+            string TenKH, DateTime ngaySinh, int tichDiem, ref string err)
         {
-            string sqlString = "Update KhachHang Set TenKH=N'" +
-                TenKH + "' Where MaKH='" + MaKH + "'";
+            string sqlString = $"exec KhachHangInsertUpdateDelete N'{MaKH}',N'{HovaTenLotKH}',N'{TenKH}','{ngaySinh}',{tichDiem},'Update'"; 
             return db.MyExecuteNonQuery(sqlString, 
                 CommandType.Text, ref err);
         }

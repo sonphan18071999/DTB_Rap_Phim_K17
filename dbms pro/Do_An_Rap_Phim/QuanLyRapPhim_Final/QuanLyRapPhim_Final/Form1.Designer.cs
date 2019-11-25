@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnHopDong = new System.Windows.Forms.Button();
             this.btnQuanLyHangSanXuat = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pnlClick = new System.Windows.Forms.Panel();
@@ -42,8 +43,8 @@
             this.btnWelcome = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblHeader = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.datVeUC1 = new QuanLyRapPhim_Final.User_Controls.DatVeUC();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.chucVuUC1 = new QuanLyRapPhim_Final.User_Controls.ChucVuUC();
             this.welcomeUC1 = new QuanLyRapPhim_Final.User_Controls.WelcomeUC();
             this.quanLyRapUC1 = new QuanLyRapPhim_Final.User_Controls.QuanLyRapUC();
@@ -60,6 +61,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.panel1.Controls.Add(this.btnHopDong);
             this.panel1.Controls.Add(this.btnQuanLyHangSanXuat);
             this.panel1.Controls.Add(this.pictureBox2);
             this.panel1.Controls.Add(this.pnlClick);
@@ -78,6 +80,20 @@
             this.panel1.Size = new System.Drawing.Size(297, 1354);
             this.panel1.TabIndex = 0;
             // 
+            // btnHopDong
+            // 
+            this.btnHopDong.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnHopDong.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnHopDong.ForeColor = System.Drawing.Color.Black;
+            this.btnHopDong.Location = new System.Drawing.Point(5, 853);
+            this.btnHopDong.Margin = new System.Windows.Forms.Padding(4);
+            this.btnHopDong.Name = "btnHopDong";
+            this.btnHopDong.Size = new System.Drawing.Size(287, 71);
+            this.btnHopDong.TabIndex = 13;
+            this.btnHopDong.Text = "Quản lý hợp đồng";
+            this.btnHopDong.UseVisualStyleBackColor = false;
+            this.btnHopDong.Click += new System.EventHandler(this.btnHopDong_Click);
+            // 
             // btnQuanLyHangSanXuat
             // 
             this.btnQuanLyHangSanXuat.BackColor = System.Drawing.Color.WhiteSmoke;
@@ -86,7 +102,7 @@
             this.btnQuanLyHangSanXuat.Location = new System.Drawing.Point(5, 774);
             this.btnQuanLyHangSanXuat.Margin = new System.Windows.Forms.Padding(4);
             this.btnQuanLyHangSanXuat.Name = "btnQuanLyHangSanXuat";
-            this.btnQuanLyHangSanXuat.Size = new System.Drawing.Size(288, 71);
+            this.btnQuanLyHangSanXuat.Size = new System.Drawing.Size(287, 71);
             this.btnQuanLyHangSanXuat.TabIndex = 12;
             this.btnQuanLyHangSanXuat.Text = "Quản lý hãng sản xuất";
             this.btnQuanLyHangSanXuat.UseVisualStyleBackColor = false;
@@ -258,6 +274,15 @@
             this.lblHeader.TabIndex = 0;
             this.lblHeader.Text = "Welcome";
             // 
+            // datVeUC1
+            // 
+            this.datVeUC1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
+            this.datVeUC1.Location = new System.Drawing.Point(1, 143);
+            this.datVeUC1.Margin = new System.Windows.Forms.Padding(5);
+            this.datVeUC1.Name = "datVeUC1";
+            this.datVeUC1.Size = new System.Drawing.Size(1195, 754);
+            this.datVeUC1.TabIndex = 4;
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::QuanLyRapPhim_Final.Properties.Resources.wall_brick_pts;
@@ -267,15 +292,6 @@
             this.pictureBox1.Size = new System.Drawing.Size(1187, 133);
             this.pictureBox1.TabIndex = 12;
             this.pictureBox1.TabStop = false;
-            // 
-            // datVeUC1
-            // 
-            this.datVeUC1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
-            this.datVeUC1.Location = new System.Drawing.Point(1, 143);
-            this.datVeUC1.Margin = new System.Windows.Forms.Padding(5);
-            this.datVeUC1.Name = "datVeUC1";
-            this.datVeUC1.Size = new System.Drawing.Size(1195, 754);
-            this.datVeUC1.TabIndex = 4;
             // 
             // chucVuUC1
             // 
@@ -345,7 +361,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1550, 943);
+            this.ClientSize = new System.Drawing.Size(1697, 943);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -387,5 +403,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button btnQuanLyHangSanXuat;
+        private System.Windows.Forms.Button btnHopDong;
     }
 }

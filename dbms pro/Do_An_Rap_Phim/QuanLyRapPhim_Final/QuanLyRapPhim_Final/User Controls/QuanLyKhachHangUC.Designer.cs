@@ -36,6 +36,13 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtTenKH = new System.Windows.Forms.TextBox();
             this.dgv_KHACHHANG = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.khachHangBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.quanLyRapPhimDataSet_KhachHang = new QuanLyRapPhim_Final.QuanLyRapPhimDataSet_KhachHang();
             this.btnHuy = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
@@ -45,17 +52,10 @@
             this.dtpNgaySinh = new System.Windows.Forms.DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
             this.txtTichDiem = new System.Windows.Forms.TextBox();
-            this.quanLyRapPhimDataSet_KhachHang = new QuanLyRapPhim_Final.QuanLyRapPhimDataSet_KhachHang();
-            this.khachHangBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.khachHangTableAdapter = new QuanLyRapPhim_Final.QuanLyRapPhimDataSet_KhachHangTableAdapters.KhachHangTableAdapter();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_KHACHHANG)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.quanLyRapPhimDataSet_KhachHang)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.khachHangBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.quanLyRapPhimDataSet_KhachHang)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -64,7 +64,7 @@
             this.label1.Location = new System.Drawing.Point(29, 23);
             this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(150, 23);
+            this.label1.Size = new System.Drawing.Size(122, 19);
             this.label1.TabIndex = 0;
             this.label1.Text = "Mã khách hàng :";
             // 
@@ -73,7 +73,7 @@
             this.txtMaKH.Location = new System.Drawing.Point(227, 23);
             this.txtMaKH.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txtMaKH.Name = "txtMaKH";
-            this.txtMaKH.Size = new System.Drawing.Size(351, 30);
+            this.txtMaKH.Size = new System.Drawing.Size(351, 26);
             this.txtMaKH.TabIndex = 1;
             // 
             // label2
@@ -82,7 +82,7 @@
             this.label2.Location = new System.Drawing.Point(29, 71);
             this.label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(102, 23);
+            this.label2.Size = new System.Drawing.Size(83, 19);
             this.label2.TabIndex = 2;
             this.label2.Text = "Họ và Tên ";
             // 
@@ -91,7 +91,7 @@
             this.txtHovalotKH.Location = new System.Drawing.Point(227, 68);
             this.txtHovalotKH.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txtHovalotKH.Name = "txtHovalotKH";
-            this.txtHovalotKH.Size = new System.Drawing.Size(351, 30);
+            this.txtHovalotKH.Size = new System.Drawing.Size(351, 26);
             this.txtHovalotKH.TabIndex = 3;
             // 
             // label3
@@ -100,7 +100,7 @@
             this.label3.Location = new System.Drawing.Point(29, 115);
             this.label3.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(154, 23);
+            this.label3.Size = new System.Drawing.Size(124, 19);
             this.label3.TabIndex = 4;
             this.label3.Text = "Tên khách hàng :";
             // 
@@ -109,7 +109,7 @@
             this.txtTenKH.Location = new System.Drawing.Point(227, 112);
             this.txtTenKH.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txtTenKH.Name = "txtTenKH";
-            this.txtTenKH.Size = new System.Drawing.Size(351, 30);
+            this.txtTenKH.Size = new System.Drawing.Size(351, 26);
             this.txtTenKH.TabIndex = 5;
             // 
             // dgv_KHACHHANG
@@ -130,118 +130,6 @@
             this.dgv_KHACHHANG.Size = new System.Drawing.Size(890, 250);
             this.dgv_KHACHHANG.TabIndex = 6;
             this.dgv_KHACHHANG.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgv_KHACHHANG_CellClick);
-            // 
-            // btnHuy
-            // 
-            this.btnHuy.Location = new System.Drawing.Point(802, 13);
-            this.btnHuy.Name = "btnHuy";
-            this.btnHuy.Size = new System.Drawing.Size(75, 55);
-            this.btnHuy.TabIndex = 11;
-            this.btnHuy.Text = "Huỷ";
-            this.btnHuy.UseVisualStyleBackColor = true;
-            this.btnHuy.Click += new System.EventHandler(this.BtnHuy_Click);
-            // 
-            // btnXoa
-            // 
-            this.btnXoa.Image = global::QuanLyRapPhim_Final.Properties.Resources.delete2;
-            this.btnXoa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnXoa.Location = new System.Drawing.Point(583, 90);
-            this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(90, 52);
-            this.btnXoa.TabIndex = 15;
-            this.btnXoa.Text = "Xóa";
-            this.btnXoa.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnXoa.UseVisualStyleBackColor = true;
-            this.btnXoa.Click += new System.EventHandler(this.btnAdd_Click);
-            // 
-            // btnSua
-            // 
-            this.btnSua.Image = global::QuanLyRapPhim_Final.Properties.Resources.tools;
-            this.btnSua.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSua.Location = new System.Drawing.Point(695, 90);
-            this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(91, 52);
-            this.btnSua.TabIndex = 15;
-            this.btnSua.Text = "Sửa";
-            this.btnSua.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnSua.UseVisualStyleBackColor = true;
-            this.btnSua.Click += new System.EventHandler(this.btnAdd_Click);
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.Image = global::QuanLyRapPhim_Final.Properties.Resources.plus;
-            this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAdd.Location = new System.Drawing.Point(583, 14);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(90, 52);
-            this.btnAdd.TabIndex = 15;
-            this.btnAdd.Text = "Thêm";
-            this.btnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnAdd.UseVisualStyleBackColor = true;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-            // 
-            // btnLuu
-            // 
-            this.btnLuu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnLuu.Image = global::QuanLyRapPhim_Final.Properties.Resources.save1;
-            this.btnLuu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLuu.Location = new System.Drawing.Point(695, 14);
-            this.btnLuu.Name = "btnLuu";
-            this.btnLuu.Size = new System.Drawing.Size(91, 52);
-            this.btnLuu.TabIndex = 9;
-            this.btnLuu.Text = "Lưu";
-            this.btnLuu.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnLuu.UseVisualStyleBackColor = true;
-            this.btnLuu.Click += new System.EventHandler(this.BtnLuu_Click);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(29, 157);
-            this.label4.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(102, 23);
-            this.label4.TabIndex = 16;
-            this.label4.Text = "Ngày Sinh:";
-            // 
-            // dtpNgaySinh
-            // 
-            this.dtpNgaySinh.Location = new System.Drawing.Point(227, 157);
-            this.dtpNgaySinh.Name = "dtpNgaySinh";
-            this.dtpNgaySinh.Size = new System.Drawing.Size(351, 30);
-            this.dtpNgaySinh.TabIndex = 17;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(29, 206);
-            this.label5.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(104, 23);
-            this.label5.TabIndex = 18;
-            this.label5.Text = "Tích Điểm:";
-            // 
-            // txtTichDiem
-            // 
-            this.txtTichDiem.Location = new System.Drawing.Point(227, 203);
-            this.txtTichDiem.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.txtTichDiem.Name = "txtTichDiem";
-            this.txtTichDiem.Size = new System.Drawing.Size(351, 30);
-            this.txtTichDiem.TabIndex = 19;
-            // 
-            // quanLyRapPhimDataSet_KhachHang
-            // 
-            this.quanLyRapPhimDataSet_KhachHang.DataSetName = "QuanLyRapPhimDataSet_KhachHang";
-            this.quanLyRapPhimDataSet_KhachHang.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // khachHangBindingSource
-            // 
-            this.khachHangBindingSource.DataMember = "KhachHang";
-            this.khachHangBindingSource.DataSource = this.quanLyRapPhimDataSet_KhachHang;
-            // 
-            // khachHangTableAdapter
-            // 
-            this.khachHangTableAdapter.ClearBeforeFill = true;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -278,9 +166,121 @@
             this.dataGridViewTextBoxColumn5.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
             // 
+            // khachHangBindingSource
+            // 
+            this.khachHangBindingSource.DataMember = "KhachHang";
+            this.khachHangBindingSource.DataSource = this.quanLyRapPhimDataSet_KhachHang;
+            // 
+            // quanLyRapPhimDataSet_KhachHang
+            // 
+            this.quanLyRapPhimDataSet_KhachHang.DataSetName = "QuanLyRapPhimDataSet_KhachHang";
+            this.quanLyRapPhimDataSet_KhachHang.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // btnHuy
+            // 
+            this.btnHuy.Location = new System.Drawing.Point(802, 13);
+            this.btnHuy.Name = "btnHuy";
+            this.btnHuy.Size = new System.Drawing.Size(75, 55);
+            this.btnHuy.TabIndex = 11;
+            this.btnHuy.Text = "Huỷ";
+            this.btnHuy.UseVisualStyleBackColor = true;
+            this.btnHuy.Click += new System.EventHandler(this.BtnHuy_Click);
+            // 
+            // btnXoa
+            // 
+            this.btnXoa.Image = global::QuanLyRapPhim_Final.Properties.Resources.delete2;
+            this.btnXoa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnXoa.Location = new System.Drawing.Point(583, 90);
+            this.btnXoa.Name = "btnXoa";
+            this.btnXoa.Size = new System.Drawing.Size(90, 52);
+            this.btnXoa.TabIndex = 15;
+            this.btnXoa.Text = "Xóa";
+            this.btnXoa.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnXoa.UseVisualStyleBackColor = true;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
+            // 
+            // btnSua
+            // 
+            this.btnSua.Image = global::QuanLyRapPhim_Final.Properties.Resources.tools;
+            this.btnSua.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSua.Location = new System.Drawing.Point(695, 90);
+            this.btnSua.Name = "btnSua";
+            this.btnSua.Size = new System.Drawing.Size(91, 52);
+            this.btnSua.TabIndex = 15;
+            this.btnSua.Text = "Sửa";
+            this.btnSua.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSua.UseVisualStyleBackColor = true;
+            this.btnSua.Click += new System.EventHandler(this.BtnSua_Click);
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.Image = global::QuanLyRapPhim_Final.Properties.Resources.plus;
+            this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAdd.Location = new System.Drawing.Point(583, 14);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(90, 52);
+            this.btnAdd.TabIndex = 15;
+            this.btnAdd.Text = "Thêm";
+            this.btnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.BtnThem_Click);
+            // 
+            // btnLuu
+            // 
+            this.btnLuu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnLuu.Image = global::QuanLyRapPhim_Final.Properties.Resources.save1;
+            this.btnLuu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLuu.Location = new System.Drawing.Point(695, 14);
+            this.btnLuu.Name = "btnLuu";
+            this.btnLuu.Size = new System.Drawing.Size(91, 52);
+            this.btnLuu.TabIndex = 9;
+            this.btnLuu.Text = "Lưu";
+            this.btnLuu.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnLuu.UseVisualStyleBackColor = true;
+            this.btnLuu.Click += new System.EventHandler(this.BtnLuu_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(29, 157);
+            this.label4.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(83, 19);
+            this.label4.TabIndex = 16;
+            this.label4.Text = "Ngày Sinh:";
+            // 
+            // dtpNgaySinh
+            // 
+            this.dtpNgaySinh.Location = new System.Drawing.Point(227, 157);
+            this.dtpNgaySinh.Name = "dtpNgaySinh";
+            this.dtpNgaySinh.Size = new System.Drawing.Size(351, 26);
+            this.dtpNgaySinh.TabIndex = 17;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(29, 206);
+            this.label5.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(83, 19);
+            this.label5.TabIndex = 18;
+            this.label5.Text = "Tích Điểm:";
+            // 
+            // txtTichDiem
+            // 
+            this.txtTichDiem.Location = new System.Drawing.Point(227, 203);
+            this.txtTichDiem.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.txtTichDiem.Name = "txtTichDiem";
+            this.txtTichDiem.Size = new System.Drawing.Size(351, 26);
+            this.txtTichDiem.TabIndex = 19;
+            // 
+            // khachHangTableAdapter
+            // 
+            this.khachHangTableAdapter.ClearBeforeFill = true;
+            // 
             // QuanLyKhachHangUC
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 23F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.txtTichDiem);
             this.Controls.Add(this.label5);
@@ -304,8 +304,8 @@
             this.Size = new System.Drawing.Size(890, 1200);
             this.Load += new System.EventHandler(this.QuanLyKhachHangUC_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_KHACHHANG)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.quanLyRapPhimDataSet_KhachHang)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.khachHangBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.quanLyRapPhimDataSet_KhachHang)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

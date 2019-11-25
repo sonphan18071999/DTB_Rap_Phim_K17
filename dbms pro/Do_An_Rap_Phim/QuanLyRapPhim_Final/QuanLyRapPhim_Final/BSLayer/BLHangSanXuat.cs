@@ -14,10 +14,9 @@ namespace QuanLyRapPhim_Final.BSLayer
         {
             db = new DBMain();
         }
-        public DataSet LayHangSanXuat()
+        public DataSet XuLyNhanVien(string MaHSX,string TenHSX,string Mail,string DiaChi,string MaHD,string State)
         {
-            return db.ExecuteQueryDataSet("Select * from HangSanXuat",
-                CommandType.Text);
+            return db.ExecuteQueryDataSet($"exec HangSanXuatInsertUpdateDelete N'{MaHSX}',N'{TenHSX}',N'{Mail}',N'{DiaChi}',N'{MaHD}','{State}'", CommandType.Text);
         }
     }
 }

@@ -33,14 +33,6 @@ namespace QuanLyRapPhim_Final.BSLayer
             return db.ExecuteQueryDataSet(sqlString,
                 CommandType.Text);
         }
-        public IEnumerable<DataSet> findHour(string tgChieu)
-        {
-            QuanLyRapPhimDataClassesDataContext qlrp = new QuanLyRapPhimDataClassesDataContext();
-            var findHourqr = qlrp.ExecuteQuery<DataSet>("select A.SuatChieu,B.TenPhim,B.MaPhim from DatVe as A inner join Phim as B on A.MaPhim = B.MaPhim");
-            //return db.ExecuteQueryDataSet("select A.SuatChieu,B.TenPhim,B.MaPhim from DatVe as A inner join Phim as B on A.MaPhim = B.MaPhim", CommandType.Text);
-            return findHourqr;
-
-        }
         public bool themVe(string MaPhim, string Rap, string SuatChieu, string MaNV, string MaKH, string Day, string Ghe, ref string err)
         {
             string sqlString = $"Insert Into DatVe values('{MaPhim.Trim()}','{SuatChieu.Trim()}','{MaNV.Trim()}','{MaKH.Trim()}','{Rap.Trim()}','{Day.Trim()}','{Ghe.Trim()}')";
@@ -50,6 +42,11 @@ namespace QuanLyRapPhim_Final.BSLayer
         {
             string sqlString = "Delete From DatVe Where MaRap='" + MaRap + "'";
             return db.MyExecuteNonQuery(sqlString, CommandType.Text, ref err);
+        }
+        public DataSet LayMaVe()
+        {
+            string sqlString = "select MAX(MaVe) from DatVe";
+            return db.ExecuteQueryDataSet(sqlString, CommandType.Text);
         }
     }
 }

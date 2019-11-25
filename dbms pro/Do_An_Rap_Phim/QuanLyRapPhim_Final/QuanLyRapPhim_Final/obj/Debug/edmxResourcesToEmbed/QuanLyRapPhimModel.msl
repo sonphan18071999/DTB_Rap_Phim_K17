@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="QuanLyRapPhimModelStoreContainer" CdmEntityContainer="QuanLyRapPhimEntities">
+    <FunctionImportMapping FunctionImportName="ChiNhanhInsertUpdateDelete" FunctionName="QuanLyRapPhimModel.Store.ChiNhanhInsertUpdateDelete">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="QuanLyRapPhimModel.ChiNhanhInsertUpdateDelete_Result">
+          <ScalarProperty Name="MaChiNhanh" ColumnName="MaChiNhanh" />
+          <ScalarProperty Name="TenChiNanh" ColumnName="TenChiNanh" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="ChucVuInsertUpdateDelete" FunctionName="QuanLyRapPhimModel.Store.ChucVuInsertUpdateDelete">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="QuanLyRapPhimModel.ChucVuInsertUpdateDelete_Result">
+          <ScalarProperty Name="MaCV" ColumnName="MaCV" />
+          <ScalarProperty Name="ChucVu" ColumnName="ChucVu" />
+          <ScalarProperty Name="Luong" ColumnName="Luong" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="DangNhapInsertUpdateDelete" FunctionName="QuanLyRapPhimModel.Store.DangNhapInsertUpdateDelete">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="QuanLyRapPhimModel.DangNhapInsertUpdateDelete_Result">
+          <ScalarProperty Name="MaNV" ColumnName="MaNV" />
+          <ScalarProperty Name="MatKhau" ColumnName="MatKhau" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="DatVeInsertUpdateDelete" FunctionName="QuanLyRapPhimModel.Store.DatVeInsertUpdateDelete">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="QuanLyRapPhimModel.DatVeInsertUpdateDelete_Result">
+          <ScalarProperty Name="HovaLotNV" ColumnName="HovaLotNV" />
+          <ScalarProperty Name="TenNV" ColumnName="TenNV" />
+          <ScalarProperty Name="MaNV" ColumnName="MaNV" />
+          <ScalarProperty Name="MaCV" ColumnName="MaCV" />
+          <ScalarProperty Name="SoGioLam" ColumnName="SoGioLam" />
+          <ScalarProperty Name="MaNQL" ColumnName="MaNQL" />
+          <ScalarProperty Name="MaChiNhanh" ColumnName="MaChiNhanh" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="HangSanXuatInsertUpdateDelete" FunctionName="QuanLyRapPhimModel.Store.HangSanXuatInsertUpdateDelete">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="QuanLyRapPhimModel.HangSanXuatInsertUpdateDelete_Result">
+          <ScalarProperty Name="MaHSX" ColumnName="MaHSX" />
+          <ScalarProperty Name="TenHSX" ColumnName="TenHSX" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
+          <ScalarProperty Name="MaHD" ColumnName="MaHD" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="KhachHangInsertUpdateDelete" FunctionName="QuanLyRapPhimModel.Store.KhachHangInsertUpdateDelete">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="QuanLyRapPhimModel.KhachHangInsertUpdateDelete_Result">
+          <ScalarProperty Name="MaKH" ColumnName="MaKH" />
+          <ScalarProperty Name="HovaLotKH" ColumnName="HovaLotKH" />
+          <ScalarProperty Name="TenKH" ColumnName="TenKH" />
+          <ScalarProperty Name="NgaySinh" ColumnName="NgaySinh" />
+          <ScalarProperty Name="TichDiem" ColumnName="TichDiem" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="NhanVienInsertUpdateDelete" FunctionName="QuanLyRapPhimModel.Store.NhanVienInsertUpdateDelete">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="QuanLyRapPhimModel.NhanVienInsertUpdateDelete_Result">
+          <ScalarProperty Name="HovaLotNV" ColumnName="HovaLotNV" />
+          <ScalarProperty Name="TenNV" ColumnName="TenNV" />
+          <ScalarProperty Name="MaNV" ColumnName="MaNV" />
+          <ScalarProperty Name="MaCV" ColumnName="MaCV" />
+          <ScalarProperty Name="SoGioLam" ColumnName="SoGioLam" />
+          <ScalarProperty Name="MaNQL" ColumnName="MaNQL" />
+          <ScalarProperty Name="MaChiNhanh" ColumnName="MaChiNhanh" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="PhimHopDongInsertUpdateDelete" FunctionName="QuanLyRapPhimModel.Store.PhimHopDongInsertUpdateDelete">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="QuanLyRapPhimModel.PhimHopDongInsertUpdateDelete_Result">
+          <ScalarProperty Name="MaHD" ColumnName="MaHD" />
+          <ScalarProperty Name="DaoDien" ColumnName="DaoDien" />
+          <ScalarProperty Name="GiaTriHD" ColumnName="GiaTriHD" />
+          <ScalarProperty Name="NgayXuatBan" ColumnName="NgayXuatBan" />
+          <ScalarProperty Name="NgayKyHopDong" ColumnName="NgayKyHopDong" />
+          <ScalarProperty Name="NgayHetHan" ColumnName="NgayHetHan" />
+          <ScalarProperty Name="MaPhim" ColumnName="MaPhim" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="PhimInsertUpdateDelete" FunctionName="QuanLyRapPhimModel.Store.PhimInsertUpdateDelete">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="QuanLyRapPhimModel.PhimInsertUpdateDelete_Result">
+          <ScalarProperty Name="TenPhim" ColumnName="TenPhim" />
+          <ScalarProperty Name="MaPhim" ColumnName="MaPhim" />
+          <ScalarProperty Name="GiaVe" ColumnName="GiaVe" />
+          <ScalarProperty Name="Poster" ColumnName="Poster" />
+          <ScalarProperty Name="ThoiLuong" ColumnName="ThoiLuong" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="RapInsertUpdateDelete" FunctionName="QuanLyRapPhimModel.Store.RapInsertUpdateDelete">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="QuanLyRapPhimModel.RapInsertUpdateDelete_Result">
+          <ScalarProperty Name="MaRap" ColumnName="MaRap" />
+          <ScalarProperty Name="SoDayGhe" ColumnName="SoDayGhe" />
+          <ScalarProperty Name="SoLuongGhe" ColumnName="SoLuongGhe" />
+          <ScalarProperty Name="LoaiPhim" ColumnName="LoaiPhim" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="QuanLyRapPhimModel.Store.sp_alterdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="QuanLyRapPhimModel.Store.sp_creatediagram" />
+    <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="QuanLyRapPhimModel.Store.sp_dropdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="QuanLyRapPhimModel.Store.sp_helpdiagramdefinition">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="QuanLyRapPhimModel.sp_helpdiagramdefinition_Result">
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="QuanLyRapPhimModel.Store.sp_helpdiagrams">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="QuanLyRapPhimModel.sp_helpdiagrams_Result">
+          <ScalarProperty Name="Database" ColumnName="Database" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Owner" ColumnName="Owner" />
+          <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="QuanLyRapPhimModel.Store.sp_renamediagram" />
+    <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="QuanLyRapPhimModel.Store.sp_upgraddiagrams" />
+    <FunctionImportMapping FunctionImportName="SuatChieuPhimInsertUpdateDelete" FunctionName="QuanLyRapPhimModel.Store.SuatChieuPhimInsertUpdateDelete">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="QuanLyRapPhimModel.SuatChieuPhimInsertUpdateDelete_Result">
+          <ScalarProperty Name="MaPhim" ColumnName="MaPhim" />
+          <ScalarProperty Name="GioChieu" ColumnName="GioChieu" />
+          <ScalarProperty Name="MaRap" ColumnName="MaRap" />
+          <ScalarProperty Name="MaSC" ColumnName="MaSC" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>

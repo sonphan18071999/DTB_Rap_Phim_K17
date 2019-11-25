@@ -90,13 +90,13 @@ namespace QuanLyRapPhim_Final.User_Controls
             btnEdit.Enabled = false;
             btnDel.Enabled = false;
 
-            txtMaPhim.Enabled = false;
+            txtMaSCP.Enabled = false;
         }
 
         private void btnDel_Click(object sender, EventArgs e)
         {
             int r = dgv_SUATCHIEU.CurrentCell.RowIndex;
-            string strSC = dgv_SUATCHIEU.Rows[r].Cells[3].Value.ToString();
+            string MaSuatChieu = dgv_SUATCHIEU.Rows[r].Cells[3].Value.ToString();
 
             DialogResult traloi;
             traloi = MessageBox.Show("Bạn thực sự muốn xóa?", "Trả lời", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
@@ -105,7 +105,7 @@ namespace QuanLyRapPhim_Final.User_Controls
 
                 try
                 {
-                    dbNV.XoaSuatChieu(ref err, strSC);
+                    dbNV.XoaSuatChieu(ref err, MaSuatChieu);
                     LoadData();
                     MessageBox.Show("Đã xóa!");
                 }
@@ -124,7 +124,7 @@ namespace QuanLyRapPhim_Final.User_Controls
                 try
                 {
                     BLSuatChieu blSC = new BLSuatChieu();
-                    blSC.ThemSuatChieu(this.txtMaPhim.Text.Trim(), this.txtSuatChieu.Text.Trim(), this.txtMaRap.Text.Trim(), ref err);
+                    blSC.ThemSuatChieu(this.txtMaPhim.Text.Trim(), this.txtSuatChieu.Text.Trim(), this.txtMaRap.Text.Trim(),txtMaSCP.Text.Trim(), ref err);
                     LoadData();
                     MessageBox.Show("Đã thêm xong!");
                 }
@@ -136,7 +136,7 @@ namespace QuanLyRapPhim_Final.User_Controls
             else
             {
                 BLSuatChieu blSC = new BLSuatChieu();
-                blSC.CapNhatSuatChieu(this.txtMaPhim.Text, this.txtSuatChieu.Text, this.txtMaRap.Text,ref err);
+                blSC.CapNhatSuatChieu(this.txtMaPhim.Text, this.txtSuatChieu.Text, this.txtMaRap.Text,txtMaSCP.Text.Trim(),ref err);
                 LoadData();
                 MessageBox.Show("Đã sửa xong!");
             }

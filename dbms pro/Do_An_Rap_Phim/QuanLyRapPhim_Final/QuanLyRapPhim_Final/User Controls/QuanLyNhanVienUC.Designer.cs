@@ -58,17 +58,22 @@
             this.cbbMaCV = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.txtChucVu = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.btnQuanLy = new System.Windows.Forms.Button();
             this.nhanVienTableAdapter = new QuanLyRapPhim_Final.QuanLyRapPhimDataSet_NHANVIENTableAdapters.NhanVienTableAdapter();
             this.quanLyRapPhimDataSet = new QuanLyRapPhim_Final.QuanLyRapPhimDataSet();
             this.nhanVienTableAdapter1 = new QuanLyRapPhim_Final.QuanLyRapPhimDataSetTableAdapters.NhanVienTableAdapter();
             this.nhanVienTableAdapter2 = new QuanLyRapPhim_Final.QuanLyRapPhimDataSet1TableAdapters.NhanVienTableAdapter();
+            this.cbMaNQL = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.nmrSoGioLam = new System.Windows.Forms.NumericUpDown();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.cbChiNhanh = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_NHANVIEN)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nhanVienBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.quanLyRapPhimDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.quanLyRapPhimDataSet_NHANVIEN)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.quanLyRapPhimDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmrSoGioLam)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -139,7 +144,7 @@
             this.maNQLDataGridViewTextBoxColumn,
             this.maChiNhanhDataGridViewTextBoxColumn});
             this.dgv_NHANVIEN.DataSource = this.nhanVienBindingSource;
-            this.dgv_NHANVIEN.Location = new System.Drawing.Point(33, 442);
+            this.dgv_NHANVIEN.Location = new System.Drawing.Point(33, 464);
             this.dgv_NHANVIEN.Name = "dgv_NHANVIEN";
             this.dgv_NHANVIEN.RowHeadersWidth = 51;
             this.dgv_NHANVIEN.Size = new System.Drawing.Size(820, 150);
@@ -248,9 +253,9 @@
             this.btnAdd.AutoSize = true;
             this.btnAdd.Location = new System.Drawing.Point(518, 160);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(67, 33);
+            this.btnAdd.Size = new System.Drawing.Size(151, 33);
             this.btnAdd.TabIndex = 19;
-            this.btnAdd.Text = "Thêm";
+            this.btnAdd.Text = "Thêm nhân viên";
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
@@ -333,28 +338,6 @@
             this.txtChucVu.Size = new System.Drawing.Size(229, 30);
             this.txtChucVu.TabIndex = 28;
             // 
-            // button1
-            // 
-            this.button1.AutoSize = true;
-            this.button1.Location = new System.Drawing.Point(518, 301);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(63, 33);
-            this.button1.TabIndex = 21;
-            this.button1.Text = "Hủy";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.btnCancel_Click);
-            // 
-            // btnQuanLy
-            // 
-            this.btnQuanLy.AutoSize = true;
-            this.btnQuanLy.Location = new System.Drawing.Point(518, 301);
-            this.btnQuanLy.Name = "btnQuanLy";
-            this.btnQuanLy.Size = new System.Drawing.Size(175, 33);
-            this.btnQuanLy.TabIndex = 21;
-            this.btnQuanLy.Text = "Quản lý nhân viên ";
-            this.btnQuanLy.UseVisualStyleBackColor = true;
-            this.btnQuanLy.Click += new System.EventHandler(this.btnQuanLy_Click);
-            // 
             // nhanVienTableAdapter
             // 
             this.nhanVienTableAdapter.ClearBeforeFill = true;
@@ -372,18 +355,81 @@
             // 
             this.nhanVienTableAdapter2.ClearBeforeFill = true;
             // 
+            // cbMaNQL
+            // 
+            this.cbMaNQL.DisplayMember = "MaCV";
+            this.cbMaNQL.FormattingEnabled = true;
+            this.cbMaNQL.Location = new System.Drawing.Point(227, 307);
+            this.cbMaNQL.Name = "cbMaNQL";
+            this.cbMaNQL.Size = new System.Drawing.Size(229, 31);
+            this.cbMaNQL.TabIndex = 29;
+            this.cbMaNQL.ValueMember = "MaCV";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(33, 310);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(159, 23);
+            this.label7.TabIndex = 30;
+            this.label7.Text = "Được quản lý bởi:";
+            // 
+            // nmrSoGioLam
+            // 
+            this.nmrSoGioLam.Location = new System.Drawing.Point(227, 357);
+            this.nmrSoGioLam.Maximum = new decimal(new int[] {
+            744,
+            0,
+            0,
+            0});
+            this.nmrSoGioLam.Name = "nmrSoGioLam";
+            this.nmrSoGioLam.Size = new System.Drawing.Size(231, 30);
+            this.nmrSoGioLam.TabIndex = 32;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(35, 364);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(118, 23);
+            this.label8.TabIndex = 33;
+            this.label8.Text = "Số Giờ Làm:";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(35, 408);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(101, 23);
+            this.label9.TabIndex = 34;
+            this.label9.Text = "Chi nhánh:";
+            // 
+            // cbChiNhanh
+            // 
+            this.cbChiNhanh.DisplayMember = "MaCV";
+            this.cbChiNhanh.FormattingEnabled = true;
+            this.cbChiNhanh.Location = new System.Drawing.Point(227, 400);
+            this.cbChiNhanh.Name = "cbChiNhanh";
+            this.cbChiNhanh.Size = new System.Drawing.Size(229, 31);
+            this.cbChiNhanh.TabIndex = 35;
+            this.cbChiNhanh.ValueMember = "MaCV";
+            // 
             // QuanLyNhanVienUC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.cbChiNhanh);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.nmrSoGioLam);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.cbMaNQL);
             this.Controls.Add(this.txtChucVu);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.cbbMaCV);
             this.Controls.Add(this.txtLuong);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.btnQuanLy);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnDelNV);
             this.Controls.Add(this.btnAdd);
@@ -407,6 +453,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.quanLyRapPhimDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.quanLyRapPhimDataSet_NHANVIEN)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.quanLyRapPhimDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmrSoGioLam)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -433,8 +480,6 @@
         private System.Windows.Forms.ComboBox cbbMaCV;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtChucVu;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button btnQuanLy;
         private QuanLyRapPhimDataSet_NHANVIEN quanLyRapPhimDataSet_NHANVIEN;
         private QuanLyRapPhimDataSet_NHANVIENTableAdapters.NhanVienTableAdapter nhanVienTableAdapter;
         private QuanLyRapPhimDataSet quanLyRapPhimDataSet;
@@ -449,5 +494,11 @@
         private System.Windows.Forms.BindingSource nhanVienBindingSource;
         private QuanLyRapPhimDataSet1 quanLyRapPhimDataSet1;
         private QuanLyRapPhimDataSet1TableAdapters.NhanVienTableAdapter nhanVienTableAdapter2;
+        private System.Windows.Forms.ComboBox cbMaNQL;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.NumericUpDown nmrSoGioLam;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.ComboBox cbChiNhanh;
     }
 }

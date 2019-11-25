@@ -112,7 +112,6 @@ namespace QuanLyRapPhim_Final.User_Controls
         private void getBookedSeat()
         {
             if (SuatChieucb.ValueMember == "") return;
-
             dtDatVe = new DataTable();
             dtDatVe.Clear();
             DataSet ds = dbDatVe.GetBookedSeat(currentMaPhim, globalRap, SuatChieucb.Text.Trim());       
@@ -138,7 +137,6 @@ namespace QuanLyRapPhim_Final.User_Controls
             dtPhim.Clear();
             DataSet dsPhim = dbPhim.LayPhim();
             dtPhim = dsPhim.Tables[0];
-            //setRaptxt(dtPhim);
             //gọi hàm set cb suất chiếu
             SuatChieucb.Enabled = true;
             if (Phimcb.ValueMember != "")
@@ -183,7 +181,6 @@ namespace QuanLyRapPhim_Final.User_Controls
                     Program.soGhe = Convert.ToInt32(dtRap.Rows[0].ItemArray[0].ToString());
                     seatLoader.removeSeat(ref seatPanel);
                     seatPanel.Refresh();
-                    //time = getHour();
                     getBookedSeat();
                     seatLoader.renderSeat(ref seatPanel, bookedSeatAlpha, bookedSeatNum);
                     setBtnEven(seatLoader.btns);
@@ -264,7 +261,6 @@ namespace QuanLyRapPhim_Final.User_Controls
                     Program.soGhe = Convert.ToInt32(dtRap.Rows[0].ItemArray[0].ToString());
                     seatLoader.removeSeat(ref seatPanel);
                     seatPanel.Refresh();
-                    //time = getHour();
                     getBookedSeat();
                     seatLoader.renderSeat(ref seatPanel, bookedSeatAlpha, bookedSeatNum);
                     setBtnEven(seatLoader.btns);

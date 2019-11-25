@@ -17,31 +17,29 @@ namespace QuanLyRapPhim_Final.BSLayer
         }
         public DataSet LayNhanVien()
         {
-            return db.ExecuteQueryDataSet("select * from NhanVien",
+            return db.ExecuteQueryDataSet("exec NhanVienInsertUpdateDelete null,null,null,null,null,null,null,'Select'",
                 CommandType.Text);
         }
         public bool ThemNhanVien(string MaNV, string HovaTenLotNV,
-            string TenNV, string MaCV,ref string err)
+            string TenNV, string MaCV,int soGioLam,string MaNQL,string ChiNhanh,ref string err)
         {
-            string sqlString =
-                $"Insert Into NhanVien Values " +
-                "( " + " N'" + HovaTenLotNV + " ' ,N'" + TenNV + "',N'"
-                + MaNV + "',N'" + MaCV +"') ";
+            string sqlString = $"exec NhanVienInsertUpdateDelete N'{HovaTenLotNV}',N'{TenNV}','{MaNV}','{MaCV}',{soGioLam},{MaNQL},N'{ChiNhanh}','Insert'";
             return db.MyExecuteNonQuery(sqlString, CommandType.Text, ref err);
         }
         public bool XoaNhanVien(ref string err, string MaNV)
         {
-            string sqlString = "Delete From NhanVien Where MaNV='"
-                + MaNV + "'";
+            string sqlString = $"exec NhanVienInsertUpdateDelete null,null,N'{MaNV}',null,null,null,null,'Delete'";
             return db.MyExecuteNonQuery(sqlString, CommandType.Text, ref err);
         }
-        public bool CapNhatNhanVien( string HovaLot,string TenNV,string MaCV,string MaNV, ref string err)
+        public bool CapNhatNhanVien( string HovaLot,string TenNV,string MaCV,string MaNV,int GioLam,string NguoiQL,string chiNhanh, ref string err)
         {
-            string sqlString = "Update NhanVien Set HovaLotNV=N'"+ HovaLot+ "',TenNV=N'" + TenNV  +"',MaCV='"+MaCV+ 
-                " Where MaNV='" + MaNV + "'";
+            string sqlString = $"exec NhanVienInsertUpdateDelete N'{HovaLot}',N'{TenNV}',N'{MaNV}',N'{MaCV}',{GioLam},N'{NguoiQL}',N'{chiNhanh}','Update'";
             return db.MyExecuteNonQuery(sqlString, CommandType.Text, ref err);
         }
-
+        public DataSet LayNguoiQuanLy(string MaCV)
+        {
+            return db.ExecuteQueryDataSet($"select MaNV,(HovaLotNV+' '+TenNV) as FullName from NhanVien where MaCV=N'{MaCV}'", CommandType.Text);
+        }
         public DataSet TimKiemNhanVien(string Ten)
         {
             return db.ExecuteQueryDataSet("select * " +

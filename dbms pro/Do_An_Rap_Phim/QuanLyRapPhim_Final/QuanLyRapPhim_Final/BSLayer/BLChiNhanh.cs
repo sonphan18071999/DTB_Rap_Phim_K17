@@ -17,7 +17,7 @@ namespace QuanLyRapPhim_Final.BSLayer
         }
         public DataSet LayChiNanh()
         {
-            return db.ExecuteQueryDataSet("select * from ChiNhanh",
+            return db.ExecuteQueryDataSet("exec ChiNhanhInsertUpdateDelete null,null,'Select'",
                 CommandType.Text);
         }
     }
