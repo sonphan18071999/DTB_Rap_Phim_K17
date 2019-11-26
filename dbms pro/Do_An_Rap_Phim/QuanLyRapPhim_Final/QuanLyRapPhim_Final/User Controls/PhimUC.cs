@@ -28,6 +28,7 @@ namespace QuanLyRapPhim_Final.User_Controls
 
         private void PhimUC_Load(object sender, EventArgs e)
         {
+            dgv_PHIM.BringToFront();
             this.phimTableAdapter.Fill(this.quanLyRapPhimDataSet_Phim.Phim);
         }
         void LoadData()
@@ -190,6 +191,18 @@ namespace QuanLyRapPhim_Final.User_Controls
             txtMaPhim.Text = dgv_PHIM.Rows[r].Cells[1].Value.ToString();
             txtGiaVe.Text = dgv_PHIM.Rows[r].Cells[2].Value.ToString();
             txtTLP.Text = dgv_PHIM.Rows[r].Cells[4].Value.ToString();           
+        }
+
+        private void đặtVéToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            dgv_PHIM.BringToFront();
+            dgv_PHIM.Visible = true;
+        }
+
+        private void thêmPhimToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            dgv_PHIM.SendToBack();
+            dgv_PHIM.Hide();
         }
     }
 }

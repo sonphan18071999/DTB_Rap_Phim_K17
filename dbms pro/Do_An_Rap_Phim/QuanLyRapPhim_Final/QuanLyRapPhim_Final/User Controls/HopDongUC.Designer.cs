@@ -207,6 +207,7 @@
             this.txtGiaTriHD.Name = "txtGiaTriHD";
             this.txtGiaTriHD.Size = new System.Drawing.Size(351, 22);
             this.txtGiaTriHD.TabIndex = 32;
+            this.txtGiaTriHD.TextChanged += new System.EventHandler(this.txtGiaTriHD_TextChanged);
             // 
             // diaChilbl
             // 

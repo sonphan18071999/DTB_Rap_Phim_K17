@@ -23,8 +23,17 @@ namespace QuanLyRapPhim_Final.BSLayer
         public bool ThemNhanVien(string MaNV, string HovaTenLotNV,
             string TenNV, string MaCV,int soGioLam,string MaNQL,string ChiNhanh,ref string err)
         {
-            string sqlString = $"exec NhanVienInsertUpdateDelete N'{HovaTenLotNV}',N'{TenNV}','{MaNV}','{MaCV}',{soGioLam},{MaNQL},N'{ChiNhanh}','Insert'";
-            return db.MyExecuteNonQuery(sqlString, CommandType.Text, ref err);
+            if (MaNQL=="")
+            {
+                string sqlString = $"exec NhanVienInsertUpdateDelete N'{HovaTenLotNV}',N'{TenNV}','{MaNV}','{MaCV}',{soGioLam},null,N'{ChiNhanh}','Insert'";
+                return db.MyExecuteNonQuery(sqlString, CommandType.Text, ref err);
+
+            }
+            else
+            {
+                string sqlString = $"exec NhanVienInsertUpdateDelete N'{HovaTenLotNV}',N'{TenNV}','{MaNV}','{MaCV}',{soGioLam},'{MaNQL}',N'{ChiNhanh}','Insert'";
+                return db.MyExecuteNonQuery(sqlString, CommandType.Text, ref err);
+            }
         }
         public bool XoaNhanVien(ref string err, string MaNV)
         {

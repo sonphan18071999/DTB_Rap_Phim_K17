@@ -182,5 +182,14 @@ namespace QuanLyRapPhim_Final.User_Controls
 
             }
         }
+
+        private void txtGiaTriHD_TextChanged(object sender, EventArgs e)
+        {
+            if (txtGiaTriHD.Text.Length>10)
+            {
+                txtGiaTriHD.ResetText();
+                MessageBox.Show("giá trị hợp đồng quá lớn!");
+            }
+        }
     }
 }

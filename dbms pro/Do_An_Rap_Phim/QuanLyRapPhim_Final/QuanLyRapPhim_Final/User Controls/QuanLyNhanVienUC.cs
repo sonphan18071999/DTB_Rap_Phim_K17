@@ -72,10 +72,9 @@ namespace QuanLyRapPhim_Final.User_Controls
                 dt = ds.Tables[0];
                 dgv_NHANVIEN.DataSource = dt;
                 dgv_NHANVIEN.Refresh();
-                //this.nhanVienTableAdapter.Fill(quanLyRapPhimDataSet_NHANVIEN.NhanVien);
                 DataSet data1 = new DataSet();
                 data1.Clear();
-                data1 = dbNV.LayNguoiQuanLy("QL");
+                data1 = dbNV.LayNguoiQuanLy("QL%");
                 dt = data1.Tables[0];
                 cbMaNQL.DataSource = dt;
                 //to do:
@@ -172,11 +171,11 @@ namespace QuanLyRapPhim_Final.User_Controls
             {
                 try
                 {
-                    
-                    BLNhanVien blNV = new BLNhanVien();
-                    blNV.ThemNhanVien(this.txtMaNV.Text.Trim(), this.txtHovalotNV.Text.Trim(), this.txtTenNV.Text.Trim(), cbbMaCV.Text,int.Parse(nmrSoGioLam.Value.ToString()),NQL, cbChiNhanh.SelectedValue.ToString(), ref err);
-                    LoadData();
+                    if (dbNV.ThemNhanVien(this.txtMaNV.Text.Trim(), this.txtHovalotNV.Text.Trim(), this.txtTenNV.Text.Trim(), cbbMaCV.Text, int.Parse(nmrSoGioLam.Value.ToString()),NQL, cbChiNhanh.SelectedValue.ToString(), ref err))
+                    {
                     MessageBox.Show("Đã thêm xong!");
+                    }
+                    LoadData();
                 }
                 catch (SqlException)
                 {
@@ -185,8 +184,7 @@ namespace QuanLyRapPhim_Final.User_Controls
             }
             else
             {
-                BLNhanVien blNV = new BLNhanVien();
-                blNV.CapNhatNhanVien( this.txtHovalotNV.Text.Trim(),this.txtTenNV.Text.Trim(),this.cbbMaCV.Text, this.txtMaNV.Text,int.Parse(nmrSoGioLam.Value.ToString()),NQL,cbChiNhanh.SelectedValue.ToString(),ref err);
+                dbNV.CapNhatNhanVien( this.txtHovalotNV.Text.Trim(),this.txtTenNV.Text.Trim(),this.cbbMaCV.Text, this.txtMaNV.Text,int.Parse(nmrSoGioLam.Value.ToString()),NQL,cbChiNhanh.SelectedValue.ToString(),ref err);
                 LoadData();
                 MessageBox.Show("Đã sửa xong!");
             }
@@ -225,11 +223,11 @@ namespace QuanLyRapPhim_Final.User_Controls
             dt = data.Tables[0];
             txtChucVu.Text = dt.Rows[cbbMaCV.SelectedIndex].ItemArray[1].ToString();
             txtLuong.Text = dt.Rows[cbbMaCV.SelectedIndex].ItemArray[2].ToString();
-            if (cbbMaCV.Text=="QL")
+            if (cbbMaCV.Text.Trim()=="QL")
             {
                 cbMaNQL.ResetText();
                 cbMaNQL.Enabled = false;
-                NQL = "null";
+                NQL = "";
             }
             else
             {
@@ -238,7 +236,15 @@ namespace QuanLyRapPhim_Final.User_Controls
                 cbMaNQL.DataSource = dataSet.Tables[0];
                 cbMaNQL.DisplayMember = "FullName";
                 cbMaNQL.ValueMember = "MaNV";
-                NQL = cbMaNQL.SelectedValue.ToString() ;
+                if (cbMaNQL.Items.Count>0)
+                {
+                    NQL = cbMaNQL.SelectedValue.ToString();
+                }
+                else
+                {
+                    cbMaNQL.Enabled = false;
+                    NQL = "";
+                }
             }
         }
 
