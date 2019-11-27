@@ -58,7 +58,7 @@
             this.label1.Location = new System.Drawing.Point(36, 95);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(74, 19);
+            this.label1.Size = new System.Drawing.Size(92, 23);
             this.label1.TabIndex = 0;
             this.label1.Text = "Chức vụ :";
             // 
@@ -67,7 +67,7 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(36, 141);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(67, 19);
+            this.label2.Size = new System.Drawing.Size(83, 23);
             this.label2.TabIndex = 1;
             this.label2.Text = "Lương : ";
             // 
@@ -75,21 +75,21 @@
             // 
             this.txtChucVu.Location = new System.Drawing.Point(140, 92);
             this.txtChucVu.Name = "txtChucVu";
-            this.txtChucVu.Size = new System.Drawing.Size(266, 26);
+            this.txtChucVu.Size = new System.Drawing.Size(266, 30);
             this.txtChucVu.TabIndex = 2;
             // 
             // txtLuong
             // 
             this.txtLuong.Location = new System.Drawing.Point(140, 138);
             this.txtLuong.Name = "txtLuong";
-            this.txtLuong.Size = new System.Drawing.Size(266, 26);
+            this.txtLuong.Size = new System.Drawing.Size(266, 30);
             this.txtLuong.TabIndex = 3;
             // 
             // txtMaCV
             // 
             this.txtMaCV.Location = new System.Drawing.Point(140, 44);
             this.txtMaCV.Name = "txtMaCV";
-            this.txtMaCV.Size = new System.Drawing.Size(266, 26);
+            this.txtMaCV.Size = new System.Drawing.Size(266, 30);
             this.txtMaCV.TabIndex = 4;
             // 
             // label3
@@ -97,7 +97,7 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(36, 47);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(98, 19);
+            this.label3.Size = new System.Drawing.Size(120, 23);
             this.label3.TabIndex = 5;
             this.label3.Text = "Mã chức vụ :";
             // 
@@ -113,6 +113,7 @@
             this.dgv_CHUCVU.DataSource = this.chucVuBindingSource;
             this.dgv_CHUCVU.Location = new System.Drawing.Point(40, 185);
             this.dgv_CHUCVU.Name = "dgv_CHUCVU";
+            this.dgv_CHUCVU.RowHeadersWidth = 51;
             this.dgv_CHUCVU.Size = new System.Drawing.Size(366, 150);
             this.dgv_CHUCVU.TabIndex = 6;
             this.dgv_CHUCVU.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_CHUCVU_CellClick);
@@ -121,18 +122,21 @@
             // 
             this.maCVDataGridViewTextBoxColumn.DataPropertyName = "MaCV";
             this.maCVDataGridViewTextBoxColumn.HeaderText = "MaCV";
+            this.maCVDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.maCVDataGridViewTextBoxColumn.Name = "maCVDataGridViewTextBoxColumn";
             // 
             // chucVuDataGridViewTextBoxColumn
             // 
             this.chucVuDataGridViewTextBoxColumn.DataPropertyName = "ChucVu";
             this.chucVuDataGridViewTextBoxColumn.HeaderText = "ChucVu";
+            this.chucVuDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.chucVuDataGridViewTextBoxColumn.Name = "chucVuDataGridViewTextBoxColumn";
             // 
             // luongDataGridViewTextBoxColumn
             // 
             this.luongDataGridViewTextBoxColumn.DataPropertyName = "Luong";
             this.luongDataGridViewTextBoxColumn.HeaderText = "Luong";
+            this.luongDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.luongDataGridViewTextBoxColumn.Name = "luongDataGridViewTextBoxColumn";
             // 
             // chucVuBindingSource
@@ -154,7 +158,7 @@
             this.btnAdd.AutoSize = true;
             this.btnAdd.Location = new System.Drawing.Point(462, 45);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(75, 29);
+            this.btnAdd.Size = new System.Drawing.Size(75, 33);
             this.btnAdd.TabIndex = 7;
             this.btnAdd.Text = "Thêm";
             this.btnAdd.UseVisualStyleBackColor = true;
@@ -165,7 +169,7 @@
             this.btnEdit.AutoSize = true;
             this.btnEdit.Location = new System.Drawing.Point(462, 90);
             this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(75, 29);
+            this.btnEdit.Size = new System.Drawing.Size(75, 33);
             this.btnEdit.TabIndex = 7;
             this.btnEdit.Text = "Sửa";
             this.btnEdit.UseVisualStyleBackColor = true;
@@ -176,7 +180,7 @@
             this.btnDel.AutoSize = true;
             this.btnDel.Location = new System.Drawing.Point(462, 136);
             this.btnDel.Name = "btnDel";
-            this.btnDel.Size = new System.Drawing.Size(75, 29);
+            this.btnDel.Size = new System.Drawing.Size(75, 33);
             this.btnDel.TabIndex = 7;
             this.btnDel.Text = "Xóa";
             this.btnDel.UseVisualStyleBackColor = true;
@@ -187,7 +191,7 @@
             this.btnSave.AutoSize = true;
             this.btnSave.Location = new System.Drawing.Point(462, 185);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(75, 29);
+            this.btnSave.Size = new System.Drawing.Size(75, 33);
             this.btnSave.TabIndex = 7;
             this.btnSave.Text = "Lưu";
             this.btnSave.UseVisualStyleBackColor = true;
@@ -198,7 +202,7 @@
             this.btnCancel.AutoSize = true;
             this.btnCancel.Location = new System.Drawing.Point(462, 231);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(75, 29);
+            this.btnCancel.Size = new System.Drawing.Size(75, 33);
             this.btnCancel.TabIndex = 7;
             this.btnCancel.Text = "Hủy";
             this.btnCancel.UseVisualStyleBackColor = true;
@@ -206,8 +210,9 @@
             // 
             // ChucVuUC
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnDel);

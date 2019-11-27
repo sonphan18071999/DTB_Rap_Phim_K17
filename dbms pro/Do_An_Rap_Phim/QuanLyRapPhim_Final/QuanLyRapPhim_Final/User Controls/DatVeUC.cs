@@ -189,6 +189,7 @@ namespace QuanLyRapPhim_Final.User_Controls
         }
         private void setCbSuatChieu(DataTable dtPhim)
         {
+
             if (Phimcb.ValueMember.ToString() == "") return;
             dtSuatChieu = new DataTable();
             dtSuatChieu.Clear();
@@ -244,6 +245,7 @@ namespace QuanLyRapPhim_Final.User_Controls
 
         private void btnReload_Click(object sender, EventArgs e)
         {
+            setNhanViencb();
             if (SuatChieucb.ValueMember.ToString() == "") return;
             render seatLoader = new render();
             if (globalRap != null)

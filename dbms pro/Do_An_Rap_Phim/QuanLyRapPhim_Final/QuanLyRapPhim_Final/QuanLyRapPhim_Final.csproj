@@ -58,6 +58,7 @@
   <ItemGroup>
     <Compile Include="BSLayer\BLChiNhanh.cs" />
     <Compile Include="BSLayer\BLChucVu.cs" />
+    <Compile Include="BSLayer\BLDangNhap.cs" />
     <Compile Include="BSLayer\BLHangSanXuat.cs" />
     <Compile Include="BSLayer\BLHopDong.cs" />
     <Compile Include="BSLayer\BLNhanVien.cs" />
@@ -87,6 +88,13 @@
     <Compile Include="KhachHangInsertUpdateDelete_Result.cs">
       <DependentUpon>QuanLyRapPhimModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DBLayer\MY_DB.cs" />
     <Compile Include="NhanVienInsertUpdateDelete_Result.cs">
       <DependentUpon>QuanLyRapPhimModel.tt</DependentUpon>
     </Compile>
@@ -194,6 +202,12 @@
     <Compile Include="SuatChieuPhimInsertUpdateDelete_Result.cs">
       <DependentUpon>QuanLyRapPhimModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="User Controls\ChiNhanhUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Controls\ChiNhanhUC.Designer.cs">
+      <DependentUpon>ChiNhanhUC.cs</DependentUpon>
+    </Compile>
     <Compile Include="User Controls\ChucVuUC.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -257,6 +271,9 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -267,6 +284,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="User Controls\ChiNhanhUC.resx">
+      <DependentUpon>ChiNhanhUC.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="User Controls\ChucVuUC.resx">
       <DependentUpon>ChucVuUC.cs</DependentUpon>
     </EmbeddedResource>
@@ -504,6 +524,10 @@
       <DependentUpon>QuanLyRapPhimModel.edmx</DependentUpon>
       <LastGenOutput>QuanLyRapPhimModel.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\clapperboard-and-popcorn-and-ticket-movie-vector-16752245.jpg" />
+    <None Include="Resources\BAR.png" />
+    <None Include="Resources\lock.png" />
+    <None Include="Resources\Boss-3-512.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

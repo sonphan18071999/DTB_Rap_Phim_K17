@@ -28,10 +28,6 @@ namespace QuanLyRapPhim_Final.BSLayer
             string sqlString = "Insert Into SuatChieuPhim Values(" + "'" + MaPhim + "',N'" +
                  SuatChieu + "',N'" + MaRap +  "',"+"N'"+MaSC+ "')";
 
-
-
-
-
             return db.MyExecuteNonQuery(sqlString, CommandType.Text, ref err);
         }
         public bool XoaSuatChieu(ref string err, string MaSC)

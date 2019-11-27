@@ -14,17 +14,20 @@ namespace QuanLyRapPhim_Final
         public static int hangGhe = 0;
         public static int soGhe = 0;
         public static string clickbtn = "";
+        public static string ChucVuUser = "";
+        public static string UserName = "";
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
         [STAThread]
         static void Main()
         {
+            
             myColor = Color.Red;
             myPen = new Pen(Program.myColor, 1);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new Login());
         }
     }
 }

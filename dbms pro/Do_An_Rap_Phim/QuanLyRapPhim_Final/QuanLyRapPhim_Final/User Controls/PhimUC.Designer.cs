@@ -50,11 +50,7 @@
             this.txtGiaVe = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.pbPoster = new System.Windows.Forms.PictureBox();
-            this.btnSave = new System.Windows.Forms.Button();
-            this.btnEditFilm = new System.Windows.Forms.Button();
-            this.btnDelFilm = new System.Windows.Forms.Button();
             this.btnReload = new System.Windows.Forms.Button();
-            this.btnAdd = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnBrowse = new System.Windows.Forms.Button();
             this.lblTLP = new System.Windows.Forms.Label();
@@ -64,6 +60,10 @@
             this.phimToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.đặtVéToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.thêmPhimToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnDelFilm = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.btnEditFilm = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbAvengers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLatMat)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCorgi)).BeginInit();
@@ -130,6 +130,7 @@
             this.dgv_PHIM.AllowUserToResizeRows = false;
             this.dgv_PHIM.AutoGenerateColumns = false;
             this.dgv_PHIM.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgv_PHIM.BackgroundColor = System.Drawing.Color.Azure;
             this.dgv_PHIM.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
             this.dgv_PHIM.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_PHIM.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -263,45 +264,10 @@
             this.pbPoster.Location = new System.Drawing.Point(542, 486);
             this.pbPoster.Margin = new System.Windows.Forms.Padding(4);
             this.pbPoster.Name = "pbPoster";
-            this.pbPoster.Size = new System.Drawing.Size(133, 153);
+            this.pbPoster.Size = new System.Drawing.Size(145, 153);
             this.pbPoster.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbPoster.TabIndex = 12;
             this.pbPoster.TabStop = false;
-            // 
-            // btnSave
-            // 
-            this.btnSave.Location = new System.Drawing.Point(742, 501);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(4);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(145, 28);
-            this.btnSave.TabIndex = 13;
-            this.btnSave.Text = "Lưu";
-            this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
-            // btnEditFilm
-            // 
-            this.btnEditFilm.AutoSize = true;
-            this.btnEditFilm.Location = new System.Drawing.Point(742, 549);
-            this.btnEditFilm.Margin = new System.Windows.Forms.Padding(4);
-            this.btnEditFilm.Name = "btnEditFilm";
-            this.btnEditFilm.Size = new System.Drawing.Size(145, 28);
-            this.btnEditFilm.TabIndex = 14;
-            this.btnEditFilm.Text = "Sửa Thông Tin Film";
-            this.btnEditFilm.UseVisualStyleBackColor = true;
-            this.btnEditFilm.Click += new System.EventHandler(this.btnEditFilm_Click);
-            // 
-            // btnDelFilm
-            // 
-            this.btnDelFilm.AutoSize = true;
-            this.btnDelFilm.Location = new System.Drawing.Point(742, 601);
-            this.btnDelFilm.Margin = new System.Windows.Forms.Padding(4);
-            this.btnDelFilm.Name = "btnDelFilm";
-            this.btnDelFilm.Size = new System.Drawing.Size(145, 28);
-            this.btnDelFilm.TabIndex = 15;
-            this.btnDelFilm.Text = "Xóa Phim";
-            this.btnDelFilm.UseVisualStyleBackColor = true;
-            this.btnDelFilm.Click += new System.EventHandler(this.btnDelFilm_Click);
             // 
             // btnReload
             // 
@@ -313,17 +279,6 @@
             this.btnReload.Text = "Reload";
             this.btnReload.UseVisualStyleBackColor = true;
             this.btnReload.Click += new System.EventHandler(this.btnReload_Click);
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.Location = new System.Drawing.Point(929, 549);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(4);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(145, 28);
-            this.btnAdd.TabIndex = 17;
-            this.btnAdd.Text = "Thêm";
-            this.btnAdd.UseVisualStyleBackColor = true;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnCancel
             // 
@@ -381,6 +336,7 @@
             // 
             // phimToolStripMenuItem
             // 
+            this.phimToolStripMenuItem.BackColor = System.Drawing.Color.Cornsilk;
             this.phimToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.đặtVéToolStripMenuItem,
             this.thêmPhimToolStripMenuItem});
@@ -402,10 +358,57 @@
             this.thêmPhimToolStripMenuItem.Text = "Thêm Phim";
             this.thêmPhimToolStripMenuItem.Click += new System.EventHandler(this.thêmPhimToolStripMenuItem_Click);
             // 
+            // btnDelFilm
+            // 
+            this.btnDelFilm.AutoSize = true;
+            this.btnDelFilm.Location = new System.Drawing.Point(742, 601);
+            this.btnDelFilm.Margin = new System.Windows.Forms.Padding(4);
+            this.btnDelFilm.Name = "btnDelFilm";
+            this.btnDelFilm.Size = new System.Drawing.Size(145, 28);
+            this.btnDelFilm.TabIndex = 15;
+            this.btnDelFilm.Text = "Xóa Phim";
+            this.btnDelFilm.UseVisualStyleBackColor = true;
+            this.btnDelFilm.Click += new System.EventHandler(this.btnDelFilm_Click);
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.Location = new System.Drawing.Point(929, 549);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(145, 28);
+            this.btnAdd.TabIndex = 17;
+            this.btnAdd.Text = "Thêm";
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
+            // btnEditFilm
+            // 
+            this.btnEditFilm.AutoSize = true;
+            this.btnEditFilm.Location = new System.Drawing.Point(742, 549);
+            this.btnEditFilm.Margin = new System.Windows.Forms.Padding(4);
+            this.btnEditFilm.Name = "btnEditFilm";
+            this.btnEditFilm.Size = new System.Drawing.Size(145, 28);
+            this.btnEditFilm.TabIndex = 14;
+            this.btnEditFilm.Text = "Sửa Thông Tin Film";
+            this.btnEditFilm.UseVisualStyleBackColor = true;
+            this.btnEditFilm.Click += new System.EventHandler(this.btnEditFilm_Click);
+            // 
+            // btnSave
+            // 
+            this.btnSave.Location = new System.Drawing.Point(742, 501);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(145, 28);
+            this.btnSave.TabIndex = 13;
+            this.btnSave.Text = "Lưu";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
             // PhimUC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.Controls.Add(this.txtTLP);
             this.Controls.Add(this.lblTLP);
             this.Controls.Add(this.btnBrowse);
@@ -463,11 +466,7 @@
         private System.Windows.Forms.TextBox txtGiaVe;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.PictureBox pbPoster;
-        private System.Windows.Forms.Button btnSave;
-        private System.Windows.Forms.Button btnEditFilm;
-        private System.Windows.Forms.Button btnDelFilm;
         private System.Windows.Forms.Button btnReload;
-        private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnBrowse;
         private System.Windows.Forms.Label lblTLP;
@@ -484,5 +483,9 @@
         private System.Windows.Forms.ToolStripMenuItem phimToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem đặtVéToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem thêmPhimToolStripMenuItem;
+        private System.Windows.Forms.Button btnDelFilm;
+        private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Button btnEditFilm;
+        private System.Windows.Forms.Button btnSave;
     }
 }

@@ -16,7 +16,10 @@ namespace QuanLyRapPhim_Final.User_Controls
     {
         bool Them;
         string err;
+        BLRap dbRap = new BLRap();
+        BLPhim dbPhim = new BLPhim();
         BLSuatChieu dbNV = new BLSuatChieu();
+        DataSet dsPhim = new DataSet();
 
         public QuanLySuatChieuUC()
         {
@@ -27,7 +30,6 @@ namespace QuanLyRapPhim_Final.User_Controls
             // Xóa trống các đối tượng trong Panel
             txtMaPhim.ResetText();
             txtSuatChieu.ResetText();
-            txtMaRap.ResetText();
             txtMaSCP.ResetText();
             // Không cho thao tác trên các nút Lưu / Hủy
             btnSave.Enabled = false;
@@ -36,6 +38,8 @@ namespace QuanLyRapPhim_Final.User_Controls
             btnAdd.Enabled = true;
             btnEdit.Enabled = true;
             btnDel.Enabled = true;
+            SetUpcbTenPhim();
+            SetUpcbMaRap();
             try
             {
                 this.suatChieuPhimTableAdapter.Fill(quanLyRapPhimDataSet_SuatChieuPhim.SuatChieuPhim);
@@ -52,20 +56,17 @@ namespace QuanLyRapPhim_Final.User_Controls
 
             txtMaPhim.Text = dgv_SUATCHIEU.Rows[r].Cells[0].Value.ToString();
             txtSuatChieu.Text = dgv_SUATCHIEU.Rows[r].Cells[1].Value.ToString();
-            txtMaRap.Text = dgv_SUATCHIEU.Rows[r].Cells[2].Value.ToString();
+            cbTenRap.Text = dgv_SUATCHIEU.Rows[r].Cells[2].Value.ToString();
             txtMaSCP.Text = dgv_SUATCHIEU.Rows[r].Cells[3].Value.ToString();
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
             Them = true;
-
-            txtMaPhim.Enabled = true;
-            txtMaPhim.ResetText();
+            txtMaPhim.Enabled = false;
             txtSuatChieu.Enabled = true;
             txtSuatChieu.ResetText();
-            txtMaRap.Enabled = true;
-            txtMaRap.ResetText();
+            cbTenRap.Enabled = true;
             txtMaSCP.ResetText();
             txtMaSCP.Enabled = true;
             txtMaSCP.Focus();
@@ -124,7 +125,7 @@ namespace QuanLyRapPhim_Final.User_Controls
                 try
                 {
                     BLSuatChieu blSC = new BLSuatChieu();
-                    blSC.ThemSuatChieu(this.txtMaPhim.Text.Trim(), this.txtSuatChieu.Text.Trim(), this.txtMaRap.Text.Trim(),txtMaSCP.Text.Trim(), ref err);
+                    blSC.ThemSuatChieu(this.txtMaPhim.Text.Trim(), this.txtSuatChieu.Text.Trim(), this.cbTenRap.Text.Trim(),txtMaSCP.Text.Trim(), ref err);
                     LoadData();
                     MessageBox.Show("Đã thêm xong!");
                 }
@@ -136,7 +137,7 @@ namespace QuanLyRapPhim_Final.User_Controls
             else
             {
                 BLSuatChieu blSC = new BLSuatChieu();
-                blSC.CapNhatSuatChieu(this.txtMaPhim.Text, this.txtSuatChieu.Text, this.txtMaRap.Text,txtMaSCP.Text.Trim(),ref err);
+                blSC.CapNhatSuatChieu(this.txtMaPhim.Text, this.txtSuatChieu.Text, this.cbTenRap.Text,txtMaSCP.Text.Trim(),ref err);
                 LoadData();
                 MessageBox.Show("Đã sửa xong!");
             }
@@ -149,7 +150,53 @@ namespace QuanLyRapPhim_Final.User_Controls
 
         private void QuanLySuatChieuUC_Load(object sender, EventArgs e)
         {
-            this.suatChieuPhimTableAdapter.Fill(quanLyRapPhimDataSet_SuatChieuPhim.SuatChieuPhim);
+            //this.suatChieuPhimTableAdapter.Fill(quanLyRapPhimDataSet_SuatChieuPhim.SuatChieuPhim);
+            LoadData();
+        }
+        private void SetUpcbTenPhim()
+        {
+            DataSet ds = new DataSet();
+            ds = dbPhim.LayPhim();
+            dsPhim = ds;
+            if (ds.Tables[0].Rows.Count!=0)
+            {
+                cbTenPhim.DataSource = ds.Tables[0];
+                cbTenPhim.DisplayMember = "TenPhim";
+                cbTenPhim.ValueMember = "MaPhim";
+            }
+
+        }
+        private void SetUpcbMaRap()
+        {
+            DataSet ds = new DataSet();
+            ds = dbRap.LayRap();
+            dsPhim = ds;
+            if (ds.Tables[0].Rows.Count != 0)
+            {
+                cbTenRap.DataSource = ds.Tables[0];
+                cbTenRap.DisplayMember = "MaRap";
+                cbTenRap.ValueMember = "MaRap";
+            }
+        }
+        private void cbTenPhim_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            dsPhim = dbPhim.TimPhim(cbTenPhim.Text.Trim());
+            if (dsPhim.Tables[0].Rows.Count>0)
+            {
+                txtMaPhim.Enabled = true;
+                txtMaPhim.Text = dsPhim.Tables[0].Rows[0].ItemArray[1].ToString();
+                txtMaPhim.Enabled = false;
+            }
+        }
+
+        private void cbTenRap_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnReload_Click(object sender, EventArgs e)
+        {
+            LoadData();
         }
     }
 }

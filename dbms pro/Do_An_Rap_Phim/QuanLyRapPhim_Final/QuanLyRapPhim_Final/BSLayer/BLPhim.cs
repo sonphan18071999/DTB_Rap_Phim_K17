@@ -37,5 +37,13 @@ namespace QuanLyRapPhim_Final.BSLayer
                 " Where MaPhim='" + MaPhim + "'";
             return db.MyExecuteNonQuery(sqlString, CommandType.Text, ref err);
         }
+        public virtual DataSet TimPhim(string TenPhim)
+        {
+            return db.ExecuteQueryDataSet($"select * from Phim where TenPhim=N'{TenPhim.Trim()}'", CommandType.Text);
+        }
+        public virtual DataSet TimPhim(int MaPhim)
+        {
+            return db.ExecuteQueryDataSet($"select * from Phim where MaPhim={MaPhim}", CommandType.Text);
+        }
     }
 }

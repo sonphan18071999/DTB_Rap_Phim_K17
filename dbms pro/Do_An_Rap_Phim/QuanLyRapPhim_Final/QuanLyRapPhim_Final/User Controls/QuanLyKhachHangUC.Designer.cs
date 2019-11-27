@@ -64,7 +64,7 @@
             this.label1.Location = new System.Drawing.Point(29, 23);
             this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(122, 19);
+            this.label1.Size = new System.Drawing.Size(150, 23);
             this.label1.TabIndex = 0;
             this.label1.Text = "Mã khách hàng :";
             // 
@@ -73,7 +73,7 @@
             this.txtMaKH.Location = new System.Drawing.Point(227, 23);
             this.txtMaKH.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txtMaKH.Name = "txtMaKH";
-            this.txtMaKH.Size = new System.Drawing.Size(351, 26);
+            this.txtMaKH.Size = new System.Drawing.Size(351, 30);
             this.txtMaKH.TabIndex = 1;
             // 
             // label2
@@ -82,7 +82,7 @@
             this.label2.Location = new System.Drawing.Point(29, 71);
             this.label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(83, 19);
+            this.label2.Size = new System.Drawing.Size(102, 23);
             this.label2.TabIndex = 2;
             this.label2.Text = "Họ và Tên ";
             // 
@@ -91,7 +91,7 @@
             this.txtHovalotKH.Location = new System.Drawing.Point(227, 68);
             this.txtHovalotKH.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txtHovalotKH.Name = "txtHovalotKH";
-            this.txtHovalotKH.Size = new System.Drawing.Size(351, 26);
+            this.txtHovalotKH.Size = new System.Drawing.Size(351, 30);
             this.txtHovalotKH.TabIndex = 3;
             // 
             // label3
@@ -100,7 +100,7 @@
             this.label3.Location = new System.Drawing.Point(29, 115);
             this.label3.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(124, 19);
+            this.label3.Size = new System.Drawing.Size(154, 23);
             this.label3.TabIndex = 4;
             this.label3.Text = "Tên khách hàng :";
             // 
@@ -109,7 +109,7 @@
             this.txtTenKH.Location = new System.Drawing.Point(227, 112);
             this.txtTenKH.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txtTenKH.Name = "txtTenKH";
-            this.txtTenKH.Size = new System.Drawing.Size(351, 26);
+            this.txtTenKH.Size = new System.Drawing.Size(351, 30);
             this.txtTenKH.TabIndex = 5;
             // 
             // dgv_KHACHHANG
@@ -245,7 +245,7 @@
             this.label4.Location = new System.Drawing.Point(29, 157);
             this.label4.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(83, 19);
+            this.label4.Size = new System.Drawing.Size(102, 23);
             this.label4.TabIndex = 16;
             this.label4.Text = "Ngày Sinh:";
             // 
@@ -253,7 +253,7 @@
             // 
             this.dtpNgaySinh.Location = new System.Drawing.Point(227, 157);
             this.dtpNgaySinh.Name = "dtpNgaySinh";
-            this.dtpNgaySinh.Size = new System.Drawing.Size(351, 26);
+            this.dtpNgaySinh.Size = new System.Drawing.Size(351, 30);
             this.dtpNgaySinh.TabIndex = 17;
             // 
             // label5
@@ -262,7 +262,7 @@
             this.label5.Location = new System.Drawing.Point(29, 206);
             this.label5.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(83, 19);
+            this.label5.Size = new System.Drawing.Size(104, 23);
             this.label5.TabIndex = 18;
             this.label5.Text = "Tích Điểm:";
             // 
@@ -271,7 +271,7 @@
             this.txtTichDiem.Location = new System.Drawing.Point(227, 203);
             this.txtTichDiem.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txtTichDiem.Name = "txtTichDiem";
-            this.txtTichDiem.Size = new System.Drawing.Size(351, 26);
+            this.txtTichDiem.Size = new System.Drawing.Size(351, 30);
             this.txtTichDiem.TabIndex = 19;
             // 
             // khachHangTableAdapter
@@ -280,8 +280,9 @@
             // 
             // QuanLyKhachHangUC
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.Controls.Add(this.txtTichDiem);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.dtpNgaySinh);

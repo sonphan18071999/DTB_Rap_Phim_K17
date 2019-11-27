@@ -34,25 +34,28 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtMaPhim = new System.Windows.Forms.TextBox();
             this.txtSuatChieu = new System.Windows.Forms.TextBox();
-            this.txtMaRap = new System.Windows.Forms.TextBox();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnDel = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.dgv_SUATCHIEU = new System.Windows.Forms.DataGridView();
-            this.quanLyRapPhimDataSet_SuatChieuPhim = new QuanLyRapPhim_Final.QuanLyRapPhimDataSet_SuatChieuPhim();
-            this.suatChieuPhimBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.suatChieuPhimTableAdapter = new QuanLyRapPhim_Final.QuanLyRapPhimDataSet_SuatChieuPhimTableAdapters.SuatChieuPhimTableAdapter();
             this.maPhimDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gioChieuDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.maRapDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.maSCDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.suatChieuPhimBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.quanLyRapPhimDataSet_SuatChieuPhim = new QuanLyRapPhim_Final.QuanLyRapPhimDataSet_SuatChieuPhim();
+            this.suatChieuPhimTableAdapter = new QuanLyRapPhim_Final.QuanLyRapPhimDataSet_SuatChieuPhimTableAdapters.SuatChieuPhimTableAdapter();
             this.label4 = new System.Windows.Forms.Label();
             this.txtMaSCP = new System.Windows.Forms.TextBox();
+            this.cbTenPhim = new System.Windows.Forms.ComboBox();
+            this.cbTenRap = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.btnReload = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_SUATCHIEU)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.quanLyRapPhimDataSet_SuatChieuPhim)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.suatChieuPhimBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.quanLyRapPhimDataSet_SuatChieuPhim)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -87,32 +90,24 @@
             // 
             // txtMaPhim
             // 
-            this.txtMaPhim.Location = new System.Drawing.Point(316, 48);
+            this.txtMaPhim.Location = new System.Drawing.Point(244, 45);
             this.txtMaPhim.Margin = new System.Windows.Forms.Padding(4);
             this.txtMaPhim.Name = "txtMaPhim";
-            this.txtMaPhim.Size = new System.Drawing.Size(204, 30);
+            this.txtMaPhim.Size = new System.Drawing.Size(115, 30);
             this.txtMaPhim.TabIndex = 1;
             // 
             // txtSuatChieu
             // 
-            this.txtSuatChieu.Location = new System.Drawing.Point(316, 102);
+            this.txtSuatChieu.Location = new System.Drawing.Point(244, 99);
             this.txtSuatChieu.Margin = new System.Windows.Forms.Padding(4);
             this.txtSuatChieu.Name = "txtSuatChieu";
-            this.txtSuatChieu.Size = new System.Drawing.Size(204, 30);
+            this.txtSuatChieu.Size = new System.Drawing.Size(434, 30);
             this.txtSuatChieu.TabIndex = 1;
-            // 
-            // txtMaRap
-            // 
-            this.txtMaRap.Location = new System.Drawing.Point(316, 155);
-            this.txtMaRap.Margin = new System.Windows.Forms.Padding(4);
-            this.txtMaRap.Name = "txtMaRap";
-            this.txtMaRap.Size = new System.Drawing.Size(204, 30);
-            this.txtMaRap.TabIndex = 1;
             // 
             // btnAdd
             // 
             this.btnAdd.AutoSize = true;
-            this.btnAdd.Location = new System.Drawing.Point(698, 48);
+            this.btnAdd.Location = new System.Drawing.Point(695, 48);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(75, 33);
             this.btnAdd.TabIndex = 3;
@@ -123,7 +118,7 @@
             // btnEdit
             // 
             this.btnEdit.AutoSize = true;
-            this.btnEdit.Location = new System.Drawing.Point(698, 100);
+            this.btnEdit.Location = new System.Drawing.Point(695, 87);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(75, 33);
             this.btnEdit.TabIndex = 3;
@@ -134,7 +129,7 @@
             // btnDel
             // 
             this.btnDel.AutoSize = true;
-            this.btnDel.Location = new System.Drawing.Point(698, 148);
+            this.btnDel.Location = new System.Drawing.Point(695, 126);
             this.btnDel.Name = "btnDel";
             this.btnDel.Size = new System.Drawing.Size(75, 33);
             this.btnDel.TabIndex = 3;
@@ -145,7 +140,7 @@
             // btnSave
             // 
             this.btnSave.AutoSize = true;
-            this.btnSave.Location = new System.Drawing.Point(698, 198);
+            this.btnSave.Location = new System.Drawing.Point(695, 165);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 33);
             this.btnSave.TabIndex = 3;
@@ -156,7 +151,7 @@
             // btnCancel
             // 
             this.btnCancel.AutoSize = true;
-            this.btnCancel.Location = new System.Drawing.Point(698, 248);
+            this.btnCancel.Location = new System.Drawing.Point(695, 204);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 33);
             this.btnCancel.TabIndex = 3;
@@ -167,6 +162,8 @@
             // dgv_SUATCHIEU
             // 
             this.dgv_SUATCHIEU.AutoGenerateColumns = false;
+            this.dgv_SUATCHIEU.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgv_SUATCHIEU.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllHeaders;
             this.dgv_SUATCHIEU.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_SUATCHIEU.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.maPhimDataGridViewTextBoxColumn,
@@ -182,27 +179,12 @@
             this.dgv_SUATCHIEU.TabIndex = 4;
             this.dgv_SUATCHIEU.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_SUATCHIEU_CellClick);
             // 
-            // quanLyRapPhimDataSet_SuatChieuPhim
-            // 
-            this.quanLyRapPhimDataSet_SuatChieuPhim.DataSetName = "QuanLyRapPhimDataSet_SuatChieuPhim";
-            this.quanLyRapPhimDataSet_SuatChieuPhim.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // suatChieuPhimBindingSource
-            // 
-            this.suatChieuPhimBindingSource.DataMember = "SuatChieuPhim";
-            this.suatChieuPhimBindingSource.DataSource = this.quanLyRapPhimDataSet_SuatChieuPhim;
-            // 
-            // suatChieuPhimTableAdapter
-            // 
-            this.suatChieuPhimTableAdapter.ClearBeforeFill = true;
-            // 
             // maPhimDataGridViewTextBoxColumn
             // 
             this.maPhimDataGridViewTextBoxColumn.DataPropertyName = "MaPhim";
             this.maPhimDataGridViewTextBoxColumn.HeaderText = "MaPhim";
             this.maPhimDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.maPhimDataGridViewTextBoxColumn.Name = "maPhimDataGridViewTextBoxColumn";
-            this.maPhimDataGridViewTextBoxColumn.Width = 125;
             // 
             // gioChieuDataGridViewTextBoxColumn
             // 
@@ -210,7 +192,6 @@
             this.gioChieuDataGridViewTextBoxColumn.HeaderText = "GioChieu";
             this.gioChieuDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.gioChieuDataGridViewTextBoxColumn.Name = "gioChieuDataGridViewTextBoxColumn";
-            this.gioChieuDataGridViewTextBoxColumn.Width = 125;
             // 
             // maRapDataGridViewTextBoxColumn
             // 
@@ -218,7 +199,6 @@
             this.maRapDataGridViewTextBoxColumn.HeaderText = "MaRap";
             this.maRapDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.maRapDataGridViewTextBoxColumn.Name = "maRapDataGridViewTextBoxColumn";
-            this.maRapDataGridViewTextBoxColumn.Width = 125;
             // 
             // maSCDataGridViewTextBoxColumn
             // 
@@ -226,7 +206,20 @@
             this.maSCDataGridViewTextBoxColumn.HeaderText = "MaSC";
             this.maSCDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.maSCDataGridViewTextBoxColumn.Name = "maSCDataGridViewTextBoxColumn";
-            this.maSCDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // suatChieuPhimBindingSource
+            // 
+            this.suatChieuPhimBindingSource.DataMember = "SuatChieuPhim";
+            this.suatChieuPhimBindingSource.DataSource = this.quanLyRapPhimDataSet_SuatChieuPhim;
+            // 
+            // quanLyRapPhimDataSet_SuatChieuPhim
+            // 
+            this.quanLyRapPhimDataSet_SuatChieuPhim.DataSetName = "QuanLyRapPhimDataSet_SuatChieuPhim";
+            this.quanLyRapPhimDataSet_SuatChieuPhim.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // suatChieuPhimTableAdapter
+            // 
+            this.suatChieuPhimTableAdapter.ClearBeforeFill = true;
             // 
             // label4
             // 
@@ -240,16 +233,58 @@
             // 
             // txtMaSCP
             // 
-            this.txtMaSCP.Location = new System.Drawing.Point(316, 201);
+            this.txtMaSCP.Location = new System.Drawing.Point(244, 198);
             this.txtMaSCP.Margin = new System.Windows.Forms.Padding(4);
             this.txtMaSCP.Name = "txtMaSCP";
-            this.txtMaSCP.Size = new System.Drawing.Size(204, 30);
+            this.txtMaSCP.Size = new System.Drawing.Size(440, 30);
             this.txtMaSCP.TabIndex = 6;
+            // 
+            // cbTenPhim
+            // 
+            this.cbTenPhim.FormattingEnabled = true;
+            this.cbTenPhim.Location = new System.Drawing.Point(468, 48);
+            this.cbTenPhim.Name = "cbTenPhim";
+            this.cbTenPhim.Size = new System.Drawing.Size(210, 31);
+            this.cbTenPhim.TabIndex = 7;
+            this.cbTenPhim.SelectedIndexChanged += new System.EventHandler(this.cbTenPhim_SelectedIndexChanged);
+            // 
+            // cbTenRap
+            // 
+            this.cbTenRap.FormattingEnabled = true;
+            this.cbTenRap.Location = new System.Drawing.Point(244, 151);
+            this.cbTenRap.Name = "cbTenRap";
+            this.cbTenRap.Size = new System.Drawing.Size(434, 31);
+            this.cbTenRap.TabIndex = 8;
+            this.cbTenRap.SelectedIndexChanged += new System.EventHandler(this.cbTenRap_SelectedIndexChanged);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(366, 48);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(96, 23);
+            this.label5.TabIndex = 9;
+            this.label5.Text = "Tên Phim:";
+            // 
+            // btnReload
+            // 
+            this.btnReload.AutoSize = true;
+            this.btnReload.Location = new System.Drawing.Point(695, 243);
+            this.btnReload.Name = "btnReload";
+            this.btnReload.Size = new System.Drawing.Size(79, 33);
+            this.btnReload.TabIndex = 10;
+            this.btnReload.Text = "Reload";
+            this.btnReload.UseVisualStyleBackColor = true;
+            this.btnReload.Click += new System.EventHandler(this.btnReload_Click);
             // 
             // QuanLySuatChieuUC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btnReload);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.cbTenRap);
+            this.Controls.Add(this.cbTenPhim);
             this.Controls.Add(this.txtMaSCP);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.dgv_SUATCHIEU);
@@ -258,7 +293,6 @@
             this.Controls.Add(this.btnDel);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnAdd);
-            this.Controls.Add(this.txtMaRap);
             this.Controls.Add(this.txtSuatChieu);
             this.Controls.Add(this.txtMaPhim);
             this.Controls.Add(this.label3);
@@ -270,8 +304,8 @@
             this.Size = new System.Drawing.Size(896, 1200);
             this.Load += new System.EventHandler(this.QuanLySuatChieuUC_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_SUATCHIEU)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.quanLyRapPhimDataSet_SuatChieuPhim)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.suatChieuPhimBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.quanLyRapPhimDataSet_SuatChieuPhim)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -284,7 +318,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtMaPhim;
         private System.Windows.Forms.TextBox txtSuatChieu;
-        private System.Windows.Forms.TextBox txtMaRap;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnDel;
@@ -300,5 +333,9 @@
         private QuanLyRapPhimDataSet_SuatChieuPhimTableAdapters.SuatChieuPhimTableAdapter suatChieuPhimTableAdapter;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtMaSCP;
+        private System.Windows.Forms.ComboBox cbTenPhim;
+        private System.Windows.Forms.ComboBox cbTenRap;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button btnReload;
     }
 }

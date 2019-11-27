@@ -164,3 +164,5 @@ C:\Users\DangKhoa\Desktop\DBMS\DTB_Rap_Phim_K17\dbms pro\Do_An_Rap_Phim\QuanLyRa
 C:\Users\DangKhoa\Desktop\DBMS\DTB_Rap_Phim_K17\dbms pro\Do_An_Rap_Phim\QuanLyRapPhim_Final\QuanLyRapPhim_Final\bin\Debug\EntityFramework.xml
 C:\Users\DangKhoa\Desktop\DBMS\DTB_Rap_Phim_K17\dbms pro\Do_An_Rap_Phim\QuanLyRapPhim_Final\QuanLyRapPhim_Final\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\DangKhoa\Desktop\DBMS\DTB_Rap_Phim_K17\dbms pro\Do_An_Rap_Phim\QuanLyRapPhim_Final\QuanLyRapPhim_Final\obj\Debug\QuanLyRapPhim_Final.csproj.CopyComplete
+C:\Users\DangKhoa\Desktop\DBMS\DTB_Rap_Phim_K17\dbms pro\Do_An_Rap_Phim\QuanLyRapPhim_Final\QuanLyRapPhim_Final\obj\Debug\QuanLyRapPhim_Final.User_Controls.ChiNhanhUC.resources
+C:\Users\DangKhoa\Desktop\DBMS\DTB_Rap_Phim_K17\dbms pro\Do_An_Rap_Phim\QuanLyRapPhim_Final\QuanLyRapPhim_Final\obj\Debug\QuanLyRapPhim_Final.Login.resources

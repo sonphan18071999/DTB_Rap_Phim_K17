@@ -147,7 +147,7 @@
             this.dgv_NHANVIEN.Location = new System.Drawing.Point(33, 464);
             this.dgv_NHANVIEN.Name = "dgv_NHANVIEN";
             this.dgv_NHANVIEN.RowHeadersWidth = 51;
-            this.dgv_NHANVIEN.Size = new System.Drawing.Size(820, 150);
+            this.dgv_NHANVIEN.Size = new System.Drawing.Size(820, 231);
             this.dgv_NHANVIEN.TabIndex = 9;
             this.dgv_NHANVIEN.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_NHANVIEN_CellClick);
             // 
@@ -418,6 +418,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.Controls.Add(this.cbChiNhanh);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);

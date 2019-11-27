@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnChiNhanh = new System.Windows.Forms.Button();
             this.btnHopDong = new System.Windows.Forms.Button();
             this.btnQuanLyHangSanXuat = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -61,6 +62,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.panel1.Controls.Add(this.btnChiNhanh);
             this.panel1.Controls.Add(this.btnHopDong);
             this.panel1.Controls.Add(this.btnQuanLyHangSanXuat);
             this.panel1.Controls.Add(this.pictureBox2);
@@ -79,6 +81,20 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(297, 1354);
             this.panel1.TabIndex = 0;
+            // 
+            // btnChiNhanh
+            // 
+            this.btnChiNhanh.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnChiNhanh.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnChiNhanh.ForeColor = System.Drawing.Color.Black;
+            this.btnChiNhanh.Location = new System.Drawing.Point(5, 932);
+            this.btnChiNhanh.Margin = new System.Windows.Forms.Padding(4);
+            this.btnChiNhanh.Name = "btnChiNhanh";
+            this.btnChiNhanh.Size = new System.Drawing.Size(287, 71);
+            this.btnChiNhanh.TabIndex = 14;
+            this.btnChiNhanh.Text = "Bảng Chi Nhánh";
+            this.btnChiNhanh.UseVisualStyleBackColor = false;
+            this.btnChiNhanh.Click += new System.EventHandler(this.btnChiNhanh_Click);
             // 
             // btnHopDong
             // 
@@ -118,6 +134,7 @@
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 11;
             this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // pnlClick
             // 
@@ -361,7 +378,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1697, 943);
+            this.ClientSize = new System.Drawing.Size(1718, 1030);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -404,5 +421,6 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button btnQuanLyHangSanXuat;
         private System.Windows.Forms.Button btnHopDong;
+        private System.Windows.Forms.Button btnChiNhanh;
     }
 }

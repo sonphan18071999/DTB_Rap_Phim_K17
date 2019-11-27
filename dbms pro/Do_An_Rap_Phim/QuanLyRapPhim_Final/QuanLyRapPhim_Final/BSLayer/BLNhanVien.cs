@@ -49,10 +49,14 @@ namespace QuanLyRapPhim_Final.BSLayer
         {
             return db.ExecuteQueryDataSet($"select MaNV,(HovaLotNV+' '+TenNV) as FullName from NhanVien where MaCV=N'{MaCV}'", CommandType.Text);
         }
-        public DataSet TimKiemNhanVien(string Ten)
+        public virtual DataSet TimKiemNhanVien(string Ten)
         {
             return db.ExecuteQueryDataSet("select * " +
                 "from NhanVien where TenNV=N'" + Ten + "'", CommandType.Text);
+        }
+        public DataSet LayChucVuNV(string MaNV)
+        {
+            return db.ExecuteQueryDataSet($"select MaCV from NhanVien where MaNV=N'{MaNV.Trim()}'", CommandType.Text);
         }
     }
 }
