@@ -122,7 +122,7 @@ namespace QuanLyRapPhim_Final.User_Controls
                     
                     BLPhim blPhim = new BLPhim();
 
-                    blPhim.ThemPhim(this.txtTenPhim.Text.Trim(), this.txtMaPhim.Text.Trim(),
+                    blPhim.addPhim(this.txtTenPhim.Text.Trim(), this.txtMaPhim.Text.Trim(),
                         int.Parse(txtGiaVe.Text.ToString()), linkPic,float.Parse(txtTLP.Text.ToString().Trim()), ref err);
                     LoadData();
                     MessageBox.Show("Đã thêm xong!");

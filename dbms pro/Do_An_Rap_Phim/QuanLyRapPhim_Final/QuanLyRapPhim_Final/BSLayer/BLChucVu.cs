@@ -17,28 +17,24 @@ namespace QuanLyRapPhim_Final.BSLayer
         }
         public DataSet LayChucVu()
         {
-            return db.ExecuteQueryDataSet("select * from ChucVu",
+            return db.ExecuteQueryDataSet("exec ChucVuInsertUpdateDelete null,null,0,'Select'",
                 CommandType.Text);
         }
         public bool ThemChucVu(string MaCV, string ChucVu,
             int Luong, ref string err)
         {
             string sqlString =
-                $"Insert Into ChucVu Values " +
-                "( " + " '" + MaCV + " ' ,N'" + ChucVu + "','"
-                + Luong + "') ";
+                $"ChucVuInsertUpdateDelete N'{MaCV}',N'{ChucVu}',{Luong},'Insert'";
             return db.MyExecuteNonQuery(sqlString, CommandType.Text, ref err);
         }
         public bool XoaChucVu(ref string err, string MaCV)
         {
-            string sqlString = "Delete From ChucVu Where MaCV='"
-                + MaCV + "'";
+            string sqlString = $"ChucVuInsertUpdateDelete N'{MaCV}',null,0,'Delete'"; ;
             return db.MyExecuteNonQuery(sqlString, CommandType.Text, ref err);
         }
         public bool CapNhatChucVu(string MaCV, string ChucVu,int Luong, ref string err)
         {
-            string sqlString = "Update ChucVu Set ChucVu=N'" + ChucVu +"',Luong="+Luong+
-                " Where MaCV='" + MaCV + "'";
+            string sqlString = $"ChucVuInsertUpdateDelete N'{MaCV}',N'{ChucVu}',{Luong},'Update'";
             return db.MyExecuteNonQuery(sqlString, CommandType.Text, ref err);
         }
     }

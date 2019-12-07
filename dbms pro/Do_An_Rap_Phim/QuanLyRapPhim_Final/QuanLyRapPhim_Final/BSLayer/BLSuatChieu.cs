@@ -17,7 +17,7 @@ namespace QuanLyRapPhim_Final.BSLayer
         }
         public DataSet LaySuatChieu()
         {
-            return db.ExecuteQueryDataSet("select * from SuatChieuPhim", CommandType.Text);
+            return db.ExecuteQueryDataSet("exec SuatChieuPhimInsertUpdateDelete null,null,null,null,'Select'", CommandType.Text);
         }
         public DataSet LaySuatChieuCuaPhim(string MaPhim)
         {
@@ -25,20 +25,17 @@ namespace QuanLyRapPhim_Final.BSLayer
         }
         public bool ThemSuatChieu(string MaPhim, string SuatChieu, string MaRap,string MaSC, ref string err)
         {
-            string sqlString = "Insert Into SuatChieuPhim Values(" + "'" + MaPhim + "',N'" +
-                 SuatChieu + "',N'" + MaRap +  "',"+"N'"+MaSC+ "')";
-
+            string sqlString = $"exec SuatChieuPhimInsertUpdateDelete N'{MaPhim}',N'{SuatChieu}',N'{MaRap}',N'{MaSC}','Insert'";
             return db.MyExecuteNonQuery(sqlString, CommandType.Text, ref err);
         }
         public bool XoaSuatChieu(ref string err, string MaSC)
         {
-            string sqlString = "Delete From SuatChieuPhim Where MaSC=N'" + MaSC + "'";
+            string sqlString = $"exec SuatChieuPhimInsertUpdateDelete null,null,null,N'{MaSC}','Delete'";
             return db.MyExecuteNonQuery(sqlString, CommandType.Text, ref err);
         }
         public bool CapNhatSuatChieu(string MaPhim, string SuatChieu, string MaRap,string MaSC,ref string err)
         {
-            string sqlString = "Update SuatChieuPhim Set "+ "MaPhim=N'"+MaPhim + "',GioChieu=N'" + SuatChieu + "',MaRap='"+MaRap+ "' Where MaSC=N'"
-                + MaSC + "'";
+            string sqlString = $"exec SuatChieuPhimInsertUpdateDelete N'{MaPhim}',N'{SuatChieu}',N'{MaRap}',N'{MaSC}','Update'";
             return db.MyExecuteNonQuery(sqlString, CommandType.Text, ref err);
         }
     }

@@ -18,12 +18,12 @@ namespace QuanLyRapPhim_Final.BSLayer
         }
         public DataSet LayPhim()
         {
-            return db.ExecuteQueryDataSet("select * from Phim", CommandType.Text);
+            return db.ExecuteQueryDataSet("exec PhimInsertUpdateDelete null,null,0,null,0,'Select'", CommandType.Text);
         }
-        public bool ThemPhim(string TenPhim, string MaPhim, int GiaVe, string Poster,float ThoiLuong, ref string err)
+        public bool addPhim(string TenPhim, string MaPhim, int GiaVe, string Poster,float ThoiLuong, ref string err)
         {
             string sqlString = $"Insert Into Phim Values(N'{TenPhim.Trim()}','{MaPhim.Trim()}',{GiaVe}," +
-                $"( select BulkColumn from Openrowset(Bulk '{Poster}', single_Blob) as image),"+$"{ThoiLuong})";
+                $"( select BulkColumn from Openrowset(Bulk '{Poster}', single_Blob) as image)," + $"{ThoiLuong})";
             return db.MyExecuteNonQuery(sqlString, CommandType.Text, ref err);
         }
         public bool XoaPhim(ref string err, string MaPhim)

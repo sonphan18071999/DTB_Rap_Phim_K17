@@ -17,7 +17,7 @@ namespace QuanLyRapPhim_Final.BSLayer
         }
         public DataSet LayThongTinVe()
         {
-            return db.ExecuteQueryDataSet("select * from DatVe",
+            return db.ExecuteQueryDataSet("exec DatVeInsertUpdateDelete null,null,null,null,null,null,null,null,'Select'",
                 CommandType.Text);
         }
 

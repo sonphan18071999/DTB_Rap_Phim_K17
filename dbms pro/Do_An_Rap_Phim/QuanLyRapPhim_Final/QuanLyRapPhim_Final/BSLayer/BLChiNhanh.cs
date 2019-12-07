@@ -20,5 +20,10 @@ namespace QuanLyRapPhim_Final.BSLayer
             return db.ExecuteQueryDataSet("exec ChiNhanhInsertUpdateDelete null,null,'Select'",
                 CommandType.Text);
         }
+        public DataSet XuLyChiNhanh(string MaChiNhanh,string TenChiNhanh,string State)
+        {
+            return db.ExecuteQueryDataSet($"exec ChiNhanhInsertUpdateDelete N'{MaChiNhanh.Trim()}',N'{TenChiNhanh.Trim()}','{State}'",
+                CommandType.Text);
+        }
     }
 }

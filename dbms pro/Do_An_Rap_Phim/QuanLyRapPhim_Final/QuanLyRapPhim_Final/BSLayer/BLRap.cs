@@ -17,25 +17,23 @@ namespace QuanLyRapPhim_Final.BSLayer
         }
         public DataSet LayRap()
         {
-            return db.ExecuteQueryDataSet("select * from Rap",
+            return db.ExecuteQueryDataSet("exec RapInsertUpdateDelete null,null,null,null,'Select'",
                 CommandType.Text);
         }
         public bool ThemRap(string MaRap, string SoDayGhe, 
             string SoLuongGhe,string LoaiRap, ref string err)
         {
-            string sqlString = "Insert Into Rap Values(" + "'" + MaRap + "',N'" +
-                SoDayGhe + "',N'" + SoLuongGhe + "',N'" +LoaiRap + "')";
+            string sqlString = $"exec RapInsertUpdateDelete N'{MaRap}',N'{SoDayGhe}',N'{SoLuongGhe}',N'{LoaiRap}','Insert'";
             return db.MyExecuteNonQuery(sqlString, CommandType.Text, ref err);
         }
         public bool XoaRap(ref string err, string MaRap)
         {
-            string sqlString = "Delete From Rap Where MaRap='" + MaRap + "'";
+            string sqlString = $"exec RapInsertUpdateDelete N'{MaRap}',null,null,null,'Delete'";
             return db.MyExecuteNonQuery(sqlString, CommandType.Text, ref err);
         }
         public bool CapNhatRap(string MaRap, string SoDayGhe,string SoLuongGhe,string LoaiPhim, ref string err)
         {
-            string sqlString = "Update Rap Set SoDayGhe='" + SoDayGhe + "',SoLuongGhe='" +SoLuongGhe+"',LoaiPhim='"+LoaiPhim+"'"+
-                " Where MaRap='" + MaRap + "'";
+            string sqlString = $"exec RapInsertUpdateDelete N'{MaRap}',N'{SoDayGhe}',N'{SoLuongGhe}',N'{LoaiPhim}','Update'";
             return db.MyExecuteNonQuery(sqlString, CommandType.Text, ref err);
         }
         public DataSet findRap(string MaRap)
