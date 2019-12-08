@@ -27,7 +27,7 @@ namespace QuanLyRapPhim_Final
             myPen = new Pen(Program.myColor, 1);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Login());
+            Application.Run(new Form1());
         }
     }
 }

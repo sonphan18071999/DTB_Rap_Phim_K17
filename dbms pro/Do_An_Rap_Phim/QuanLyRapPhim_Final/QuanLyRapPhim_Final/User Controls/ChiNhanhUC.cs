@@ -15,7 +15,12 @@ namespace QuanLyRapPhim_Final.User_Controls
     public partial class ChiNhanhUC : UserControl
     {
         BLChiNhanh dbChiNhanh = new BLChiNhanh();
+        BLDatVe dbDatVe = new BLDatVe();
+        BLSuatChieu dbSuatChieu = new BLSuatChieu();
+        BLPhim dbPhim = new BLPhim();
         bool Them;
+        string Phim;
+
         public ChiNhanhUC()
         {
             InitializeComponent();
@@ -25,12 +30,14 @@ namespace QuanLyRapPhim_Final.User_Controls
         {
             try
             {
+                btnTinh.Enabled = false;
                 DataSet ds = dbChiNhanh.LayChiNanh();
                 dgv_ChiNhanh.DataSource = ds.Tables[0];
                 dgv_ChiNhanh.AutoResizeColumns();
-
+                txtDoanhThu.Enabled = false;
                 txtMaChiNhanh.ResetText();
                 txtTenChiNhanh.ResetText();
+                setCbPhim();
                 txtMaChiNhanh.Enabled = false;
                 txtTenChiNhanh.Enabled = false;
                 btnCancel.Enabled = false;
@@ -38,6 +45,7 @@ namespace QuanLyRapPhim_Final.User_Controls
                 btnAdd.Enabled = true;
                 btnEdit.Enabled = true;
                 btnDel.Enabled = true;
+                dtpNgay.Enabled = false;
             }
             catch (SqlException)
             {
@@ -74,7 +82,8 @@ namespace QuanLyRapPhim_Final.User_Controls
             int r = dgv_ChiNhanh.CurrentCell.RowIndex;
             txtMaChiNhanh.Text = dgv_ChiNhanh.Rows[r].Cells[0].Value.ToString();
             txtTenChiNhanh.Text = dgv_ChiNhanh.Rows[r].Cells[1].Value.ToString();
-
+            //DataSet ds = dbChiNhanh.DoanhThu(txtMaChiNhanh.Text, dtpNgay.Value.Date);
+            //txtDoanhThu.Text = ds.Tables[0].Rows[0].ItemArray[0].ToString();
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -158,6 +167,100 @@ namespace QuanLyRapPhim_Final.User_Controls
                     MessageBox.Show("Lỗi!!! Xóa thất bại!");
                 }
 
+            }
+        }
+
+        private void dtpNgay_ValueChanged(object sender, EventArgs e)
+        {
+            DataSet ds = dbChiNhanh.DoanhThu(txtMaChiNhanh.Text, dtpNgay.Value.Date);
+            txtDoanhThu.Text = ds.Tables[0].Rows[0].ItemArray[0].ToString();
+
+        }
+
+        private void setCbPhim()
+        {
+            DataSet ds = dbPhim.LayPhim();
+            cbPhim.DataSource = ds.Tables[0];
+            cbPhim.DisplayMember = "TenPhim";
+            cbPhim.ValueMember = "MaPhim";
+        }
+
+        private void chbPhim_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgv_ChiNhanh_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void ckbNgay_CheckedChanged(object sender, EventArgs e)
+        {
+            btnTinh.Enabled = true;
+            if (ckbNgay.CheckState == CheckState.Checked)
+            {
+                dtpNgay.Enabled = true;
+            }
+            else
+            {
+                dtpNgay.Enabled = false;
+                if (ckbPhim.CheckState==CheckState.Unchecked)
+                {
+                    btnTinh.Enabled = false;
+                }
+            }
+        }
+
+        private void ckbPhim_CheckedChanged(object sender, EventArgs e)
+        {
+            btnTinh.Enabled = true;
+            if (ckbPhim.CheckState==CheckState.Checked)
+            {
+                cbPhim.Enabled = true;
+            }
+            else
+            {
+                cbPhim.Enabled = false;
+                if (ckbNgay.CheckState == CheckState.Unchecked)
+                {
+                    btnTinh.Enabled = false;
+                }
+            }
+        }
+
+        private void btnTinh_Click(object sender, EventArgs e)
+        {
+
+            if (ckbNgay.CheckState == CheckState.Checked)
+            {
+                if (ckbPhim.CheckState == CheckState.Checked)
+                {
+                    //tính ngày tính phim
+                    DataSet ds = dbChiNhanh.DoanhThuPhim(txtMaChiNhanh.Text, dtpNgay.Value.Date, cbPhim.SelectedValue.ToString().Trim(),"");
+                    txtDoanhThu.Text = ds.Tables[0].Rows[0].ItemArray[0].ToString();
+
+                }
+                else
+                {
+                    DataSet ds = dbChiNhanh.DoanhThu(txtMaChiNhanh.Text, dtpNgay.Value.Date);
+                    txtDoanhThu.Text = ds.Tables[0].Rows[0].ItemArray[0].ToString();
+
+                }
+            }
+            else
+            {
+                if (ckbPhim.CheckState == CheckState.Checked)
+                {
+                    //tính phim ko ngày
+                    DataSet ds = dbChiNhanh.DoanhThuPhim(txtMaChiNhanh.Text, dtpNgay.Value.Date, cbPhim.SelectedValue.ToString().Trim(), "NULL");
+                    txtDoanhThu.Text = ds.Tables[0].Rows[0].ItemArray[0].ToString();
+
+                }
+                else
+                {
+                    txtDoanhThu.ResetText();
+                }
             }
         }
     }

@@ -282,6 +282,7 @@ namespace QuanLyRapPhim_Final.User_Controls
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
+            XuLySuatVe();
             if (!raptxt.Text.Equals("") && !ghetxt.Text.Equals("") && !Daytxt.Text.Equals(""))
             {
                 bool checkKH = checkMaKH();
@@ -302,6 +303,7 @@ namespace QuanLyRapPhim_Final.User_Controls
                 //todo
                 try
                 {
+
                     dbDatVe.themVe(maPhim, raptxt.Text, SuatChieucb.Text, maNV, globalMaKH, Daytxt.Text, ghetxt.Text, ref err);
                     MessageBox.Show("thêm thành công!");
                     storedMaKH = globalMaKH;
@@ -390,6 +392,12 @@ namespace QuanLyRapPhim_Final.User_Controls
             Phimcb.Enabled = false;
             btnHuy.Enabled = false;
             btnThem.Enabled = true;
+        }
+        private void XuLySuatVe()
+        {
+            string[] container;
+            string str = SuatChieucb.Text.ToString();
+            container = str.Split('h');
         }
     }
 }

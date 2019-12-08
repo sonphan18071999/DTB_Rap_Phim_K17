@@ -169,15 +169,28 @@ namespace QuanLyRapPhim_Final.User_Controls
             if (traloi == DialogResult.OK)
             {
 
-                try
+                MY_DB mydb = new MY_DB();
+                mydb.openConnection();
+                SqlTransaction objTrans = null;
+                using (SqlConnection objConn = mydb.getConnection)
                 {
-                    BLHopDong.XuLyHopDong(strHD, txtTenDaoDien.Text, int.Parse(txtGiaTriHD.Text), dtpNgayXuatBan.Value, dtpNgayKiHD.Value, dtpNgayHetHan.Value, cbMaPhim.Text, "Delete");
-                    LoadData();
-                    MessageBox.Show("Đã xóa!");
-                }
-                catch (SqlException)
-                {
-                    MessageBox.Show("Lỗi!!! Xóa thất bại!");
+                    objTrans = objConn.BeginTransaction();
+                    SqlCommand dlHSX = new SqlCommand($"update HangSanXuat set MaHD=NULL  where MaHD=N'{txtMaHD.Text.Trim()}'", mydb.getConnection, objTrans);
+                    SqlCommand dlPHD = new SqlCommand($"delete from PhimHopDong where MaHD=  N'{txtMaHD.Text.Trim()}'", mydb.getConnection, objTrans);
+                    try
+                    {
+                        dlHSX.ExecuteNonQuery();
+                        dlPHD.ExecuteNonQuery();
+                        objTrans.Commit();
+                        MessageBox.Show("Da xoa hop dong" + txtMaHD.Text);
+
+                    }
+                    catch (Exception ex)
+                    {
+                        objTrans.Rollback();
+                        MessageBox.Show(ex.Message);
+                    }
+                    mydb.closeConnection();
                 }
 
             }

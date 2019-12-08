@@ -10,6 +10,7 @@ namespace QuanLyRapPhim_Final
 {
     class MY_DB
     {
+
         SqlConnection conn = new SqlConnection(@"Data Source=.\SQLEXPRESS;Initial Catalog=QuanLyRapPhim;Integrated Security=True");
         public SqlConnection getConnection
         {

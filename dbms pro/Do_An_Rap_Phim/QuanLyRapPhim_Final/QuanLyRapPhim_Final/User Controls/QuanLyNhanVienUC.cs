@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using QuanLyRapPhim_Final.BSLayer;
 
+
 namespace QuanLyRapPhim_Final.User_Controls
 {
     public partial class QuanLyNhanVienUC : UserControl
@@ -192,25 +193,36 @@ namespace QuanLyRapPhim_Final.User_Controls
 
         private void btnDelNV_Click(object sender, EventArgs e)
         {
-            int r = dgv_NHANVIEN.CurrentCell.RowIndex;
-            string strNV = dgv_NHANVIEN.Rows[r].Cells[2].Value.ToString();
-
             DialogResult traloi;
             traloi = MessageBox.Show("Bạn thực sự muốn xóa?", "Trả lời", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
             if (traloi == DialogResult.OK)
             {
-
-                try
+                MY_DB mydb = new MY_DB();
+                mydb.openConnection();
+                SqlTransaction objTrans = null;
+                using (SqlConnection objConn = mydb.getConnection)
                 {
-                    dbNV.XoaNhanVien(ref err, strNV);
-                    LoadData();
-                    MessageBox.Show("Đã xóa!");
-                }
-                catch (SqlException)
-                {
-                    MessageBox.Show("Lỗi!!! Xóa thất bại!");
-                }
+                    objTrans = objConn.BeginTransaction();
+                    SqlCommand dlDV = new SqlCommand("update DatVe set MaNV=NULL where MaNV=" + txtMaNV.Text, mydb.getConnection, objTrans);
+                    SqlCommand dlDN = new SqlCommand("delete from DangNhap where MaNV=" + txtMaNV.Text, mydb.getConnection, objTrans);
+                    SqlCommand dlNV = new SqlCommand("delete from NhanVien where MaNV=" + txtMaNV.Text, mydb.getConnection, objTrans);
+                    try
+                    {
+                        dlDV.ExecuteNonQuery();
+                        dlDN.ExecuteNonQuery();
+                        dlNV.ExecuteNonQuery();
 
+                        objTrans.Commit();
+                        MessageBox.Show("Da xoa nhan vien" + txtMaNV.Text);
+
+                    }
+                    catch (Exception ex)
+                    {
+                        objTrans.Rollback();
+                        MessageBox.Show(ex.Message);
+                    }
+                    mydb.closeConnection();
+                }
             }
         }
 

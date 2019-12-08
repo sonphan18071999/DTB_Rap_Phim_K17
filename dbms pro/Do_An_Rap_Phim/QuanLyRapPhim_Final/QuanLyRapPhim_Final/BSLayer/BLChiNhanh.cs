@@ -25,5 +25,20 @@ namespace QuanLyRapPhim_Final.BSLayer
             return db.ExecuteQueryDataSet($"exec ChiNhanhInsertUpdateDelete N'{MaChiNhanh.Trim()}',N'{TenChiNhanh.Trim()}','{State}'",
                 CommandType.Text);
         }
+        public DataSet DoanhThu(string ChiNhanh,DateTime Ngay)
+        {
+            return db.ExecuteQueryDataSet($"select [dbo].TinhDoanhThuTrongNgay('{Ngay}',N'{ChiNhanh.Trim()}') as [DoanhThuTrongNgay]", CommandType.Text);
+        }
+        public DataSet DoanhThuPhim(string ChiNhanh, DateTime Ngay,string MaPhim,string TinhNgay)
+        {
+            if (TinhNgay !="NULL")
+            {
+            return db.ExecuteQueryDataSet($"select [dbo].TinhDoanhThuTheoPhim('{Ngay}',N'{ChiNhanh.Trim()}',N'{MaPhim.Trim()}') as [DoanhThu]", CommandType.Text);
+            }
+            else
+            {
+                return db.ExecuteQueryDataSet($"select [dbo].TinhDoanhThuTheoPhim(default,N'{ChiNhanh.Trim()}',N'{MaPhim.Trim()}') as [DoanhThu]", CommandType.Text);
+            }
+        }
     }
 }
