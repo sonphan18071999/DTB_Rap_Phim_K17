@@ -36,6 +36,8 @@ namespace QuanLyRapPhim_Final.User_Controls
             btnAdd.Enabled = true;
             btnSua.Enabled = true;
             btnXoa.Enabled = true;
+            dgv_KHACHHANG.RowTemplate.Height = 90;
+
             try
             {
                 this.khachHangTableAdapter.Fill(this.quanLyRapPhimDataSet_KhachHang.KhachHang);
@@ -263,6 +265,11 @@ namespace QuanLyRapPhim_Final.User_Controls
             btnXoa.Enabled = false;
 
             txtMaKH.Enabled = false;
+        }
+
+        private void btnReload_Click(object sender, EventArgs e)
+        {
+            LoadData();
         }
     }
 }

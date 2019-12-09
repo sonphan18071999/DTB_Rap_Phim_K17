@@ -268,6 +268,13 @@
     <Compile Include="User Controls\WelcomeUC.Designer.cs">
       <DependentUpon>WelcomeUC.cs</DependentUpon>
     </Compile>
+    <Compile Include="User.cs" />
+    <Compile Include="VeDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VeDetails.Designer.cs">
+      <DependentUpon>VeDetails.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -316,6 +323,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="User Controls\WelcomeUC.resx">
       <DependentUpon>WelcomeUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VeDetails.resx">
+      <DependentUpon>VeDetails.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -524,6 +534,39 @@
       <DependentUpon>QuanLyRapPhimModel.edmx</DependentUpon>
       <LastGenOutput>QuanLyRapPhimModel.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\delete9.png" />
+    <None Include="Resources\delete8.png" />
+    <None Include="Resources\delete7.png" />
+    <None Include="Resources\refresh2.png" />
+    <None Include="Resources\tools2.png" />
+    <None Include="Resources\save3.png" />
+    <None Include="Resources\trash2.png" />
+    <None Include="Resources\delete6.png" />
+    <None Include="Resources\plus3.png" />
+    <None Include="Resources\refresh1.png" />
+    <None Include="Resources\delete5.png" />
+    <None Include="Resources\trash1.png" />
+    <None Include="Resources\bag.png" />
+    <None Include="Resources\bank.png" />
+    <None Include="Resources\contract.png" />
+    <None Include="Resources\movie.png" />
+    <None Include="Resources\calendar.png" />
+    <None Include="Resources\movies.png" />
+    <None Include="Resources\car-seat.png" />
+    <None Include="Resources\employee.png" />
+    <None Include="Resources\support.png" />
+    <None Include="Resources\photo-1-15458898386971044005541.jpg" />
+    <None Include="Resources\browsing.png" />
+    <None Include="Resources\delete4.png" />
+    <None Include="Resources\delete3.png" />
+    <None Include="Resources\plus2.png" />
+    <None Include="Resources\save2.png" />
+    <None Include="Resources\refresh.png" />
+    <None Include="Resources\trash.png" />
+    <None Include="Resources\tools1.png" />
+    <None Include="Resources\plus1.png" />
+    <None Include="Resources\video-camera1.png" />
+    <None Include="Resources\video-camera.png" />
     <None Include="Resources\clapperboard-and-popcorn-and-ticket-movie-vector-16752245.jpg" />
     <None Include="Resources\BAR.png" />
     <None Include="Resources\lock.png" />

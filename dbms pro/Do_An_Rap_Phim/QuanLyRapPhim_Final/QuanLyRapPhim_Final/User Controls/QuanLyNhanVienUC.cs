@@ -22,6 +22,7 @@ namespace QuanLyRapPhim_Final.User_Controls
         BLChucVu dbCV = new BLChucVu();
         BLChiNhanh dbChiNhanh = new BLChiNhanh();
         DataTable dt = null;
+        BLDangNhap dbDangNhap = new BLDangNhap();
         int month = DateTime.Now.Month;
         int day = DateTime.Now.Day;
         int nam= DateTime.Now.Year;
@@ -34,6 +35,10 @@ namespace QuanLyRapPhim_Final.User_Controls
         private void QuanLyNhanVienUC_Load(object sender, EventArgs e)
         {
             LoadData();
+            groupBox2.Visible = false;
+            dgv_NHANVIEN.RowTemplate.Height = 90;
+
+
         }
 
         void LoadData()
@@ -57,6 +62,8 @@ namespace QuanLyRapPhim_Final.User_Controls
             btnDelNV.Enabled = true;
             txtChucVu.Enabled = false;
             txtLuong.Enabled = false;
+            txtLuongThang.Enabled = false;
+            groupBox2.Visible = false;
             try
             {
                 dt = new DataTable();
@@ -133,7 +140,7 @@ namespace QuanLyRapPhim_Final.User_Controls
         private void dgv_NHANVIEN_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int r = dgv_NHANVIEN.CurrentCell.RowIndex;
-
+            
             txtMaNV.Text = dgv_NHANVIEN.Rows[r].Cells[2].Value.ToString();
             txtHovalotNV.Text = dgv_NHANVIEN.Rows[r].Cells[0].Value.ToString();
             txtTenNV.Text = dgv_NHANVIEN.Rows[r].Cells[1].Value.ToString();
@@ -175,6 +182,8 @@ namespace QuanLyRapPhim_Final.User_Controls
                     if (dbNV.ThemNhanVien(this.txtMaNV.Text.Trim(), this.txtHovalotNV.Text.Trim(), this.txtTenNV.Text.Trim(), cbbMaCV.Text, int.Parse(nmrSoGioLam.Value.ToString()),NQL, cbChiNhanh.SelectedValue.ToString(), ref err))
                     {
                     MessageBox.Show("Đã thêm xong!");
+                        dbDangNhap.TaoTaiKhoan(txtMaNV.Text.Trim(), "1", ref err);
+                        dbDangNhap.Encrypt(txtMaNV.Text.Trim());
                     }
                     LoadData();
                 }
@@ -264,6 +273,36 @@ namespace QuanLyRapPhim_Final.User_Controls
         private void btnReload_Click(object sender, EventArgs e)
         {
             LoadData();
+            groupBox2.Visible = false;
+
+        }
+
+        private void btnTinh_Click(object sender, EventArgs e)
+        {
+            txtLuongThang.Text = dbNV.TinhLuongNV(Convert.ToInt64(txtLuong.Text), Convert.ToInt32(nmrSoGioLam.Value)).Tables[0].Rows[0].ItemArray[0].ToString();
+        }
+
+        private void dgv_NHANVIEN_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        //private void chkbDoiPass_CheckedChanged(object sender, EventArgs e)
+        ////{
+        ////    if (chkbDoiPass.CheckState==CheckState.Checked)
+        ////    {
+        ////        groupBox2.Visible = true;
+        ////    }
+        ////    else
+        ////    {
+        ////        groupBox2.Visible = false;
+        ////    }
+        //}
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            groupBox2.Visible = true;
+            
         }
     }
 }

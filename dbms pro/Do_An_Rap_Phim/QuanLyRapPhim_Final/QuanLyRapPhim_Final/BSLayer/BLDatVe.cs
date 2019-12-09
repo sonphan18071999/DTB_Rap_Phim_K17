@@ -48,5 +48,27 @@ namespace QuanLyRapPhim_Final.BSLayer
             string sqlString = "select MAX(MaVe) from DatVe";
             return db.ExecuteQueryDataSet(sqlString, CommandType.Text);
         }
+        public DataSet XuLyVe(string MaVe,string MaNV,string MaKH,string Day,DateTime Ngay,int So,string MaSC,string GioKetThuc,float Gia,string GhiChu,string State)
+        {
+            return db.ExecuteQueryDataSet($"exec DatVeInsertUpdateDelete N'{MaVe.Trim()}',N'{MaNV.Trim()}',N'{MaKH.Trim()}','{Day.Trim()}','{Ngay}',{So},N'{MaSC.Trim()}','{GioKetThuc.Trim()}',{Gia},N'{GhiChu}','Insert'", CommandType.Text);
+        }
+        public DataSet TinhTienVe(float TienVe,float KhuyenMai)
+        {
+            return db.ExecuteQueryDataSet($"select [dbo].TinhTienVe({TienVe},{KhuyenMai})", CommandType.Text);
+
+        }
+        public string TangMaVe()
+        {
+            string result =  db.ExecuteQueryDataSet($"select MAX(MaVe) from DatVe ", CommandType.Text).Tables[0].Rows[0].ItemArray[0].ToString();
+            if (result =="")
+            {
+                return "1";
+            }
+            else
+            {
+                int convertedResult = Convert.ToInt32(result)+1;
+                return convertedResult.ToString();
+            }
+        }
     }
 }

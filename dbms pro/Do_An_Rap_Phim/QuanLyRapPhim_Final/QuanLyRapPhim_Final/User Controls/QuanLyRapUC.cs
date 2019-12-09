@@ -171,5 +171,10 @@ namespace QuanLyRapPhim_Final.User_Controls
             txtSoLuongGhe.Text = dgv_RAP.Rows[r].Cells[2].Value.ToString();
             txtLoaiPhim.Text = dgv_RAP.Rows[r].Cells[3].Value.ToString();
         }
+
+        private void btnReload_Click(object sender, EventArgs e)
+        {
+            LoadData();
+        }
     }
 }

@@ -58,5 +58,9 @@ namespace QuanLyRapPhim_Final.BSLayer
         {
             return db.ExecuteQueryDataSet($"select MaCV from NhanVien where MaNV=N'{MaNV.Trim()}'", CommandType.Text);
         }
+        public DataSet TinhLuongNV(float Luong,int Gio)
+        {
+            return db.ExecuteQueryDataSet($"select dbo.TinhLuongNV({Luong},{Gio})", CommandType.Text);
+        }
     }
 }

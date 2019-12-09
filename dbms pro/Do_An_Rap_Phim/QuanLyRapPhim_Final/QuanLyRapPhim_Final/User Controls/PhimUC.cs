@@ -11,11 +11,13 @@ using System.Windows.Forms;
 using QuanLyRapPhim_Final.BSLayer;
 using System.Data.SqlClient;
 using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
 
 namespace QuanLyRapPhim_Final.User_Controls
 {
     public partial class PhimUC : UserControl
     {
+        private Bitmap ImgDisplay;
         DataTable dtPhim = null;
         bool Them = false;
         string err;
@@ -26,27 +28,34 @@ namespace QuanLyRapPhim_Final.User_Controls
             InitializeComponent();
         }
 
+
         private void PhimUC_Load(object sender, EventArgs e)
         {
             dgv_PHIM.BringToFront();
-            this.phimTableAdapter.Fill(this.quanLyRapPhimDataSet_Phim.Phim);
+            pnPhim.Visible = false;
+            //this.phimTableAdapter.Fill(this.quanLyRapPhimDataSet_Phim.Phim);
+            LoadData();
         }
         void LoadData()
         {
             try
             {
+                List<PictureBox> ArrPic = new List<PictureBox>() {pb1,pb2,pb3,pb4 };
+
                 dtPhim = new DataTable();
                 dtPhim.Clear();
                 DataSet ds = dbPhim.LayPhim();
                 dtPhim = ds.Tables[0];
 
                 dgv_PHIM.DataSource = dtPhim;
-                dgv_PHIM.AutoResizeColumns();
-
-                txtMaPhim.ResetText();
+                //dgv_PHIM.AutoResizeColumns();
+                ((DataGridViewImageColumn)dgv_PHIM.Columns[3]).ImageLayout = DataGridViewImageCellLayout.Zoom; 
                 txtTenPhim.ResetText();
+                txtTenPhim.Enabled = false;
                 txtGiaVe.ResetText();
+                txtGiaVe.Enabled = false;
                 txtTLP.ResetText();
+                txtTLP.Enabled = false;
                 txtMaPhim.Enabled = false;
 
                 btnCancel.Enabled = false;
@@ -54,6 +63,13 @@ namespace QuanLyRapPhim_Final.User_Controls
                 btnAdd.Enabled = true;
                 btnEditFilm.Enabled = true;
                 btnDelFilm.Enabled = true;
+                for (int i = 0; i < 4 & i<dgv_PHIM.RowCount; i++)
+                {
+                    byte[] cvr = (byte[])dgv_PHIM.Rows[i].Cells[3].Value;
+                    Image convertedImg= byteArrayToImage(cvr);
+                    ArrPic[i].Image = convertedImg;
+                }
+                
             }
             catch (SqlException)
             {
@@ -79,9 +95,11 @@ namespace QuanLyRapPhim_Final.User_Controls
             Them = true;
             txtMaPhim.Enabled = true;
             txtMaPhim.ResetText();
-            txtTenPhim.ResetText();
-            txtGiaVe.ResetText();
-            txtTLP.ResetText();
+            txtTenPhim.Enabled=true;
+            txtGiaVe.Enabled = true;
+            txtTLP.Enabled = true;
+            txtNoiDung.Enabled = true;
+
             btnSave.Enabled = true;
             btnCancel.Enabled = true;
             btnAdd.Enabled = false;
@@ -101,6 +119,12 @@ namespace QuanLyRapPhim_Final.User_Controls
             txtTenPhim.ResetText();
             txtGiaVe.ResetText();
             txtTLP.ResetText();
+            txtMaPhim.Enabled = false;
+            txtMaPhim.ResetText();
+            txtTenPhim.Enabled = false;
+            txtGiaVe.Enabled = false;
+            txtTLP.Enabled = false;
+            txtNoiDung.Enabled = false;
             btnAdd.Enabled = true;
             btnEditFilm.Enabled = true;
             btnDelFilm.Enabled = true;
@@ -196,13 +220,55 @@ namespace QuanLyRapPhim_Final.User_Controls
         private void đặtVéToolStripMenuItem_Click(object sender, EventArgs e)
         {
             dgv_PHIM.BringToFront();
+            pnPhim.Visible = false;
             dgv_PHIM.Visible = true;
         }
 
         private void thêmPhimToolStripMenuItem_Click(object sender, EventArgs e)
         {
             dgv_PHIM.SendToBack();
+            pnPhim.Visible = true;
             dgv_PHIM.Hide();
+        }
+
+        public Image byteArrayToImage(byte[] byteArrayIn)
+        {
+            MemoryStream ms = new MemoryStream(byteArrayIn);
+            Image returnImage = Image.FromStream(ms);
+            return returnImage;
+        }
+        public void ShowImgDisplay(String fileToDisplay, int xSize, int ySize)
+        {
+            // Sets up an image object to be displayed.
+            if (ImgDisplay != null)
+            {
+                ImgDisplay.Dispose();
+            }
+
+            // Stretches the image to fit the pictureBox.
+            pb1.SizeMode = PictureBoxSizeMode.StretchImage;
+            ImgDisplay = new Bitmap(fileToDisplay);
+            pb1.ClientSize = new Size(xSize, ySize);
+            pb1.Image = (Image)ImgDisplay;
+        }
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            dgv_PHIM.DataSource = dbPhim.SearchPhim(txtSearch.Text).Tables[0];
+        }
+
+        private void phimToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pnPhim_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
         }
     }
 }

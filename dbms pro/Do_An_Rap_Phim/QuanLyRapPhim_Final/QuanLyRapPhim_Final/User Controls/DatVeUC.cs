@@ -43,8 +43,9 @@ namespace QuanLyRapPhim_Final.User_Controls
         private string currentMaPhim;
         private string globalMaKH;
         private string storedMaKH = "";
-        private int globalMaNV;
+        private string globalMaNV;
         private bool themFlag = false;
+        private float TienVeLucDau = 0;
         string err;
         public DatVeUC()
         {
@@ -53,7 +54,11 @@ namespace QuanLyRapPhim_Final.User_Controls
 
         private void DatVeUC_Load(object sender, EventArgs e)
         {
-
+            LoadData();
+        }
+        private void LoadData()
+        {
+            SetupcbGhiChu();
             setNhanViencb();
             setCombobox2();
             DataSet ds = dbRap.LayRap();
@@ -65,16 +70,22 @@ namespace QuanLyRapPhim_Final.User_Controls
             Phimcb.Enabled = false;
             btnHuy.Enabled = false;
             btnLuu.Enabled = false;
+            Daytxt.Enabled = false;
+            ghetxt.Enabled = false;
+            txtTien.Enabled = false;
+            txtKhuyenMai.Text = "0";
+            txtKhuyenMai.Enabled = false;
+            txtGioKetThuc.Enabled = false;
+            txtMaVe.Enabled = false;
+
         }
         private void setCombobox2()
         {
-            dtPhim = new DataTable();
-            conn = new SqlConnection(cnstr);
-            da = new SqlDataAdapter("select * from Phim", conn);
-            da.Fill(dtPhim);
-            Phimcb.DataSource = dtPhim;
+            DataSet ds = dbPhim.LayPhim();
+            Phimcb.DataSource = ds.Tables[0];
             Phimcb.DisplayMember = "TenPhim";
             Phimcb.ValueMember = "TenPhim";
+            Phimcb.SelectedIndex = 0;
         }
         private void setRaptxt(DataTable dt)
         {
@@ -146,7 +157,6 @@ namespace QuanLyRapPhim_Final.User_Controls
 
             //render chỗ khi change index
 
-
         }
 
         private void SuatChieucb_SelectedIndexChanged(object sender, EventArgs e)
@@ -156,8 +166,8 @@ namespace QuanLyRapPhim_Final.User_Controls
             if (Phimcb.ValueMember.ToString() == "") return;
             if (SuatChieucb.ValueMember.ToString() == "") return;
             //string time;
-
-
+            XuLyGioKetThuc();
+            
             seatPanel.Visible = true;
             render seatLoader = new render();
             dtRap = new DataTable();
@@ -212,19 +222,17 @@ namespace QuanLyRapPhim_Final.User_Controls
         private void nhanViencb_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (nhanViencb.ValueMember == "") return;
-            globalMaNV = nhanViencb.SelectedIndex;
+            globalMaNV = nhanViencb.SelectedValue.ToString().Trim();
         }
         private void setNhanViencb()
         {
-            conn = new SqlConnection(cnstr);
-            da = new SqlDataAdapter("select * from NhanVien", conn);
-            dtNhanVien = new DataTable();
-            da.Fill(dtNhanVien);
 
-            nhanViencb.DataSource = dtNhanVien;
+            DataSet ds = dbNhanVien.LayNhanVien();
+            nhanViencb.DataSource = ds.Tables[0];
             nhanViencb.DisplayMember = "TenNV";
-            nhanViencb.ValueMember = "TenNV";
-            globalMaNV = nhanViencb.SelectedIndex;
+            nhanViencb.ValueMember = "MaNV";
+            nhanViencb.SelectedIndex = 0;
+            globalMaNV = nhanViencb.SelectedIndex.ToString();
         }
         private void setBtnEven(List<Button> btns)
         {
@@ -245,7 +253,9 @@ namespace QuanLyRapPhim_Final.User_Controls
 
         private void btnReload_Click(object sender, EventArgs e)
         {
-            setNhanViencb();
+            //setNhanViencb();
+            //setMaKHcb();
+            //setCombobox2();
             if (SuatChieucb.ValueMember.ToString() == "") return;
             render seatLoader = new render();
             if (globalRap != null)
@@ -273,6 +283,8 @@ namespace QuanLyRapPhim_Final.User_Controls
         private void btnThem_Click(object sender, EventArgs e)
         {
             themFlag = true;
+            txtMaVe.Text = dbDatVe.TangMaVe();
+            txtMaVe.Enabled = false;
             btnLuu.Enabled = true;
             btnHuy.Enabled = true;
             btnThem.Enabled = false;
@@ -282,31 +294,33 @@ namespace QuanLyRapPhim_Final.User_Controls
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
-            XuLySuatVe();
             if (!raptxt.Text.Equals("") && !ghetxt.Text.Equals("") && !Daytxt.Text.Equals(""))
             {
-                bool checkKH = checkMaKH();
-                if (checkKH == false)
-                {
-                    MessageBox.Show("bạn đã đặt suất chiếu này rồi!");
-                    return;
-                }
+                //bool checkKH = checkMaKH();
+                //if (checkKH == false)
+                //{
+                //    MessageBox.Show("bạn đã đặt suất chiếu này rồi!");
+                //    return;
+                //}
 
                 dtPhim = new DataTable();
                 dtPhim.Clear();
                 DataSet dsPhim = dbPhim.LayPhim();
                 dtPhim = dsPhim.Tables[0];
                 string maPhim = findMaPhim(dtPhim);
-                string maNV = findMaNV();
                 dbDatVe = new BLDatVe();
-
+                DataSet dsSuatChieu = dbSuatChieu.LaySuatChieuCuaPhim(maPhim);
+                string MaSC = dtSuatChieu.Rows[0].ItemArray[3].ToString();
                 //todo
                 try
                 {
 
-                    dbDatVe.themVe(maPhim, raptxt.Text, SuatChieucb.Text, maNV, globalMaKH, Daytxt.Text, ghetxt.Text, ref err);
+                    //dbDatVe.themVe(maPhim, raptxt.Text, SuatChieucb.Text, maNV, globalMaKH, Daytxt.Text, ghetxt.Text, ref err);
+                    dbDatVe.XuLyVe(txtMaVe.Text, globalMaNV, globalMaKH, Daytxt.Text, dtpNgay.Value.Date, Convert.ToInt32(ghetxt.Text), MaSC, txtGioKetThuc.Text, Convert.ToInt32(txtTien.Text.Trim()), cbGhiChu.Text, "Insert");
                     MessageBox.Show("thêm thành công!");
                     storedMaKH = globalMaKH;
+                    btnReload_Click(sender,e);
+                    txtMaVe.ResetText();
                 }
                 catch (Exception)
                 {
@@ -319,24 +333,13 @@ namespace QuanLyRapPhim_Final.User_Controls
                 MessageBox.Show("chưa hoàn thành đặt vé !");
             }
         }
-        private bool checkMaKH()
-        {
-            dtDatVe = new DataTable();
-            dtDatVe.Clear();
-            DataSet ds = dbDatVe.LayThongTinVe();
-            dtDatVe = ds.Tables[0];
 
-            for (int i = 0; i < dtDatVe.Rows.Count; i++)
-            {
-                if (globalMaKH == dtDatVe.Rows[i].ItemArray[3].ToString())
-                {
-                    if (SuatChieucb.Text == dtDatVe.Rows[i].ItemArray[1].ToString())
-                    {
-                        return false;
-                    }
-                }
-            }
-            return true;
+        private void SetupcbGhiChu()
+        {
+            cbGhiChu.Items.Add("Sinh viên");
+            cbGhiChu.Items.Add("Học sinh");
+            cbGhiChu.Items.Add("Người lớn");
+            cbGhiChu.SelectedIndex = 0;
         }
         private string findMaPhim(DataTable dt)
         {
@@ -346,20 +349,6 @@ namespace QuanLyRapPhim_Final.User_Controls
                 i++;
             }
             return dt.Rows[i].ItemArray[1].ToString();
-        }
-        private string findMaNV()
-        {
-
-            dtNhanVien = new DataTable();
-            dtNhanVien.Clear();
-            DataSet ds = dbNhanVien.LayNhanVien();
-            dtNhanVien = ds.Tables[0];
-            int i = 0;
-            while (i < dtNhanVien.Rows.Count && globalMaNV != (Convert.ToInt64(dtNhanVien.Rows[i].ItemArray[2]) - 1))
-            {
-                i++;
-            }
-            return dtNhanVien.Rows[i].ItemArray[2].ToString();
         }
         private void setMaKHcb()
         {
@@ -388,16 +377,137 @@ namespace QuanLyRapPhim_Final.User_Controls
             raptxt.Text = "";
             Daytxt.Text = "";
             ghetxt.Text = "";
+            txtMaVe.ResetText();
+            SuatChieucb.Enabled = false;
             nhanViencb.Text = "";
             Phimcb.Enabled = false;
             btnHuy.Enabled = false;
             btnThem.Enabled = true;
         }
-        private void XuLySuatVe()
+        private void XuLyGioKetThuc()
         {
+            DataSet ds = dbPhim.TimPhim(Phimcb.Text.Trim());
+            float ThoiLuong = Convert.ToInt64(ds.Tables[0].Rows[0].ItemArray[4].ToString());
+            float Phut = ThoiLuong % 60;
+            float Gio = ThoiLuong / 60;
+            Gio = Convert.ToInt64(Math.Round(Convert.ToDouble(Gio)));
+            //tách suất chiếu
             string[] container;
             string str = SuatChieucb.Text.ToString();
-            container = str.Split('h');
+            container = str.ToLower().Split('h');
+            foreach (var item in container)
+            {
+                if (item.Length<2)
+                {
+                    item.Insert(0,"0");
+                }
+            }
+            //xử lí phút:
+            float phutKetThuc = Phut + Convert.ToInt64(container[1]);
+            float carry = 0;
+            if (phutKetThuc>60)
+            {
+                carry = 1;
+                phutKetThuc -= 60;
+            }
+            else if (phutKetThuc==60)
+            {
+                carry = 1;
+                phutKetThuc = 0;
+            }
+            //xử lí giờ
+            float gioKetThuc = Gio + Convert.ToInt64(container[0]);
+            if (gioKetThuc+carry>24)
+            {
+                gioKetThuc = gioKetThuc - 24 + carry;
+            }
+            else if (gioKetThuc+carry==24)
+            {
+                gioKetThuc =0;
+            }
+            else
+            {
+                gioKetThuc += carry;
+            }
+            //join 2 vế
+            
+            if (phutKetThuc.ToString().Length<2)
+            {
+                //xử lí phút
+                container[1] = phutKetThuc.ToString().Insert(0, "0");
+            }
+            else
+            {
+                container[1] = phutKetThuc.ToString();
+            }
+            if (gioKetThuc.ToString().Length<2)
+            {
+                container[0] = gioKetThuc.ToString().Insert(0, "0");
+            }
+            else
+            {
+                container[0] = gioKetThuc.ToString();
+            }
+            string final= string.Join(":", container);
+            txtGioKetThuc.Text = final;
+        }
+
+        private void cbGhiChu_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbGhiChu.SelectedIndex==0)
+            {
+                txtTien.Text = "45000";
+                TienVeLucDau = 45000;
+                txtKhuyenMai.Text = "0";
+            }
+            else if (cbGhiChu.SelectedIndex==1)
+            {
+                txtTien.Text = "60000";
+                TienVeLucDau = 60000;
+                txtKhuyenMai.Text = "0";
+
+            }
+            else
+            {
+                txtTien.Text = "120000";
+                TienVeLucDau = 120000;
+                txtKhuyenMai.Text = "0";
+
+            }
+        }
+
+        private void ckbKhuyeMai_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ckbKhuyeMai.CheckState==CheckState.Checked)
+            {
+                txtKhuyenMai.Enabled=true;
+                cbGhiChu.Enabled = false;
+            }
+            else
+            {
+                txtKhuyenMai.Enabled = false;
+                cbGhiChu.Enabled = true;
+            }
+        }
+
+        private void txtKhuyenMai_TextChanged(object sender, EventArgs e)
+        {
+            if (txtKhuyenMai.Text!="")
+            {
+            txtTien.ResetText();
+            DataSet ds= dbDatVe.TinhTienVe(TienVeLucDau,Convert.ToInt64(txtKhuyenMai.Text.Trim()));
+            txtTien.Text = ds.Tables[0].Rows[0].ItemArray[0].ToString();
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            LoadData();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

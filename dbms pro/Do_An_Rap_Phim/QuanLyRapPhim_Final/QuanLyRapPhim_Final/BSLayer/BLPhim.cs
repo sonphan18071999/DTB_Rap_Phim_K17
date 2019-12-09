@@ -45,5 +45,9 @@ namespace QuanLyRapPhim_Final.BSLayer
         {
             return db.ExecuteQueryDataSet($"select * from Phim where MaPhim={MaPhim}", CommandType.Text);
         }
+        public virtual DataSet SearchPhim(string TenPhim)
+        {
+            return db.ExecuteQueryDataSet($" SELECT * from PhimSearch(N'{TenPhim.Trim()}')", CommandType.Text);
+        }
     }
 }

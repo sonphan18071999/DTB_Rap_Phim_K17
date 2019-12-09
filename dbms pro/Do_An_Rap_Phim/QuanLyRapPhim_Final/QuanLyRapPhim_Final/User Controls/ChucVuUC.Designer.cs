@@ -42,11 +42,11 @@
             this.chucVuBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.quanLyRapPhimDataSet_CHUCVU = new QuanLyRapPhim_Final.QuanLyRapPhimDataSet_CHUCVU();
             this.chucVuTableAdapter = new QuanLyRapPhim_Final.QuanLyRapPhimDataSet_CHUCVUTableAdapters.ChucVuTableAdapter();
-            this.btnAdd = new System.Windows.Forms.Button();
-            this.btnEdit = new System.Windows.Forms.Button();
-            this.btnDel = new System.Windows.Forms.Button();
-            this.btnSave = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.btnDel = new System.Windows.Forms.Button();
+            this.btnEdit = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_CHUCVU)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chucVuBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.quanLyRapPhimDataSet_CHUCVU)).BeginInit();
@@ -55,7 +55,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(36, 95);
+            this.label1.Location = new System.Drawing.Point(173, 82);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(92, 23);
@@ -65,7 +65,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(36, 141);
+            this.label2.Location = new System.Drawing.Point(173, 141);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(83, 23);
             this.label2.TabIndex = 1;
@@ -73,29 +73,29 @@
             // 
             // txtChucVu
             // 
-            this.txtChucVu.Location = new System.Drawing.Point(140, 92);
+            this.txtChucVu.Location = new System.Drawing.Point(304, 75);
             this.txtChucVu.Name = "txtChucVu";
-            this.txtChucVu.Size = new System.Drawing.Size(266, 30);
+            this.txtChucVu.Size = new System.Drawing.Size(333, 30);
             this.txtChucVu.TabIndex = 2;
             // 
             // txtLuong
             // 
-            this.txtLuong.Location = new System.Drawing.Point(140, 138);
+            this.txtLuong.Location = new System.Drawing.Point(304, 134);
             this.txtLuong.Name = "txtLuong";
-            this.txtLuong.Size = new System.Drawing.Size(266, 30);
+            this.txtLuong.Size = new System.Drawing.Size(333, 30);
             this.txtLuong.TabIndex = 3;
             // 
             // txtMaCV
             // 
-            this.txtMaCV.Location = new System.Drawing.Point(140, 44);
+            this.txtMaCV.Location = new System.Drawing.Point(304, 20);
             this.txtMaCV.Name = "txtMaCV";
-            this.txtMaCV.Size = new System.Drawing.Size(266, 30);
+            this.txtMaCV.Size = new System.Drawing.Size(333, 30);
             this.txtMaCV.TabIndex = 4;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(36, 47);
+            this.label3.Location = new System.Drawing.Point(173, 27);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(120, 23);
             this.label3.TabIndex = 5;
@@ -105,16 +105,17 @@
             // 
             this.dgv_CHUCVU.AutoGenerateColumns = false;
             this.dgv_CHUCVU.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgv_CHUCVU.BackgroundColor = System.Drawing.Color.Beige;
             this.dgv_CHUCVU.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_CHUCVU.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.maCVDataGridViewTextBoxColumn,
             this.chucVuDataGridViewTextBoxColumn,
             this.luongDataGridViewTextBoxColumn});
             this.dgv_CHUCVU.DataSource = this.chucVuBindingSource;
-            this.dgv_CHUCVU.Location = new System.Drawing.Point(40, 185);
+            this.dgv_CHUCVU.Location = new System.Drawing.Point(140, 190);
             this.dgv_CHUCVU.Name = "dgv_CHUCVU";
             this.dgv_CHUCVU.RowHeadersWidth = 51;
-            this.dgv_CHUCVU.Size = new System.Drawing.Size(366, 150);
+            this.dgv_CHUCVU.Size = new System.Drawing.Size(893, 451);
             this.dgv_CHUCVU.TabIndex = 6;
             this.dgv_CHUCVU.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_CHUCVU_CellClick);
             // 
@@ -153,60 +154,75 @@
             // 
             this.chucVuTableAdapter.ClearBeforeFill = true;
             // 
-            // btnAdd
+            // btnCancel
             // 
-            this.btnAdd.AutoSize = true;
-            this.btnAdd.Location = new System.Drawing.Point(462, 45);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(75, 33);
-            this.btnAdd.TabIndex = 7;
-            this.btnAdd.Text = "Thêm";
-            this.btnAdd.UseVisualStyleBackColor = true;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-            // 
-            // btnEdit
-            // 
-            this.btnEdit.AutoSize = true;
-            this.btnEdit.Location = new System.Drawing.Point(462, 90);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(75, 33);
-            this.btnEdit.TabIndex = 7;
-            this.btnEdit.Text = "Sửa";
-            this.btnEdit.UseVisualStyleBackColor = true;
-            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
-            // 
-            // btnDel
-            // 
-            this.btnDel.AutoSize = true;
-            this.btnDel.Location = new System.Drawing.Point(462, 136);
-            this.btnDel.Name = "btnDel";
-            this.btnDel.Size = new System.Drawing.Size(75, 33);
-            this.btnDel.TabIndex = 7;
-            this.btnDel.Text = "Xóa";
-            this.btnDel.UseVisualStyleBackColor = true;
-            this.btnDel.Click += new System.EventHandler(this.btnDel_Click);
+            this.btnCancel.AutoSize = true;
+            this.btnCancel.Image = global::QuanLyRapPhim_Final.Properties.Resources.delete7;
+            this.btnCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCancel.Location = new System.Drawing.Point(831, 75);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(143, 43);
+            this.btnCancel.TabIndex = 7;
+            this.btnCancel.Text = "Hủy";
+            this.btnCancel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnSave
             // 
             this.btnSave.AutoSize = true;
-            this.btnSave.Location = new System.Drawing.Point(462, 185);
+            this.btnSave.Image = global::QuanLyRapPhim_Final.Properties.Resources.save1;
+            this.btnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSave.Location = new System.Drawing.Point(831, 19);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(75, 33);
+            this.btnSave.Size = new System.Drawing.Size(143, 45);
             this.btnSave.TabIndex = 7;
             this.btnSave.Text = "Lưu";
+            this.btnSave.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // btnCancel
+            // btnDel
             // 
-            this.btnCancel.AutoSize = true;
-            this.btnCancel.Location = new System.Drawing.Point(462, 231);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(75, 33);
-            this.btnCancel.TabIndex = 7;
-            this.btnCancel.Text = "Hủy";
-            this.btnCancel.UseVisualStyleBackColor = true;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            this.btnDel.AutoSize = true;
+            this.btnDel.Image = global::QuanLyRapPhim_Final.Properties.Resources.trash1;
+            this.btnDel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDel.Location = new System.Drawing.Point(657, 136);
+            this.btnDel.Name = "btnDel";
+            this.btnDel.Size = new System.Drawing.Size(144, 38);
+            this.btnDel.TabIndex = 7;
+            this.btnDel.Text = "Xóa";
+            this.btnDel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnDel.UseVisualStyleBackColor = true;
+            this.btnDel.Click += new System.EventHandler(this.btnDel_Click);
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.AutoSize = true;
+            this.btnEdit.Image = global::QuanLyRapPhim_Final.Properties.Resources.tools;
+            this.btnEdit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEdit.Location = new System.Drawing.Point(657, 76);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(144, 42);
+            this.btnEdit.TabIndex = 7;
+            this.btnEdit.Text = "Sửa";
+            this.btnEdit.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.AutoSize = true;
+            this.btnAdd.Image = global::QuanLyRapPhim_Final.Properties.Resources.plus2;
+            this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAdd.Location = new System.Drawing.Point(657, 20);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(144, 43);
+            this.btnAdd.TabIndex = 7;
+            this.btnAdd.Text = "Thêm";
+            this.btnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // ChucVuUC
             // 
@@ -228,7 +244,7 @@
             this.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ChucVuUC";
-            this.Size = new System.Drawing.Size(896, 1200);
+            this.Size = new System.Drawing.Size(1187, 1233);
             this.Load += new System.EventHandler(this.ChucVuUC_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_CHUCVU)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chucVuBindingSource)).EndInit();

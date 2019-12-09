@@ -90,6 +90,8 @@ namespace QuanLyRapPhim_Final.User_Controls
         private void HopDongUC_Load(object sender, EventArgs e)
         {
             LoadData();
+            dgv_HopDong.RowTemplate.Height = 90;
+
         }
 
         private void dgv_HopDong_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -203,6 +205,11 @@ namespace QuanLyRapPhim_Final.User_Controls
                 txtGiaTriHD.ResetText();
                 MessageBox.Show("giá trị hợp đồng quá lớn!");
             }
+        }
+
+        private void btnReload_Click(object sender, EventArgs e)
+        {
+            LoadData();
         }
     }
 }

@@ -34,7 +34,11 @@ namespace QuanLyRapPhim_Final
             }
             else
             {
+                dbDangNhap.Decrypt(txtUsername.Text.Trim());
+
                 DataSet ds = dbDangNhap.FindUser(txtUsername.Text, txtPassword.Text);
+                dbDangNhap.Encrypt(txtUsername.Text.Trim());
+
                 if (ds.Tables[0].Rows.Count>0)
                 {
                     DataSet ds1 = dbNhanVien.LayChucVuNV(txtUsername.Text);
@@ -42,9 +46,11 @@ namespace QuanLyRapPhim_Final
                     {
                         Program.ChucVuUser = ds1.Tables[0].Rows[0].ItemArray[0].ToString();
                         Program.UserName = txtUsername.Text;
-                        MessageBox.Show("đăng nhập thành công.","Thông báo!!",MessageBoxButtons.OK,MessageBoxIcon.Information);
                         this.Hide();
-                        Form1 mainform = new Form1();
+
+                        User us = new User();
+                        us.MaNV = txtUsername.Text.Trim();
+                        Form1 mainform = new Form1(us.MaNV);
                         mainform.ShowDialog();
                         this.Close();
                         //this.ShowInTaskbar = false;
@@ -91,7 +97,10 @@ namespace QuanLyRapPhim_Final
                 }
                 else
                 {
+                    dbDangNhap.Decrypt(txtUsername.Text.Trim());
+
                     DataSet ds = dbDangNhap.FindUser(txtUsername.Text, txtPassword.Text);
+                    dbDangNhap.Encrypt(txtUsername.Text.Trim());
                     if (ds.Tables[0].Rows.Count > 0)
                     {
                         DataSet ds1 = dbNhanVien.LayChucVuNV(txtUsername.Text);
@@ -101,7 +110,9 @@ namespace QuanLyRapPhim_Final
                             Program.UserName = txtUsername.Text;
                             MessageBox.Show("đăng nhập thành công.", "Thông báo!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             this.Hide();
-                            Form1 mainform = new Form1();
+                            User us = new User();
+                            us.MaNV = txtUsername.Text;
+                            Form1 mainform = new Form1(us.MaNV);
                             mainform.ShowDialog();
                             this.Close();
                             //this.ShowInTaskbar = false;
@@ -118,4 +129,5 @@ namespace QuanLyRapPhim_Final
             }
         }
     }
+
 }

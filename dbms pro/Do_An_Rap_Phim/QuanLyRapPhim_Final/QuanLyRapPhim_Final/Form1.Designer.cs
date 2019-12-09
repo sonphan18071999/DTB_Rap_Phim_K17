@@ -44,15 +44,15 @@
             this.btnWelcome = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblHeader = new System.Windows.Forms.Label();
-            this.datVeUC1 = new QuanLyRapPhim_Final.User_Controls.DatVeUC();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.chucVuUC1 = new QuanLyRapPhim_Final.User_Controls.ChucVuUC();
             this.welcomeUC1 = new QuanLyRapPhim_Final.User_Controls.WelcomeUC();
             this.quanLyRapUC1 = new QuanLyRapPhim_Final.User_Controls.QuanLyRapUC();
             this.quanLyNhanVienUC1 = new QuanLyRapPhim_Final.User_Controls.QuanLyNhanVienUC();
             this.quanLyKhachHangUC1 = new QuanLyRapPhim_Final.User_Controls.QuanLyKhachHangUC();
             this.phimUC1 = new QuanLyRapPhim_Final.User_Controls.PhimUC();
             this.quanLySuatChieuUC1 = new QuanLyRapPhim_Final.User_Controls.QuanLySuatChieuUC();
+            this.datVeUC1 = new QuanLyRapPhim_Final.User_Controls.DatVeUC();
+            this.chucVuUC1 = new QuanLyRapPhim_Final.User_Controls.ChucVuUC();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel2.SuspendLayout();
@@ -87,12 +87,15 @@
             this.btnChiNhanh.BackColor = System.Drawing.Color.WhiteSmoke;
             this.btnChiNhanh.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnChiNhanh.ForeColor = System.Drawing.Color.Black;
+            this.btnChiNhanh.Image = global::QuanLyRapPhim_Final.Properties.Resources.bank;
+            this.btnChiNhanh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnChiNhanh.Location = new System.Drawing.Point(5, 932);
             this.btnChiNhanh.Margin = new System.Windows.Forms.Padding(4);
             this.btnChiNhanh.Name = "btnChiNhanh";
             this.btnChiNhanh.Size = new System.Drawing.Size(287, 71);
             this.btnChiNhanh.TabIndex = 14;
             this.btnChiNhanh.Text = "Bảng Chi Nhánh";
+            this.btnChiNhanh.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnChiNhanh.UseVisualStyleBackColor = false;
             this.btnChiNhanh.Click += new System.EventHandler(this.btnChiNhanh_Click);
             // 
@@ -101,12 +104,15 @@
             this.btnHopDong.BackColor = System.Drawing.Color.WhiteSmoke;
             this.btnHopDong.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnHopDong.ForeColor = System.Drawing.Color.Black;
+            this.btnHopDong.Image = global::QuanLyRapPhim_Final.Properties.Resources.contract;
+            this.btnHopDong.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnHopDong.Location = new System.Drawing.Point(5, 853);
             this.btnHopDong.Margin = new System.Windows.Forms.Padding(4);
             this.btnHopDong.Name = "btnHopDong";
             this.btnHopDong.Size = new System.Drawing.Size(287, 71);
             this.btnHopDong.TabIndex = 13;
             this.btnHopDong.Text = "Quản lý hợp đồng";
+            this.btnHopDong.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnHopDong.UseVisualStyleBackColor = false;
             this.btnHopDong.Click += new System.EventHandler(this.btnHopDong_Click);
             // 
@@ -115,12 +121,15 @@
             this.btnQuanLyHangSanXuat.BackColor = System.Drawing.Color.WhiteSmoke;
             this.btnQuanLyHangSanXuat.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnQuanLyHangSanXuat.ForeColor = System.Drawing.Color.Black;
+            this.btnQuanLyHangSanXuat.Image = global::QuanLyRapPhim_Final.Properties.Resources.movie;
+            this.btnQuanLyHangSanXuat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnQuanLyHangSanXuat.Location = new System.Drawing.Point(5, 774);
             this.btnQuanLyHangSanXuat.Margin = new System.Windows.Forms.Padding(4);
             this.btnQuanLyHangSanXuat.Name = "btnQuanLyHangSanXuat";
             this.btnQuanLyHangSanXuat.Size = new System.Drawing.Size(287, 71);
             this.btnQuanLyHangSanXuat.TabIndex = 12;
-            this.btnQuanLyHangSanXuat.Text = "Quản lý hãng sản xuất";
+            this.btnQuanLyHangSanXuat.Text = "Hãng sản xuất";
+            this.btnQuanLyHangSanXuat.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnQuanLyHangSanXuat.UseVisualStyleBackColor = false;
             this.btnQuanLyHangSanXuat.Click += new System.EventHandler(this.btnQuanLyHangSanXuat_Click);
             // 
@@ -150,12 +159,15 @@
             this.btnQuanLySuatChieu.BackColor = System.Drawing.Color.WhiteSmoke;
             this.btnQuanLySuatChieu.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnQuanLySuatChieu.ForeColor = System.Drawing.Color.Black;
+            this.btnQuanLySuatChieu.Image = global::QuanLyRapPhim_Final.Properties.Resources.calendar;
+            this.btnQuanLySuatChieu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnQuanLySuatChieu.Location = new System.Drawing.Point(4, 695);
             this.btnQuanLySuatChieu.Margin = new System.Windows.Forms.Padding(4);
             this.btnQuanLySuatChieu.Name = "btnQuanLySuatChieu";
             this.btnQuanLySuatChieu.Size = new System.Drawing.Size(288, 71);
             this.btnQuanLySuatChieu.TabIndex = 9;
-            this.btnQuanLySuatChieu.Text = "Quản lý suất chiếu";
+            this.btnQuanLySuatChieu.Text = "Suất chiếu phim";
+            this.btnQuanLySuatChieu.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnQuanLySuatChieu.UseVisualStyleBackColor = false;
             this.btnQuanLySuatChieu.Click += new System.EventHandler(this.btnQuanLySuatChieu_Click);
             // 
@@ -164,12 +176,15 @@
             this.btnChucVuNhanVien.BackColor = System.Drawing.Color.WhiteSmoke;
             this.btnChucVuNhanVien.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnChucVuNhanVien.ForeColor = System.Drawing.Color.Black;
+            this.btnChucVuNhanVien.Image = global::QuanLyRapPhim_Final.Properties.Resources.bag;
+            this.btnChucVuNhanVien.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnChucVuNhanVien.Location = new System.Drawing.Point(4, 617);
             this.btnChucVuNhanVien.Margin = new System.Windows.Forms.Padding(4);
             this.btnChucVuNhanVien.Name = "btnChucVuNhanVien";
             this.btnChucVuNhanVien.Size = new System.Drawing.Size(288, 71);
             this.btnChucVuNhanVien.TabIndex = 6;
-            this.btnChucVuNhanVien.Text = "Chức vụ nhân viên";
+            this.btnChucVuNhanVien.Text = "Chức vụ ";
+            this.btnChucVuNhanVien.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnChucVuNhanVien.UseVisualStyleBackColor = false;
             this.btnChucVuNhanVien.Click += new System.EventHandler(this.btnChucVuNhanVien_Click);
             // 
@@ -178,12 +193,15 @@
             this.btnDatVe.BackColor = System.Drawing.Color.WhiteSmoke;
             this.btnDatVe.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnDatVe.ForeColor = System.Drawing.Color.Black;
+            this.btnDatVe.Image = global::QuanLyRapPhim_Final.Properties.Resources.movies;
+            this.btnDatVe.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDatVe.Location = new System.Drawing.Point(4, 538);
             this.btnDatVe.Margin = new System.Windows.Forms.Padding(4);
             this.btnDatVe.Name = "btnDatVe";
             this.btnDatVe.Size = new System.Drawing.Size(288, 71);
             this.btnDatVe.TabIndex = 3;
             this.btnDatVe.Text = "Đặt vé";
+            this.btnDatVe.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnDatVe.UseVisualStyleBackColor = false;
             this.btnDatVe.Click += new System.EventHandler(this.btnDatVe_Click);
             // 
@@ -192,12 +210,15 @@
             this.btnQuanLyRap.BackColor = System.Drawing.Color.WhiteSmoke;
             this.btnQuanLyRap.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnQuanLyRap.ForeColor = System.Drawing.Color.Black;
+            this.btnQuanLyRap.Image = global::QuanLyRapPhim_Final.Properties.Resources.car_seat;
+            this.btnQuanLyRap.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnQuanLyRap.Location = new System.Drawing.Point(4, 459);
             this.btnQuanLyRap.Margin = new System.Windows.Forms.Padding(4);
             this.btnQuanLyRap.Name = "btnQuanLyRap";
             this.btnQuanLyRap.Size = new System.Drawing.Size(288, 71);
             this.btnQuanLyRap.TabIndex = 3;
             this.btnQuanLyRap.Text = "Quản lý rạp";
+            this.btnQuanLyRap.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnQuanLyRap.UseVisualStyleBackColor = false;
             this.btnQuanLyRap.Click += new System.EventHandler(this.btnQuanLyRap_Click);
             // 
@@ -206,12 +227,15 @@
             this.btnQuanLyNhanVien.BackColor = System.Drawing.Color.WhiteSmoke;
             this.btnQuanLyNhanVien.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnQuanLyNhanVien.ForeColor = System.Drawing.Color.Black;
+            this.btnQuanLyNhanVien.Image = global::QuanLyRapPhim_Final.Properties.Resources.employee;
+            this.btnQuanLyNhanVien.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnQuanLyNhanVien.Location = new System.Drawing.Point(4, 380);
             this.btnQuanLyNhanVien.Margin = new System.Windows.Forms.Padding(4);
             this.btnQuanLyNhanVien.Name = "btnQuanLyNhanVien";
             this.btnQuanLyNhanVien.Size = new System.Drawing.Size(288, 71);
             this.btnQuanLyNhanVien.TabIndex = 3;
             this.btnQuanLyNhanVien.Text = "Quản lý nhân viên";
+            this.btnQuanLyNhanVien.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnQuanLyNhanVien.UseVisualStyleBackColor = false;
             this.btnQuanLyNhanVien.Click += new System.EventHandler(this.btnQuanLyNhanVien_Click);
             // 
@@ -220,12 +244,15 @@
             this.btnQuanLyKhachHang.BackColor = System.Drawing.Color.WhiteSmoke;
             this.btnQuanLyKhachHang.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnQuanLyKhachHang.ForeColor = System.Drawing.Color.Black;
+            this.btnQuanLyKhachHang.Image = global::QuanLyRapPhim_Final.Properties.Resources.support;
+            this.btnQuanLyKhachHang.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnQuanLyKhachHang.Location = new System.Drawing.Point(4, 302);
             this.btnQuanLyKhachHang.Margin = new System.Windows.Forms.Padding(4);
             this.btnQuanLyKhachHang.Name = "btnQuanLyKhachHang";
             this.btnQuanLyKhachHang.Size = new System.Drawing.Size(288, 71);
             this.btnQuanLyKhachHang.TabIndex = 3;
-            this.btnQuanLyKhachHang.Text = "Quản lý khách hàng";
+            this.btnQuanLyKhachHang.Text = "Quản lý hách hàng";
+            this.btnQuanLyKhachHang.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnQuanLyKhachHang.UseVisualStyleBackColor = false;
             this.btnQuanLyKhachHang.Click += new System.EventHandler(this.btnQuanLyKhachHang_Click);
             // 
@@ -234,12 +261,15 @@
             this.btnQuanLyPhim.BackColor = System.Drawing.Color.WhiteSmoke;
             this.btnQuanLyPhim.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnQuanLyPhim.ForeColor = System.Drawing.Color.Black;
+            this.btnQuanLyPhim.Image = global::QuanLyRapPhim_Final.Properties.Resources.video_camera1;
+            this.btnQuanLyPhim.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnQuanLyPhim.Location = new System.Drawing.Point(4, 223);
             this.btnQuanLyPhim.Margin = new System.Windows.Forms.Padding(4);
             this.btnQuanLyPhim.Name = "btnQuanLyPhim";
             this.btnQuanLyPhim.Size = new System.Drawing.Size(288, 71);
             this.btnQuanLyPhim.TabIndex = 1;
             this.btnQuanLyPhim.Text = "Phim đang chiếu";
+            this.btnQuanLyPhim.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnQuanLyPhim.UseVisualStyleBackColor = false;
             this.btnQuanLyPhim.Click += new System.EventHandler(this.btnQuanLyPhim_Click);
             // 
@@ -261,19 +291,19 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.panel2.Controls.Add(this.lblHeader);
-            this.panel2.Controls.Add(this.datVeUC1);
             this.panel2.Controls.Add(this.pictureBox1);
-            this.panel2.Controls.Add(this.chucVuUC1);
             this.panel2.Controls.Add(this.welcomeUC1);
             this.panel2.Controls.Add(this.quanLyRapUC1);
             this.panel2.Controls.Add(this.quanLyNhanVienUC1);
             this.panel2.Controls.Add(this.quanLyKhachHangUC1);
             this.panel2.Controls.Add(this.phimUC1);
             this.panel2.Controls.Add(this.quanLySuatChieuUC1);
+            this.panel2.Controls.Add(this.datVeUC1);
+            this.panel2.Controls.Add(this.chucVuUC1);
             this.panel2.Location = new System.Drawing.Point(304, 1);
             this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1207, 1354);
+            this.panel2.Size = new System.Drawing.Size(1600, 1354);
             this.panel2.TabIndex = 1;
             // 
             // lblHeader
@@ -291,76 +321,62 @@
             this.lblHeader.TabIndex = 0;
             this.lblHeader.Text = "Welcome";
             // 
-            // datVeUC1
-            // 
-            this.datVeUC1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
-            this.datVeUC1.Location = new System.Drawing.Point(1, 143);
-            this.datVeUC1.Margin = new System.Windows.Forms.Padding(5);
-            this.datVeUC1.Name = "datVeUC1";
-            this.datVeUC1.Size = new System.Drawing.Size(1195, 754);
-            this.datVeUC1.TabIndex = 4;
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::QuanLyRapPhim_Final.Properties.Resources.wall_brick_pts;
             this.pictureBox1.Location = new System.Drawing.Point(4, 0);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1187, 133);
+            this.pictureBox1.Size = new System.Drawing.Size(1605, 133);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 12;
             this.pictureBox1.TabStop = false;
-            // 
-            // chucVuUC1
-            // 
-            this.chucVuUC1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
-            this.chucVuUC1.Location = new System.Drawing.Point(0, 143);
-            this.chucVuUC1.Margin = new System.Windows.Forms.Padding(5);
-            this.chucVuUC1.Name = "chucVuUC1";
-            this.chucVuUC1.Size = new System.Drawing.Size(2389, 1356);
-            this.chucVuUC1.TabIndex = 10;
             // 
             // welcomeUC1
             // 
             this.welcomeUC1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.welcomeUC1.Location = new System.Drawing.Point(1, 143);
+            this.welcomeUC1.Location = new System.Drawing.Point(0, 142);
             this.welcomeUC1.Margin = new System.Windows.Forms.Padding(5);
             this.welcomeUC1.Name = "welcomeUC1";
-            this.welcomeUC1.Size = new System.Drawing.Size(1187, 1233);
+            this.welcomeUC1.Size = new System.Drawing.Size(1625, 886);
             this.welcomeUC1.TabIndex = 9;
             // 
             // quanLyRapUC1
             // 
             this.quanLyRapUC1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.quanLyRapUC1.Location = new System.Drawing.Point(1, 143);
+            this.quanLyRapUC1.Location = new System.Drawing.Point(1, 145);
             this.quanLyRapUC1.Margin = new System.Windows.Forms.Padding(5);
             this.quanLyRapUC1.Name = "quanLyRapUC1";
-            this.quanLyRapUC1.Size = new System.Drawing.Size(1593, 1211);
+            this.quanLyRapUC1.Size = new System.Drawing.Size(1624, 886);
             this.quanLyRapUC1.TabIndex = 8;
             // 
             // quanLyNhanVienUC1
             // 
+            this.quanLyNhanVienUC1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.quanLyNhanVienUC1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.quanLyNhanVienUC1.Location = new System.Drawing.Point(1, 143);
+            this.quanLyNhanVienUC1.Location = new System.Drawing.Point(-3, 142);
             this.quanLyNhanVienUC1.Margin = new System.Windows.Forms.Padding(5);
             this.quanLyNhanVienUC1.Name = "quanLyNhanVienUC1";
-            this.quanLyNhanVienUC1.Size = new System.Drawing.Size(1593, 1221);
+            this.quanLyNhanVienUC1.Size = new System.Drawing.Size(1628, 886);
             this.quanLyNhanVienUC1.TabIndex = 7;
             // 
             // quanLyKhachHangUC1
             // 
+            this.quanLyKhachHangUC1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.quanLyKhachHangUC1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.quanLyKhachHangUC1.Location = new System.Drawing.Point(1, 145);
             this.quanLyKhachHangUC1.Margin = new System.Windows.Forms.Padding(7, 5, 7, 5);
             this.quanLyKhachHangUC1.Name = "quanLyKhachHangUC1";
-            this.quanLyKhachHangUC1.Size = new System.Drawing.Size(1593, 1209);
+            this.quanLyKhachHangUC1.Size = new System.Drawing.Size(1608, 886);
             this.quanLyKhachHangUC1.TabIndex = 6;
             // 
             // phimUC1
             // 
+            this.phimUC1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.phimUC1.Location = new System.Drawing.Point(1, 144);
             this.phimUC1.Margin = new System.Windows.Forms.Padding(5);
             this.phimUC1.Name = "phimUC1";
-            this.phimUC1.Size = new System.Drawing.Size(1195, 1210);
+            this.phimUC1.Size = new System.Drawing.Size(1608, 886);
             this.phimUC1.TabIndex = 5;
             // 
             // quanLySuatChieuUC1
@@ -370,21 +386,42 @@
             this.quanLySuatChieuUC1.Location = new System.Drawing.Point(5, 143);
             this.quanLySuatChieuUC1.Margin = new System.Windows.Forms.Padding(5);
             this.quanLySuatChieuUC1.Name = "quanLySuatChieuUC1";
-            this.quanLySuatChieuUC1.Size = new System.Drawing.Size(2389, 1356);
+            this.quanLySuatChieuUC1.Size = new System.Drawing.Size(1604, 886);
             this.quanLySuatChieuUC1.TabIndex = 11;
+            // 
+            // datVeUC1
+            // 
+            this.datVeUC1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.datVeUC1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
+            this.datVeUC1.Location = new System.Drawing.Point(1, 142);
+            this.datVeUC1.Margin = new System.Windows.Forms.Padding(5);
+            this.datVeUC1.Name = "datVeUC1";
+            this.datVeUC1.Size = new System.Drawing.Size(1624, 872);
+            this.datVeUC1.TabIndex = 4;
+            // 
+            // chucVuUC1
+            // 
+            this.chucVuUC1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.chucVuUC1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
+            this.chucVuUC1.Location = new System.Drawing.Point(0, 142);
+            this.chucVuUC1.Margin = new System.Windows.Forms.Padding(5);
+            this.chucVuUC1.Name = "chucVuUC1";
+            this.chucVuUC1.Size = new System.Drawing.Size(1609, 1207);
+            this.chucVuUC1.TabIndex = 10;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1718, 1030);
+            this.ClientSize = new System.Drawing.Size(1782, 1054);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "Quản lý phim";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();

@@ -42,14 +42,15 @@
             this.loaiPhimDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rapBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.quanLyRapPhimDataSet_RAP = new QuanLyRapPhim_Final.QuanLyRapPhimDataSet_RAP();
-            this.btnAdd = new System.Windows.Forms.Button();
-            this.btnDel = new System.Windows.Forms.Button();
-            this.btnEdit = new System.Windows.Forms.Button();
-            this.btnCancel = new System.Windows.Forms.Button();
-            this.btnSave = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.txtLoaiPhim = new System.Windows.Forms.TextBox();
             this.rapTableAdapter = new QuanLyRapPhim_Final.QuanLyRapPhimDataSet_RAPTableAdapters.RapTableAdapter();
+            this.btnReload = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.btnEdit = new System.Windows.Forms.Button();
+            this.btnDel = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_RAP)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rapBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.quanLyRapPhimDataSet_RAP)).BeginInit();
@@ -58,7 +59,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(29, 23);
+            this.label1.Location = new System.Drawing.Point(163, 49);
             this.label1.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(89, 23);
@@ -68,7 +69,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(29, 71);
+            this.label2.Location = new System.Drawing.Point(163, 119);
             this.label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(113, 23);
@@ -78,7 +79,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(29, 114);
+            this.label3.Location = new System.Drawing.Point(163, 191);
             this.label3.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(131, 23);
@@ -87,31 +88,34 @@
             // 
             // txtMaRap
             // 
-            this.txtMaRap.Location = new System.Drawing.Point(229, 26);
+            this.txtMaRap.Location = new System.Drawing.Point(321, 52);
             this.txtMaRap.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txtMaRap.Name = "txtMaRap";
-            this.txtMaRap.Size = new System.Drawing.Size(229, 30);
+            this.txtMaRap.Size = new System.Drawing.Size(336, 30);
             this.txtMaRap.TabIndex = 8;
             // 
             // txtSoDayGhe
             // 
-            this.txtSoDayGhe.Location = new System.Drawing.Point(229, 68);
+            this.txtSoDayGhe.Location = new System.Drawing.Point(321, 116);
             this.txtSoDayGhe.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txtSoDayGhe.Name = "txtSoDayGhe";
-            this.txtSoDayGhe.Size = new System.Drawing.Size(229, 30);
+            this.txtSoDayGhe.Size = new System.Drawing.Size(336, 30);
             this.txtSoDayGhe.TabIndex = 9;
             // 
             // txtSoLuongGhe
             // 
-            this.txtSoLuongGhe.Location = new System.Drawing.Point(229, 111);
+            this.txtSoLuongGhe.Location = new System.Drawing.Point(321, 188);
             this.txtSoLuongGhe.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txtSoLuongGhe.Name = "txtSoLuongGhe";
-            this.txtSoLuongGhe.Size = new System.Drawing.Size(229, 30);
+            this.txtSoLuongGhe.Size = new System.Drawing.Size(336, 30);
             this.txtSoLuongGhe.TabIndex = 10;
             // 
             // dgv_RAP
             // 
             this.dgv_RAP.AutoGenerateColumns = false;
+            this.dgv_RAP.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgv_RAP.BackgroundColor = System.Drawing.Color.White;
+            this.dgv_RAP.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgv_RAP.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_RAP.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.maRapDataGridViewTextBoxColumn,
@@ -119,10 +123,10 @@
             this.soLuongGheDataGridViewTextBoxColumn,
             this.loaiPhimDataGridViewTextBoxColumn});
             this.dgv_RAP.DataSource = this.rapBindingSource;
-            this.dgv_RAP.Location = new System.Drawing.Point(33, 216);
+            this.dgv_RAP.Location = new System.Drawing.Point(134, 326);
             this.dgv_RAP.Name = "dgv_RAP";
             this.dgv_RAP.RowHeadersWidth = 51;
-            this.dgv_RAP.Size = new System.Drawing.Size(485, 150);
+            this.dgv_RAP.Size = new System.Drawing.Size(966, 378);
             this.dgv_RAP.TabIndex = 12;
             this.dgv_RAP.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_RAP_CellClick);
             // 
@@ -132,7 +136,6 @@
             this.maRapDataGridViewTextBoxColumn.HeaderText = "MaRap";
             this.maRapDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.maRapDataGridViewTextBoxColumn.Name = "maRapDataGridViewTextBoxColumn";
-            this.maRapDataGridViewTextBoxColumn.Width = 125;
             // 
             // soDayGheDataGridViewTextBoxColumn
             // 
@@ -140,7 +143,6 @@
             this.soDayGheDataGridViewTextBoxColumn.HeaderText = "SoDayGhe";
             this.soDayGheDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.soDayGheDataGridViewTextBoxColumn.Name = "soDayGheDataGridViewTextBoxColumn";
-            this.soDayGheDataGridViewTextBoxColumn.Width = 125;
             // 
             // soLuongGheDataGridViewTextBoxColumn
             // 
@@ -148,7 +150,6 @@
             this.soLuongGheDataGridViewTextBoxColumn.HeaderText = "SoLuongGhe";
             this.soLuongGheDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.soLuongGheDataGridViewTextBoxColumn.Name = "soLuongGheDataGridViewTextBoxColumn";
-            this.soLuongGheDataGridViewTextBoxColumn.Width = 125;
             // 
             // loaiPhimDataGridViewTextBoxColumn
             // 
@@ -156,7 +157,6 @@
             this.loaiPhimDataGridViewTextBoxColumn.HeaderText = "LoaiPhim";
             this.loaiPhimDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.loaiPhimDataGridViewTextBoxColumn.Name = "loaiPhimDataGridViewTextBoxColumn";
-            this.loaiPhimDataGridViewTextBoxColumn.Width = 125;
             // 
             // rapBindingSource
             // 
@@ -168,60 +168,10 @@
             this.quanLyRapPhimDataSet_RAP.DataSetName = "QuanLyRapPhimDataSet_RAP";
             this.quanLyRapPhimDataSet_RAP.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // btnAdd
-            // 
-            this.btnAdd.Location = new System.Drawing.Point(535, 26);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(75, 35);
-            this.btnAdd.TabIndex = 13;
-            this.btnAdd.Text = "Thêm";
-            this.btnAdd.UseVisualStyleBackColor = true;
-            this.btnAdd.Click += new System.EventHandler(this.BtnAdd_Click_1);
-            // 
-            // btnDel
-            // 
-            this.btnDel.Location = new System.Drawing.Point(535, 81);
-            this.btnDel.Name = "btnDel";
-            this.btnDel.Size = new System.Drawing.Size(75, 35);
-            this.btnDel.TabIndex = 14;
-            this.btnDel.Text = "Xoá";
-            this.btnDel.UseVisualStyleBackColor = true;
-            this.btnDel.Click += new System.EventHandler(this.BtnDel_Click);
-            // 
-            // btnEdit
-            // 
-            this.btnEdit.Location = new System.Drawing.Point(535, 135);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(75, 35);
-            this.btnEdit.TabIndex = 15;
-            this.btnEdit.Text = "Sửa";
-            this.btnEdit.UseVisualStyleBackColor = true;
-            this.btnEdit.Click += new System.EventHandler(this.BtnEdit_Click);
-            // 
-            // btnCancel
-            // 
-            this.btnCancel.Location = new System.Drawing.Point(535, 189);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(75, 35);
-            this.btnCancel.TabIndex = 16;
-            this.btnCancel.Text = "Huỷ";
-            this.btnCancel.UseVisualStyleBackColor = true;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
-            // 
-            // btnSave
-            // 
-            this.btnSave.Location = new System.Drawing.Point(535, 244);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(75, 35);
-            this.btnSave.TabIndex = 17;
-            this.btnSave.Text = "Lưu";
-            this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(29, 160);
+            this.label4.Location = new System.Drawing.Point(163, 266);
             this.label4.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(105, 23);
@@ -230,20 +180,100 @@
             // 
             // txtLoaiPhim
             // 
-            this.txtLoaiPhim.Location = new System.Drawing.Point(229, 157);
+            this.txtLoaiPhim.Location = new System.Drawing.Point(321, 263);
             this.txtLoaiPhim.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txtLoaiPhim.Name = "txtLoaiPhim";
-            this.txtLoaiPhim.Size = new System.Drawing.Size(229, 30);
+            this.txtLoaiPhim.Size = new System.Drawing.Size(336, 30);
             this.txtLoaiPhim.TabIndex = 19;
             // 
             // rapTableAdapter
             // 
             this.rapTableAdapter.ClearBeforeFill = true;
             // 
+            // btnReload
+            // 
+            this.btnReload.AutoSize = true;
+            this.btnReload.Image = global::QuanLyRapPhim_Final.Properties.Resources.refresh2;
+            this.btnReload.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnReload.Location = new System.Drawing.Point(846, 241);
+            this.btnReload.Name = "btnReload";
+            this.btnReload.Size = new System.Drawing.Size(144, 52);
+            this.btnReload.TabIndex = 20;
+            this.btnReload.Text = "Reload";
+            this.btnReload.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnReload.UseVisualStyleBackColor = true;
+            this.btnReload.Click += new System.EventHandler(this.btnReload_Click);
+            // 
+            // btnSave
+            // 
+            this.btnSave.Image = global::QuanLyRapPhim_Final.Properties.Resources.save3;
+            this.btnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSave.Location = new System.Drawing.Point(846, 144);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(140, 54);
+            this.btnSave.TabIndex = 17;
+            this.btnSave.Text = "Lưu";
+            this.btnSave.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.Image = global::QuanLyRapPhim_Final.Properties.Resources.delete6;
+            this.btnCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCancel.Location = new System.Drawing.Point(846, 49);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(140, 54);
+            this.btnCancel.TabIndex = 16;
+            this.btnCancel.Text = "Huỷ";
+            this.btnCancel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.Image = global::QuanLyRapPhim_Final.Properties.Resources.tools2;
+            this.btnEdit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEdit.Location = new System.Drawing.Point(681, 240);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(131, 54);
+            this.btnEdit.TabIndex = 15;
+            this.btnEdit.Text = "Sửa";
+            this.btnEdit.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.BtnEdit_Click);
+            // 
+            // btnDel
+            // 
+            this.btnDel.Image = global::QuanLyRapPhim_Final.Properties.Resources.trash2;
+            this.btnDel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDel.Location = new System.Drawing.Point(681, 144);
+            this.btnDel.Name = "btnDel";
+            this.btnDel.Size = new System.Drawing.Size(131, 54);
+            this.btnDel.TabIndex = 14;
+            this.btnDel.Text = "Xoá";
+            this.btnDel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnDel.UseVisualStyleBackColor = true;
+            this.btnDel.Click += new System.EventHandler(this.BtnDel_Click);
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.Image = global::QuanLyRapPhim_Final.Properties.Resources.plus3;
+            this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAdd.Location = new System.Drawing.Point(681, 49);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(131, 54);
+            this.btnAdd.TabIndex = 13;
+            this.btnAdd.Text = "Thêm";
+            this.btnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.BtnAdd_Click_1);
+            // 
             // QuanLyRapUC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btnReload);
             this.Controls.Add(this.txtLoaiPhim);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.btnSave);
@@ -261,7 +291,7 @@
             this.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "QuanLyRapUC";
-            this.Size = new System.Drawing.Size(896, 1200);
+            this.Size = new System.Drawing.Size(1625, 886);
             this.Load += new System.EventHandler(this.QuanLyRapUC_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_RAP)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rapBindingSource)).EndInit();
@@ -294,5 +324,6 @@
         private QuanLyRapPhimDataSet_RAP quanLyRapPhimDataSet_RAP;
         private System.Windows.Forms.TextBox txtLoaiPhim;
         private QuanLyRapPhimDataSet_RAPTableAdapters.RapTableAdapter rapTableAdapter;
+        private System.Windows.Forms.Button btnReload;
     }
 }

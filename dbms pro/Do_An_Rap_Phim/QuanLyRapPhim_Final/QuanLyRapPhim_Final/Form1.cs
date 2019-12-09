@@ -15,10 +15,14 @@ namespace QuanLyRapPhim_Final
         QuanLyHangSanXuatUC quanLyHangSanXuatUC = new QuanLyHangSanXuatUC();
         HopDongUC quanLyHopDong = new HopDongUC();
         ChiNhanhUC ChiNhanhUC = new ChiNhanhUC();
-
-        public Form1()
+        string user;
+        public Form1(string manv)
         {
             InitializeComponent();
+           user = manv.Substring(0, 1).ToLower();
+            this.Size=new Size(1800, 1101);
+            pictureBox1.Size = new Size(1625, 133);
+            // WindowState = FormWindowState.Maximized;
         }
 
         private void btnWelcome_Click(object sender, EventArgs e)
@@ -147,11 +151,44 @@ namespace QuanLyRapPhim_Final
             ChiNhanhUC.Height = 754;
             ChiNhanhUC.BackColor = Color.FromArgb(255, 224, 192);
             //disable nhân viên 
-            if (Program.ChucVuUser=="NV")
-            {
-                btnChiNhanh.Enabled = false;
-                btnHopDong.Enabled = false;
+            btnQuanLyPhim.Enabled = false;
+            btnQuanLyKhachHang.Enabled = false;
+            btnQuanLyNhanVien.Enabled = false;
+            btnQuanLyRap.Enabled = false;
+            btnChucVuNhanVien.Enabled = false;
+            btnQuanLySuatChieu.Enabled = false;
+            btnQuanLyHangSanXuat.Enabled = false;
+            btnHopDong.Enabled = false;
+            btnChiNhanh.Enabled = false;
 
+            if (user.ToString() == "a")
+            {
+                btnQuanLyPhim.Enabled = true;
+                btnQuanLyKhachHang.Enabled = true;
+                btnQuanLyNhanVien.Enabled = true;
+                btnQuanLyRap.Enabled = true;
+                btnChucVuNhanVien.Enabled = true;
+                btnQuanLySuatChieu.Enabled = true;
+                btnQuanLyHangSanXuat.Enabled = true;
+                btnHopDong.Enabled = true;
+                btnChiNhanh.Enabled = true;
+            }
+            else if (user.ToString() == "q")
+            {
+                btnQuanLyPhim.Enabled = true;
+                btnQuanLyKhachHang.Enabled = true;
+                btnQuanLyNhanVien.Enabled = true;
+                btnQuanLyRap.Enabled = true;
+                btnChucVuNhanVien.Enabled = true;
+
+            }
+            else
+            {
+                btnQuanLyPhim.Enabled = true;
+                btnQuanLyKhachHang.Enabled = true;
+                //btnQuanLyNhanVien.Enabled = false;
+                btnQuanLyRap.Enabled = true;
+                btnQuanLySuatChieu.Enabled = true;
             }
         }
 
@@ -164,6 +201,7 @@ namespace QuanLyRapPhim_Final
             quanLyHopDong.SendToBack();
             ChiNhanhUC.SendToBack();
             lblHeader.Text = "Hãng sản xuất";
+            quanLyHangSanXuatUC.Size = new Size(1625, 886);
         }
 
         private void btnHopDong_Click(object sender, EventArgs e)
@@ -175,17 +213,19 @@ namespace QuanLyRapPhim_Final
             quanLyHopDong.BringToFront();
             ChiNhanhUC.SendToBack();
             lblHeader.Text = "Bảng hợp đồng";
+            quanLyHopDong.Size = new Size(1625, 886);
         }
 
         private void btnChiNhanh_Click(object sender, EventArgs e)
         {
-            pnlClick.Height = ChiNhanhUC.Height;
-            pnlClick.Top = ChiNhanhUC.Top;
-            pnlClick.BringToFront();
+            //pnlClick.Height = ChiNhanhUC.Height;
+            //pnlClick.Top = ChiNhanhUC.Top;
+            //pnlClick.BringToFront();
             quanLyHangSanXuatUC.SendToBack();
             quanLyHopDong.SendToBack();
             ChiNhanhUC.BringToFront();
             lblHeader.Text = "Bảng chi nhánh";
+            ChiNhanhUC.Size = new Size(1625, 886);
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)

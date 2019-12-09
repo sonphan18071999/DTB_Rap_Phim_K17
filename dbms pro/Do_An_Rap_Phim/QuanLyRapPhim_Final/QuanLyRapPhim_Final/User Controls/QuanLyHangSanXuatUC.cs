@@ -84,6 +84,7 @@ namespace QuanLyRapPhim_Final.User_Controls
         private void QuanLyHangSanXuatUC_Load(object sender, EventArgs e)
         {
             LoadData();
+            this.Size = new Size(1625, 886);
         }
 
         private void dgv_HangSanXuat_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -166,6 +167,12 @@ namespace QuanLyRapPhim_Final.User_Controls
                 }
 
             }
+        }
+
+        private void btnReload_Click(object sender, EventArgs e)
+        {
+            LoadData();
+
         }
     }
 }

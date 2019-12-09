@@ -24,5 +24,18 @@ namespace QuanLyRapPhim_Final.BSLayer
             return db.ExecuteQueryDataSet($"select * from DangNhap where MaNV=N'{MaNV.Trim()}'and MatKhau=N'{Pas.Trim()}'",
                 CommandType.Text);
         }
+        public void Decrypt(string MaNV)
+        {
+            db.ExecuteQueryDataSet($"exec hash_Passwords 'decrypt','{MaNV.Trim()}'", CommandType.Text);
+        }
+        public void Encrypt(string MaNV)
+        {
+            db.ExecuteQueryDataSet($"exec hash_Passwords 'hash','{MaNV.Trim()}'", CommandType.Text);
+        }
+        public void TaoTaiKhoan(string MaNV,string MK,ref string err)
+        {
+            db.MyExecuteNonQuery($"exec DangNhapInsertUpdateDelete N'{MaNV.Trim()}',N'{MK.Trim()}','Insert'", CommandType.Text, ref err);
+            
+        }
     }
 }
